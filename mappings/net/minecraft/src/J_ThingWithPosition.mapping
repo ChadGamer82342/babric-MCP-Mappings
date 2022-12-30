@@ -1,1 +1,3 @@
 CLASS argo/saj/ThingWithPosition net/minecraft/src/J_ThingWithPosition
+	METHOD getColumn func_27331_a ()I
+	METHOD getRow func_27330_b ()I

@@ -3,3 +3,8 @@ CLASS argo/saj/PositionTrackingPushbackReader net/minecraft/src/J_PositionTracki
 	FIELD lastCharacterWasCarriageReturn field_27339_d Z
 	FIELD lineCount field_27340_c I
 	FIELD pushbackReader field_27338_a Ljava/io/PushbackReader;
+	METHOD read func_27333_c ()I
+	METHOD read func_27336_b ([C)I
+	METHOD uncount func_27335_a ([C)V
+	METHOD unread func_27334_a (C)V
+	METHOD updateCharacterAndLineCounts func_27332_a (I)V

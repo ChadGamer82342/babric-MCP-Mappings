@@ -1,1 +1,3 @@
 CLASS argo/jdom/JdomParser net/minecraft/src/J_JdomParser
+	METHOD parse func_27366_a (Ljava/io/Reader;)Largo/jdom/JsonRootNode;
+	METHOD parse func_27367_a (Ljava/lang/String;)Largo/jdom/JsonRootNode;

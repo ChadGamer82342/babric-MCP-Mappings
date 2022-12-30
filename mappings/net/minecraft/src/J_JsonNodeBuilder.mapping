@@ -1,1 +1,2 @@
 CLASS argo/jdom/JsonNodeBuilder net/minecraft/src/J_JsonNodeBuilder
+	METHOD build func_27234_b ()Largo/jdom/JsonNode;

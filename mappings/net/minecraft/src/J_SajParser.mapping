@@ -1,1 +1,18 @@
 CLASS argo/saj/SajParser net/minecraft/src/J_SajParser
+	METHOD aFieldToken func_27449_c (Largo/saj/PositionTrackingPushbackReader;Largo/saj/JsonListener;)V
+	METHOD aJsonValue func_27464_d (Largo/saj/PositionTrackingPushbackReader;Largo/saj/JsonListener;)V
+	METHOD arrayString func_27455_a (Largo/saj/PositionTrackingPushbackReader;Largo/saj/JsonListener;)V
+	METHOD digitString func_27456_e (Largo/saj/PositionTrackingPushbackReader;)Ljava/lang/String;
+	METHOD digitToken func_27458_d (Largo/saj/PositionTrackingPushbackReader;)C
+	METHOD escapedStringChar func_27457_j (Largo/saj/PositionTrackingPushbackReader;)C
+	METHOD hexidecimalNumber func_27450_k (Largo/saj/PositionTrackingPushbackReader;)I
+	METHOD nonNegativeNumberToken func_27451_b (Largo/saj/PositionTrackingPushbackReader;)Ljava/lang/String;
+	METHOD nonZeroDigitToken func_27460_c (Largo/saj/PositionTrackingPushbackReader;)C
+	METHOD numberToken func_27459_a (Largo/saj/PositionTrackingPushbackReader;)Ljava/lang/String;
+	METHOD objectString func_27453_b (Largo/saj/PositionTrackingPushbackReader;Largo/saj/JsonListener;)V
+	METHOD parse func_27463_a (Ljava/io/Reader;Largo/saj/JsonListener;)V
+	METHOD possibleExponent func_27454_g (Largo/saj/PositionTrackingPushbackReader;)Ljava/lang/String;
+	METHOD possibleFractionalComponent func_27462_f (Largo/saj/PositionTrackingPushbackReader;)Ljava/lang/String;
+	METHOD possibleSign func_27461_h (Largo/saj/PositionTrackingPushbackReader;)Ljava/lang/String;
+	METHOD readNextNonWhitespaceChar func_27448_l (Largo/saj/PositionTrackingPushbackReader;)I
+	METHOD stringToken func_27452_i (Largo/saj/PositionTrackingPushbackReader;)Ljava/lang/String;

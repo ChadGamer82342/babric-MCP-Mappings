@@ -1,1 +1,9 @@
 CLASS argo/jdom/JsonNodeFactories net/minecraft/src/J_JsonNodeFactories
+	METHOD aJsonArray func_27309_a (Ljava/lang/Iterable;)Largo/jdom/JsonRootNode;
+	METHOD aJsonArray func_27315_a ([Largo/jdom/JsonNode;)Largo/jdom/JsonRootNode;
+	METHOD aJsonFalse func_27314_c ()Largo/jdom/JsonNode;
+	METHOD aJsonNull func_27310_a ()Largo/jdom/JsonNode;
+	METHOD aJsonNumber func_27311_b (Ljava/lang/String;)Largo/jdom/JsonNode;
+	METHOD aJsonObject func_27312_a (Ljava/util/Map;)Largo/jdom/JsonRootNode;
+	METHOD aJsonString func_27316_a (Ljava/lang/String;)Largo/jdom/JsonStringNode;
+	METHOD aJsonTrue func_27313_b ()Largo/jdom/JsonNode;

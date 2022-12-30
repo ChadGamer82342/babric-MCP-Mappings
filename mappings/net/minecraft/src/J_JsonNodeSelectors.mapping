@@ -1,8 +1,33 @@
 CLASS argo/jdom/JsonNodeSelectors net/minecraft/src/J_JsonNodeSelectors
 	CLASS 1 J_JsonStringNodeSelector
+		METHOD matchesNode func_27072_a (Largo/jdom/JsonNode;)Z
+		METHOD typeSafeApplyTo func_27073_b (Largo/jdom/JsonNode;)Ljava/lang/String;
+
 	CLASS 10 J_JsonObjectNodeSelector
+		METHOD matchesNode func_27070_a (Largo/jdom/JsonNode;)Z
+		METHOD typeSafeApplyTo func_27071_b (Largo/jdom/JsonNode;)Ljava/util/Map;
+
 	CLASS 12 J_JsonFieldNodeSelector
 		FIELD val$fieldName field_27066_a Largo/jdom/JsonStringNode;
+		METHOD matchesNode func_27065_a (Ljava/util/Map;)Z
+		METHOD typeSafeApplyTo func_27064_b (Ljava/util/Map;)Largo/jdom/JsonNode;
+
 	CLASS 13 J_JsonElementNodeSelector
 		FIELD val$index field_27069_a I
+		METHOD matchesNode func_27067_a (Ljava/util/List;)Z
+		METHOD typeSafeApplyTo func_27068_b (Ljava/util/List;)Largo/jdom/JsonNode;
+
 	CLASS 8 J_JsonArrayNodeSelector
+		METHOD matchesNode func_27074_a (Largo/jdom/JsonNode;)Z
+		METHOD typeSafeApplyTo func_27075_b (Largo/jdom/JsonNode;)Ljava/util/List;
+
+	METHOD aField func_27350_a (Largo/jdom/JsonStringNode;)Largo/jdom/JsonNodeSelector;
+	METHOD aField func_27348_a (Ljava/lang/String;)Largo/jdom/JsonNodeSelector;
+	METHOD aStringNode func_27349_a ([Ljava/lang/Object;)Largo/jdom/JsonNodeSelector;
+	METHOD anArrayNode func_27346_b ([Ljava/lang/Object;)Largo/jdom/JsonNodeSelector;
+	METHOD anArrayNodeWithElement func_27354_b (I)Largo/jdom/JsonNodeSelector;
+	METHOD anElement func_27347_a (I)Largo/jdom/JsonNodeSelector;
+	METHOD anObjectNode func_27353_c ([Ljava/lang/Object;)Largo/jdom/JsonNodeSelector;
+	METHOD anObjectNodeWithField func_27351_b (Ljava/lang/String;)Largo/jdom/JsonNodeSelector;
+	METHOD chainOn func_27352_a ([Ljava/lang/Object;Largo/jdom/JsonNodeSelector;)Largo/jdom/JsonNodeSelector;
+	METHOD chainedJsonNodeSelector func_27345_a (Largo/jdom/JsonNodeSelector;Largo/jdom/JsonNodeSelector;)Largo/jdom/JsonNodeSelector;

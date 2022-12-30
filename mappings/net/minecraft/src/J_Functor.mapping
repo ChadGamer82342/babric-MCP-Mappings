@@ -1,1 +1,4 @@
 CLASS argo/jdom/Functor net/minecraft/src/J_Functor
+	METHOD applyTo func_27059_b (Ljava/lang/Object;)Ljava/lang/Object;
+	METHOD matchesNode func_27058_a (Ljava/lang/Object;)Z
+	METHOD shortForm func_27060_a ()Ljava/lang/String;

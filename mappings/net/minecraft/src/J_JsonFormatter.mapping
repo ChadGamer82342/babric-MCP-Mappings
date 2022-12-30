@@ -1,1 +1,2 @@
 CLASS argo/format/JsonFormatter net/minecraft/src/J_JsonFormatter
+	METHOD format func_27327_a (Largo/jdom/JsonRootNode;)Ljava/lang/String;

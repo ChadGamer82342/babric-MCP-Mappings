@@ -1,4 +1,14 @@
 CLASS argo/jdom/JsonNodeBuilders net/minecraft/src/J_JsonNodeBuilders
 	CLASS 1 J_JsonNullNodeBuilder
+
 	CLASS 2 J_JsonTrueNodeBuilder
+
 	CLASS 3 J_JsonFalseNodeBuilder
+
+	METHOD aFalseBuilder func_27252_c ()Largo/jdom/JsonNodeBuilder;
+	METHOD aNullBuilder func_27248_a ()Largo/jdom/JsonNodeBuilder;
+	METHOD aNumberBuilder func_27250_a (Ljava/lang/String;)Largo/jdom/JsonNodeBuilder;
+	METHOD aStringBuilder func_27254_b (Ljava/lang/String;)Largo/jdom/JsonStringNodeBuilder;
+	METHOD aTrueBuilder func_27251_b ()Largo/jdom/JsonNodeBuilder;
+	METHOD anArrayBuilder func_27249_e ()Largo/jdom/JsonArrayNodeBuilder;
+	METHOD anObjectBuilder func_27253_d ()Largo/jdom/JsonObjectNodeBuilder;

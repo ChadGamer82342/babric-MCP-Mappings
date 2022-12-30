@@ -1,1 +1,14 @@
 CLASS argo/saj/JsonListener net/minecraft/src/J_JsonListener
+	METHOD endArray func_27197_e ()V
+	METHOD endDocument func_27204_c ()V
+	METHOD endField func_27199_h ()V
+	METHOD endObject func_27203_g ()V
+	METHOD falseValue func_27193_j ()V
+	METHOD nullValue func_27202_k ()V
+	METHOD numberValue func_27201_b (Ljava/lang/String;)V
+	METHOD startArray func_27200_d ()V
+	METHOD startDocument func_27195_b ()V
+	METHOD startField func_27205_a (Ljava/lang/String;)V
+	METHOD startObject func_27194_f ()V
+	METHOD stringValue func_27198_c (Ljava/lang/String;)V
+	METHOD trueValue func_27196_i ()V

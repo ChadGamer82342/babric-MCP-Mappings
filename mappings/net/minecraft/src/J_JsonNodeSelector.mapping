@@ -1,2 +1,6 @@
 CLASS argo/jdom/JsonNodeSelector net/minecraft/src/J_JsonNodeSelector
 	FIELD valueGetter field_27359_a Largo/jdom/Functor;
+	METHOD getValue func_27357_b (Ljava/lang/Object;)Ljava/lang/Object;
+	METHOD matches func_27356_a (Ljava/lang/Object;)Z
+	METHOD shortForm func_27358_a ()Ljava/lang/String;
+	METHOD with func_27355_a (Largo/jdom/JsonNodeSelector;)Largo/jdom/JsonNodeSelector;

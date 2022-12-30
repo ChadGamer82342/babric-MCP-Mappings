@@ -1,1 +1,8 @@
 CLASS argo/jdom/JsonNode net/minecraft/src/J_JsonNode
+	METHOD getArrayNode func_27217_b ([Ljava/lang/Object;)Ljava/util/List;
+	METHOD getElements func_27215_d ()Ljava/util/List;
+	METHOD getFields func_27214_c ()Ljava/util/Map;
+	METHOD getStringValue func_27213_a ([Ljava/lang/Object;)Ljava/lang/String;
+	METHOD getText func_27216_b ()Ljava/lang/String;
+	METHOD getType func_27218_a ()Largo/jdom/JsonNodeType;
+	METHOD wrapExceptionsFor func_27219_a (Largo/jdom/JsonNodeSelector;Largo/jdom/JsonNode;[Ljava/lang/Object;)Ljava/lang/Object;

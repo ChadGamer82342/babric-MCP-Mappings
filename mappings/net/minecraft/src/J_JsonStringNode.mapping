@@ -1,2 +1,3 @@
 CLASS argo/jdom/JsonStringNode net/minecraft/src/J_JsonStringNode
 	FIELD value field_27224_a Ljava/lang/String;
+	METHOD compareTo func_27223_a (Largo/jdom/JsonStringNode;)I

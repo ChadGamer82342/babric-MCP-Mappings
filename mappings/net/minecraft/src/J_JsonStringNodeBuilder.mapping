@@ -1,2 +1,3 @@
 CLASS argo/jdom/JsonStringNodeBuilder net/minecraft/src/J_JsonStringNodeBuilder
 	FIELD value field_27244_a Ljava/lang/String;
+	METHOD build func_27243_a ()Largo/jdom/JsonStringNode;

@@ -1,3 +1,6 @@
 CLASS argo/format/CompactJsonFormatter net/minecraft/src/J_CompactJsonFormatter
 	CLASS 1 EnumJsonNodeTypeMappingHelper
 		FIELD $SwitchMap$argo$jdom$JsonNodeType field_27341_a [I
+
+	METHOD format func_27329_a (Largo/jdom/JsonRootNode;Ljava/io/Writer;)V
+	METHOD formatJsonNode func_27328_a (Largo/jdom/JsonNode;Ljava/io/Writer;)V

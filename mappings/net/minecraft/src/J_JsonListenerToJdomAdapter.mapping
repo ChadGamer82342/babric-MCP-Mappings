@@ -2,12 +2,21 @@ CLASS argo/jdom/JsonListenerToJdomAdapter net/minecraft/src/J_JsonListenerToJdom
 	CLASS 1 J_ArrayNodeContainer
 		FIELD this$0 field_27293_b Largo/jdom/JsonListenerToJdomAdapter;
 		FIELD val$arrayBuilder field_27294_a Largo/jdom/JsonArrayNodeBuilder;
+
 	CLASS 2 J_ObjectNodeContainer
 		FIELD this$0 field_27295_b Largo/jdom/JsonListenerToJdomAdapter;
 		FIELD val$objectNodeBuilder field_27296_a Largo/jdom/JsonObjectNodeBuilder;
+
 	CLASS 3 J_FieldNodeContainer
 		FIELD this$0 field_27291_b Largo/jdom/JsonListenerToJdomAdapter;
 		FIELD val$fieldBuilder field_27292_a Largo/jdom/JsonFieldBuilder;
+
 	CLASS NodeContainer J_NodeContainer
+		METHOD addField func_27289_a (Largo/jdom/JsonFieldBuilder;)V
+		METHOD addNode func_27290_a (Largo/jdom/JsonNodeBuilder;)V
+
 	FIELD root field_27209_b Largo/jdom/JsonNodeBuilder;
 	FIELD stack field_27210_a Ljava/util/Stack;
+	METHOD addRootNode func_27207_a (Largo/jdom/JsonNodeBuilder;)V
+	METHOD addValue func_27206_b (Largo/jdom/JsonNodeBuilder;)V
+	METHOD getDocument func_27208_a ()Largo/jdom/JsonRootNode;

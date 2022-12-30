@@ -1,3 +1,7 @@
 CLASS argo/jdom/JsonNodeDoesNotMatchChainedJsonNodeSelectorException net/minecraft/src/J_JsonNodeDoesNotMatchChainedJsonNodeSelectorException
 	FIELD failPath field_27325_b Ljava/util/List;
 	FIELD failedNode field_27326_a Largo/jdom/Functor;
+	METHOD createChainedJsonNodeDoesNotMatchJsonNodeSelectorException func_27323_a (Largo/jdom/JsonNodeDoesNotMatchChainedJsonNodeSelectorException;Largo/jdom/JsonNodeSelector;)Largo/jdom/JsonNodeDoesNotMatchJsonNodeSelectorException;
+	METHOD createJsonNodeDoesNotMatchJsonNodeSelectorException func_27322_a (Largo/jdom/Functor;)Largo/jdom/JsonNodeDoesNotMatchJsonNodeSelectorException;
+	METHOD createUnchainedJsonNodeDoesNotMatchJsonNodeSelectorException func_27321_b (Largo/jdom/JsonNodeDoesNotMatchChainedJsonNodeSelectorException;Largo/jdom/JsonNodeSelector;)Largo/jdom/JsonNodeDoesNotMatchJsonNodeSelectorException;
+	METHOD getShortFormFailPath func_27324_a (Ljava/util/List;)Ljava/lang/String;

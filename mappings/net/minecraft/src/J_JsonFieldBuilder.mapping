@@ -1,3 +1,8 @@
 CLASS argo/jdom/JsonFieldBuilder net/minecraft/src/J_JsonFieldBuilder
 	FIELD keyBuilder field_27306_a Largo/jdom/JsonNodeBuilder;
 	FIELD valueBuilder field_27305_b Largo/jdom/JsonNodeBuilder;
+	METHOD aJsonFieldBuilder func_27301_a ()Largo/jdom/JsonFieldBuilder;
+	METHOD buildKey func_27303_b ()Largo/jdom/JsonStringNode;
+	METHOD buildValue func_27302_c ()Largo/jdom/JsonNode;
+	METHOD withKey func_27304_a (Largo/jdom/JsonNodeBuilder;)Largo/jdom/JsonFieldBuilder;
+	METHOD withValue func_27300_b (Largo/jdom/JsonNodeBuilder;)Largo/jdom/JsonFieldBuilder;
