@@ -519,6 +519,7 @@ task compressTiny(dependsOn: [tinyJar, mergeTiny], type: FileOutput) {
 
 	doLast {
 		logger.lifecycle(":compressing tiny mappings")
+		outputFile.parentFile.mkdirs()
 
 		def buffer = new byte[1024]
 		def fileOutputStream = new FileOutputStream(outputFile)
