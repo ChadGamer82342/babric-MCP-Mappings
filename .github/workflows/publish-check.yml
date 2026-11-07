@@ -1,0 +1,59 @@
+name: Publish Check
+
+# Verifies that every artifact in the `maven` publication can be built and published,
+# without uploading anything: it publishes into a throwaway local Maven repository.
+on: [ push, pull_request ]
+
+concurrency:
+  group: publish-check-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish-check:
+    runs-on: ubuntu-latest
+    env:
+      LOCAL_REPO: ${{ github.workspace }}/build/publish-check-repo
+      BUILD_NUMBER: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      # Validates the wrapper jar and caches Gradle downloads.
+      - uses: gradle/actions/setup-gradle@v5
+
+      - name: Publish to local Maven repository
+        run: ./gradlew publishToMavenLocal -Dmaven.repo.local="$LOCAL_REPO" --stacktrace
+
+      - name: Verify published artifacts
+        run: |
+          dir="$LOCAL_REPO/babric/barn/b1.7.3+build.$BUILD_NUMBER"
+          status=0
+          for suffix in .pom .jar -constants.jar -javadoc.jar; do
+            file="$dir/barn-b1.7.3+build.$BUILD_NUMBER$suffix"
+            if [ -s "$file" ]; then
+              echo "OK       $(basename "$file") ($(stat -c %s "$file") bytes)"
+            else
+              echo "::error::Missing or empty artifact: $(basename "$file")"
+              status=1
+            fi
+          done
+          # The mappings jar must actually contain the tiny mappings Loom reads.
+          unzip -l "$dir/barn-b1.7.3+build.$BUILD_NUMBER.jar" | grep -q 'mappings/mappings.tiny' \
+            || { echo "::error::mappings/mappings.tiny missing from mappings jar"; status=1; }
+          exit $status
+
+      - name: Upload published artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-artifacts
+          path: ${{ env.LOCAL_REPO }}
+          if-no-files-found: ignore

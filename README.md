@@ -1,69 +1,117 @@
-# Barn
+# babric MCP Mappings
 
-**B**eta y**arn** is a [yarn](https://github.com/FabricMC/yarn) fork for b1.7.3
+MCP-style names for Minecraft **Beta 1.7.3**, packaged as mappings for the
+[babric](https://github.com/babric) toolchain (Fabric for Beta).
 
-## Usage
+This is a fork of [babric/barn](https://github.com/babric/barn) ("**B**eta y**arn**"). It keeps
+Barn's build pipeline but swaps Barn's community names for the names from the old Mod Coder Pack. If you
+learned modding on `net.minecraft.src.EntityPlayer`, `World` and `Block` rather than
+`net.minecraft.entity.player.PlayerEntity`, this project lets you keep those names with a modern Fabric-style
+setup (Loom, Mixin, Fabric Loader).
 
-To use yarn-deobfuscated Minecraft for Minecraft modding or as a dependency in a Java project, you can
-use [loom](https://github.com/babric/fabric-loom) Gradle plugin.
-See [fabric wiki tutorial](https://fabricmc.net/wiki/tutorial:setup) for more information.
+```
+CLASS net/minecraft/class_54 net/minecraft/src/EntityPlayer
+	FIELD field_511 timeUntilPortal I
+	FIELD field_506 playerCloakUrl Ljava/lang/String;
+```
 
-To obtain a deobfuscated Minecraft jar, [`./gradlew mapNamedJar`](#mapNamedJar) will generate a jar named
-like `<minecraft version>-named.jar`, which can be sent to a decompiler for deobfuscated code.
+Names are mapped on top of babric's [intermediary](https://github.com/babric/intermediary). This means code
+compiled against these mappings is still remapped to intermediary at build time. So, at runtime it works with
+mods built against Barn or any other babric mapping set.
 
-Please note to run the yarn build script **Java 17** or higher is required!
+## ⚠️ Licensing
 
-## Contributing
+The upstream Barn project is released under CC0. **The names in this fork come from MCP and are not original
+work, so CC0 cannot be assumed to apply to them.** MCP's mappings were never released under an open licence.
+The `LICENSE` file covers the build scripts and other upstream material, not the MCP-derived names.
 
-Please remember that copying and pasting mappings from alternate projects under more restrictive licenses (such as MCP,
-Spigot's or Mojang's obfuscation maps)
-is **completely forbidden** without explicit permission from the owners of said mappings to distribute the names under
-the CC0 license. This includes using the names from those mappings for inspiration. Discussing the naming approaches
-used in said projects is also not welcome - you have been warned. However, it is a good idea to consult name changes
-with other people - use pull requests or our community spaces to ask questions!
+That's why Barn forbids copying MCP names into Barn itself (see [CONTRIBUTING.md](CONTRIBUTING.md)). Please
+**do not submit names from this repository upstream to Barn, Yarn or any other CC0 project**. Use these
+mappings for your own personal, educational or preservation projects. Check for yourself whether that fits
+what you plan to do with them.
 
-Please have a look at the [naming conventions](/CONVENTIONS.md) before submitting mappings.
+## Using the mappings
 
-### Getting Started
+### In a babric mod (Loom)
 
-1. Fork and clone the repo
-2. Run `./gradlew yarn` (Linux, macOS) or `gradlew yarn` (Windows) to open [Enigma](https://github.com/FabricMC/Enigma),
-   a user interface to easily edit the mappings
-3. Commit and push your work to your fork
-4. Open a pull request with your changes
+The repository builds on [JitPack](https://jitpack.io/#ChadGamer82342/babric-MCP-Mappings). Point your mod's
+`mappings` dependency at it instead of Barn:
 
-## Gradle
+```groovy
+repositories {
+	maven { url = "https://jitpack.io" }
+}
 
-Yarn uses Gradle to provide a number of utility tasks for working with the mappings.
+dependencies {
+	// Replace <version> with a commit hash, tag or "b1.7.3-SNAPSHOT"
+	mappings "com.github.ChadGamer82342:babric-MCP-Mappings:<version>"
+}
+```
 
-### `yarn`
+See the [babric Loom fork](https://github.com/babric/fabric-loom) and the
+[babric example mod](https://github.com/babric/example-mod) for a full project setup.
 
-Setup and download and launch the latest version of [Enigma](https://github.com/FabricMC/Enigma) automatically
-configured to use the merged jar and the mappings.
+### As a deobfuscated jar
 
-Compared to launching Enigma externally, the gradle task adds a name guesser plugin that automatically maps enums and a
-few constant field names.
+```sh
+./gradlew mapNamedJar     # -> b1.7.3-named.jar
+./gradlew decompileCFR    # -> namedSrc/ (readable source, not meant to be recompiled)
+```
 
-### `build`
+## Building
 
-Build a GZip'd archive containing a tiny mapping between official (obfuscated)
-, [intermediary](https://github.com/FabricMC/intermediary), and yarn names ("named") and packages enigma mappings into a
-zip archive..
+Requirements:
 
-### `mapNamedJar`
+- **Java 17 or newer** (checked in `settings.gradle`)
+- Nothing else: the Gradle wrapper (Gradle 9.9) downloads everything, including the Minecraft jars, from the
+  [babric manifest polyfill](https://github.com/babric/manifest-polyfill).
 
-Builds a deobfuscated jar with yarn mappings and automapped fields (enums, etc.). Unmapped names will be filled
-with [intermediary](https://github.com/FabricMC/Intermediary) names.
+```sh
+./gradlew build
+```
 
-### `decompileCFR`
+Outputs in `build/libs/`:
 
-Decompile the mapped source code. **Note:** This is not designed to be recompiled.
+| File | Contents |
+| --- | --- |
+| `barn-b1.7.3+build.<n>.jar` | `mappings/mappings.tiny` (intermediary → named) plus unpick definitions. This is what Loom consumes. |
+| `barn-tiny-b1.7.3+build.<n>.gz` | The same tiny file, gzipped |
+| `barn-b1.7.3+build.<n>-constants.jar` | Constant classes used by unpick |
 
-### `download`
+`<n>` is `$BUILD_NUMBER`, or `local` when unset. The artifacts are still called `barn` because the build is
+inherited from upstream.
 
-Downloads the client and server Minecraft jars for the current Minecraft version to `.gradle/minecraft`
+## Editing mappings
 
-### `mergeJars`
+Mappings live in [`mappings/`](mappings) as [Enigma](https://github.com/FabricMC/Enigma) `.mapping` files,
+one per top-level class, laid out by package (`mappings/net/minecraft/src/EntityPlayer.mapping`).
 
-Merges the client and server jars into one merged jar, located at `VERSION-merged.jar` in the mappings directory
-where `VERSION` is the current Minecraft version.
+1. Fork and clone the repository.
+2. Run `./gradlew yarn` to open Enigma on the merged, unpicked jar with these mappings loaded.
+   (`./gradlew yarnWithoutUnpick` skips the unpick step if it causes trouble.)
+3. Rename things, save, and run `./gradlew checkMappings` to catch mistakes.
+4. Commit and open a pull request.
+
+Keep to MCP's naming style so the set stays consistent: `net.minecraft.src` for most classes, `EntityX` /
+`BlockX` / `ItemX` / `GuiX` class names, and the original `field_NNNNN_x` / `func_NNNNN_x` SRG-style names
+for anything MCP left unnamed. [CONVENTIONS.md](CONVENTIONS.md) is Barn's/Yarn's guide. Use it for
+formatting and Javadoc, but not for choosing names.
+
+## Useful Gradle tasks
+
+| Task | What it does |
+| --- | --- |
+| `yarn` | Launch Enigma with the mappings and the name-proposal plugin |
+| `build` | Build the tiny mappings jar, the gzipped tiny file and the constants jar |
+| `checkMappings` | Validate the Enigma mappings against the merged jar |
+| `mergeJars` | Download and remap the client and server, then merge them into `b1.7.3-intermediary.jar` |
+| `mapNamedJar` | Produce `b1.7.3-named.jar` with these names applied |
+| `decompileCFR` | Decompile the named jar into `namedSrc/` |
+| `javadocJar` | Generate Javadoc from the mappings' comments |
+| `clean` | Delete `build/` and the cached Minecraft files in `.gradle/minecraft` |
+
+## Credits
+
+- [babric](https://github.com/babric) for Barn, intermediary, Loom and the rest of the Beta toolchain
+- [FabricMC](https://github.com/FabricMC) for Yarn, Enigma, Stitch, tiny-remapper and unpick
+- The original Mod Coder Pack team, whose names this project uses

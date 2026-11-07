@@ -1,21 +1,20 @@
 buildscript {
 	repositories {
 		maven {
-			name "Fabric Repository"
-			url "https://maven.fabricmc.net"
+			name = "Fabric Repository"
+			url = "https://maven.fabricmc.net"
 		}
 		mavenCentral()
 		mavenLocal()
 		maven {
-			name "Jitpack"
-			url "https://jitpack.io"
+			name = "Jitpack"
+			url = "https://jitpack.io"
 		}
 	}
 	dependencies {
 		classpath "cuchaz:enigma-cli:${project.enigma_version}"
 		classpath "com.github.Chocohead:Stitch:8befa96d4b"
 		classpath "commons-io:commons-io:2.11.0"
-		classpath "de.undercouch:gradle-download-task:4.1.1"
 		classpath "net.fabricmc:tiny-remapper:${project.tiny_remapper_version}"
 		classpath "net.fabricmc.unpick:unpick:${project.unpick_version}"
 		classpath "net.fabricmc.unpick:unpick-format-utils:${project.unpick_version}"
@@ -25,9 +24,9 @@ buildscript {
 
 plugins {
 	id "java" // for constants, packages, javadoc
-	id "de.undercouch.download" version "4.1.2"
+	id "de.undercouch.download" version "5.7.0"
 	id "maven-publish"
-	id "com.diffplug.spotless" version "6.4.2"
+	id "com.diffplug.spotless" version "8.11.0"
 	id "net.fabricmc.filament" version "0.3.0"
 }
 
@@ -50,16 +49,16 @@ if (ENV.BRANCH_NAME) {
 repositories {
 	mavenCentral()
 	maven {
-		name "Babric Repository"
-		url "https://maven.glass-launcher.net/babric/"
+		name = "Babric Repository"
+		url = "https://maven.glass-launcher.net/babric/"
 	}
 	maven {
-		name "Fabric Repository"
-		url "https://maven.fabricmc.net"
+		name = "Fabric Repository"
+		url = "https://maven.fabricmc.net"
 	}
 	maven {
-		name "Mojang"
-		url "https://libraries.minecraft.net/"
+		name = "Mojang"
+		url = "https://libraries.minecraft.net/"
 	}
 	mavenLocal()
 }
@@ -125,6 +124,7 @@ import cuchaz.enigma.command.CheckMappingsCommand
 import cuchaz.enigma.command.MapSpecializedMethodsCommand
 import groovy.io.FileType
 import groovy.json.JsonSlurper
+import groovy.xml.XmlSlurper
 import net.fabricmc.stitch.commands.CommandFixNesting
 import net.fabricmc.stitch.commands.CommandMergeTiny
 import net.fabricmc.stitch.commands.CommandReorderTiny
@@ -158,7 +158,7 @@ task downloadVersionsManifest {
 	outputs.file(manifestFile)
 	doLast {
 		logger.lifecycle(":downloading minecraft versions manifest")
-		FileUtils.copyURLToFile(new URL("https://babric.github.io/manifest-polyfill/version_manifest_v2.json"), manifestFile)
+		FileUtils.copyURLToFile(URI.create("https://babric.github.io/manifest-polyfill/version_manifest_v2.json").toURL(), manifestFile)
 	}
 }
 
@@ -185,7 +185,7 @@ task downloadWantedVersionManifest(dependsOn: downloadVersionsManifest) {
 		if (manifestVersion.isPresent() || versionFile.exists()) {
 
 			if (manifestVersion.isPresent()) {
-				FileUtils.copyURLToFile(new URL(manifestVersion.get().url), versionFile)
+				FileUtils.copyURLToFile(URI.create(manifestVersion.get().url).toURL(), versionFile)
 			}
 		} else {
 			throw new RuntimeException("No version data for Minecraft version ${minecraft_version}")
@@ -215,14 +215,14 @@ task downloadMcJars(dependsOn: downloadWantedVersionManifest) {
 
 		logger.lifecycle(":downloading minecraft jars")
 
-		download {
-			src new URL(version.downloads.client.url)
+		download.run {
+			src version.downloads.client.url
 			dest clientJar
 			overwrite false
 		}
 
-		download {
-			src new URL(version.downloads.server.url)
+		download.run {
+			src version.downloads.server.url
 			dest serverJar
 			overwrite false
 		}
@@ -236,6 +236,8 @@ task downloadMcLibs(dependsOn: downloadWantedVersionManifest) {
 	outputs.dir(libraries)
 
 	outputs.upToDateWhen { false }
+
+	def projectDependencies = project.dependencies
 
 	doLast {
 		if (!versionFile.exists()) {
@@ -256,13 +258,13 @@ task downloadMcLibs(dependsOn: downloadWantedVersionManifest) {
 
 			def downloadUrl = it.downloads.artifact.url
 
-			download {
+			download.run {
 				src downloadUrl
 				dest new File(libraries, downloadUrl.substring(downloadUrl.lastIndexOf("/") + 1))
 				overwrite false
 			}
 
-			project.dependencies.add("decompileClasspath", it.name)
+			projectDependencies.add("decompileClasspath", it.name)
 		}
 	}
 }
@@ -270,8 +272,8 @@ task downloadMcLibs(dependsOn: downloadWantedVersionManifest) {
 task downloadIntermediary(type: Download) {
 	group = buildMappingGroup
 	def url = "https://github.com/babric/intermediary/raw/master/mappings/${minecraft_version}.tiny"
-	src com.google.common.net.UrlEscapers.urlFragmentEscaper().escape(url)
-	dest new File(cacheFilesMinecraft, "${minecraft_version}-intermediary.tiny")
+	src(com.google.common.net.UrlEscapers.urlFragmentEscaper().escape(url))
+	dest(new File(cacheFilesMinecraft, "${minecraft_version}-intermediary.tiny"))
 }
 
 task remapMcJars(dependsOn: [downloadMcJars, downloadMcLibs, downloadIntermediary]) {
@@ -285,8 +287,8 @@ task remapMcJars(dependsOn: [downloadMcJars, downloadMcLibs, downloadIntermediar
 
 	doLast {
 		logger.lifecycle(":mapping minecraft to intermediary")
-		mapJar(clientIntermediaryJar, clientJar, downloadIntermediary.dest, libraries, "client", "intermediary")
-		mapJar(serverIntermediaryJar, serverJar, downloadIntermediary.dest, libraries, "server", "intermediary")
+		mapJar(clientIntermediaryJar, clientJar, downloadIntermediary.outputFiles.first(), libraries, "client", "intermediary")
+		mapJar(serverIntermediaryJar, serverJar, downloadIntermediary.outputFiles.first(), libraries, "server", "intermediary")
 	}
 }
 
@@ -313,7 +315,7 @@ task mergeJars(dependsOn: remapMcJars) {
 
 task invertIntermediary(dependsOn: downloadIntermediary, type: FileOutput) {
 	group = buildMappingGroup
-	def v1Input = downloadIntermediary.dest
+	def v1Input = downloadIntermediary.outputFiles.first()
 
 	output = new File(cacheFilesMinecraft, "${minecraft_version}-intermediary-inverted.tiny")
 	outputs.file(output)
@@ -433,7 +435,7 @@ task buildYarnTiny(dependsOn: mergeJars, type: FileOutput) {
 task mergeTiny(dependsOn: ["buildYarnTiny", "downloadIntermediary"], type: FileOutput) {
 	group = buildMappingGroup
 	def yarnTinyInput = buildYarnTiny.output
-	def intermediaryTinyInput = downloadIntermediary.dest
+	def intermediaryTinyInput = downloadIntermediary.outputFiles.first()
 
 	output = new File(tempDir, "mappings.tiny")
 	outputs.file(output)
@@ -483,7 +485,7 @@ remapUnpickDefinitionsIntermediary {
 
 task unpickIntermediaryJar(type: JavaExec, dependsOn: [mergeJars, "constantsJar", remapUnpickDefinitionsIntermediary]) {
 	outputs.upToDateWhen { false }
-	group "unpick"
+	group = "unpick"
 
 	mainClass = "daomephsta.unpick.cli.Main"
 	systemProperty "java.util.logging.config.file", file('unpick-logging.properties')
@@ -503,7 +505,6 @@ task tinyJar(type: Jar, dependsOn: [mergeTiny, combineUnpickDefinitions]) {
 	outputs.upToDateWhen { false }
 	archiveFileName = "barn-${yarnVersion}.jar"
 	destinationDirectory.set(file("build/libs"))
-	classifier = ""
 	from(mergeTiny.output) {
 		rename { "mappings/mappings.tiny" }
 	}
@@ -553,7 +554,7 @@ clean.doFirst {
 	delete tempDir, cacheFilesMinecraft
 }
 
-tasks.build.dependsOn "tinyJar"
+tasks.build.dependsOn "compressTiny", "tinyJar"
 
 task mapNamedJar(dependsOn: ["mergeTiny", "unpickIntermediaryJar"]) {
 	group = mapJarGroup
@@ -584,8 +585,10 @@ task mapNamedJar(dependsOn: ["mergeTiny", "unpickIntermediaryJar"]) {
 
 // Setup the build for the unpicked constants
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+java {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = "UTF-8"
@@ -643,6 +646,9 @@ javadoc {
 
 	def mappingPoetJar = project.provider { zipTree configurations.mappingPoetJar.singleFile }
 
+	def fileOps = project.services.get(FileSystemOperations)
+	def javadocOutDir = destinationDir
+
 	failOnError = false
 	maxMemory = "2G"
 
@@ -691,10 +697,10 @@ javadoc {
 	classpath = configurations.javadocClasspath.plus downloadMcLibs.outputs.files.asFileTree
 
 	doLast {
-		project.copy {
+		fileOps.copy {
 			from mappingPoetJar
 			include "copy_on_click.js"
-			into javadoc.outputDirectory
+			into javadocOutDir
 		}
 	}
 
@@ -734,14 +740,14 @@ check.dependsOn javadocLint
 publishing {
 	publications {
 		maven(MavenPublication) {
-			groupId ENV.JITPACK ? ENV.GROUP : "babric"
-			artifactId ENV.JITPACK ? ENV.ARTIFACT : "barn"
-			version ENV.JITPACK ? ENV.VERSION : yarnVersion
+			groupId = ENV.JITPACK ? ENV.GROUP : "babric"
+			artifactId = ENV.JITPACK ? ENV.ARTIFACT : "barn"
+			version = ENV.JITPACK ? ENV.VERSION : yarnVersion
 
 			artifact(tinyJar)
 
 			artifact(constantsJar) {
-				classifier "constants"
+				classifier = "constants"
 			}
 			artifact javadocJar
 		}
@@ -749,10 +755,10 @@ publishing {
 	repositories {
 		if (ENV.MAVEN_URL) {
 			maven {
-				url ENV.MAVEN_URL
+				url = ENV.MAVEN_URL
 				credentials {
-					username ENV.MAVEN_USERNAME
-					password ENV.MAVEN_PASSWORD
+					username = ENV.MAVEN_USERNAME
+					password = ENV.MAVEN_PASSWORD
 				}
 			}
 		}
@@ -762,7 +768,7 @@ publishing {
 // A task to ensure that the version being released has not already been released.
 task checkVersion {
 	doFirst {
-		def xml = new URL("https://maven.glass-launcher.net/babric/babric/barn/maven-metadata.xml").text
+		def xml = URI.create("https://maven.glass-launcher.net/babric/babric/barn/maven-metadata.xml").toURL().text
 		def metadata = new XmlSlurper().parseText(xml)
 		def versions = metadata.versioning.versions.version*.text();
 		if (versions.contains(version)) {
