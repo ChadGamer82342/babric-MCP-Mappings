@@ -718,12 +718,11 @@ javadocLint {
 }
 
 check.dependsOn javadocLint
-
 publishing {
 	publications {
 		maven(MavenPublication) {
-			groupId project.findProperty("group") ?: "babric"
-			version project.findProperty("version") ...
+			groupId ENV.JITPACK ? ENV.GROUP : "babric"
+			artifactId ENV.JITPACK ? ENV.ARTIFACT : "barn"
 			version ENV.JITPACK ? ENV.VERSION : yarnVersion
 
 			artifact(compressTiny.output) {
