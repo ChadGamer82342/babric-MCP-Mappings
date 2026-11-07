@@ -444,17 +444,6 @@ task mergeTiny(dependsOn: ["buildYarnTiny", "downloadIntermediary"], type: FileO
 
 	doLast {
 		logger.lifecycle(":merging yarn and intermediary")
-		def lines = output.readLines()
-		def names = [:]
-		lines.each { l ->
-			def p = l.split('\t', -1)
-			if (p[0] == 'METHOD' && p.length == 8 && p[7] != p[3]) names[p[3] + ' ' + p[2]] = p[7]
-		}
-		output.text = lines.collect { l ->
-			def p = l.split('\t', -1)
-			if (p[0] == 'METHOD' && p.length == 8 && p[7] == p[3] && names[p[3] + ' ' + p[2]]) p[7] = names[p[3] + ' ' + p[2]]
-			p.join('\t')
-		}.join('\n') + '\n'
 
 		String[] args = [
 				intermediaryTinyInput.getAbsolutePath(),
@@ -467,6 +456,20 @@ task mergeTiny(dependsOn: ["buildYarnTiny", "downloadIntermediary"], type: FileO
 
 		output.delete()
 		new CommandMergeTiny().run(args)
+
+		// Propagate method names to unmapped methods that share the same intermediary name + descriptor
+		// (e.g. overrides in subclasses). Columns: METHOD owner desc intermediary glue server client named
+		def lines = output.readLines()
+		def names = [:]
+		lines.each { l ->
+			def p = l.split('\t', -1)
+			if (p[0] == 'METHOD' && p.length == 8 && p[7] != p[3]) names[p[3] + ' ' + p[2]] = p[7]
+		}
+		output.text = lines.collect { l ->
+			def p = l.split('\t', -1)
+			if (p[0] == 'METHOD' && p.length == 8 && p[7] == p[3] && names[p[3] + ' ' + p[2]]) p[7] = names[p[3] + ' ' + p[2]]
+			p.join('\t')
+		}.join('\n') + '\n'
 	}
 }
 
