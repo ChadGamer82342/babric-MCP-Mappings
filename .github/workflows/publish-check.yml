@@ -30,7 +30,8 @@ jobs:
       - uses: gradle/actions/setup-gradle@v5
 
       - name: Publish to local Maven repository
-        run: ./gradlew publishToMavenLocal -Dmaven.repo.local="$LOCAL_REPO" --stacktrace
+        # `build` is included because JitPack runs it in the same invocation as publishing.
+        run: ./gradlew build publishToMavenLocal -Dmaven.repo.local="$LOCAL_REPO" --stacktrace
 
       - name: Verify published artifacts
         run: |

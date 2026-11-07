@@ -616,6 +616,12 @@ task constantsJar(type: Jar) {
 
 build.dependsOn constantsJar
 
+// The main source set is empty, and the default jar would write to the same file as tinyJar
+// (barn-<version>.jar), clobbering the published mappings jar.
+tasks.named("jar") {
+	enabled = false
+}
+
 def fakeSourceDir = file(".gradle/temp/fakeSource")
 task genFakeSource(type: JavaExec, dependsOn: ["mergeTiny", "mapNamedJar"]) {
 	group = "javadoc generation"
