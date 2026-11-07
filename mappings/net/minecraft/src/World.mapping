@@ -184,3 +184,12 @@ CLASS net/minecraft/class_18 net/minecraft/src/World
 	METHOD method_293 sendQuittingDisconnectingPacket ()V
 	METHOD method_294 randomDisplayUpdates (III)V
 	METHOD method_295 DIST_HASH_MAGIC ()V
+	METHOD method_1783 isBlockOpaqueCube (III)Z
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD method_1781 getWorldChunkManager ()Lnet/minecraft/class_519;
+	METHOD method_1782 getLightBrightness (III)F
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z

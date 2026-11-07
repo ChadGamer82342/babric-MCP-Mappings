@@ -1,3 +1,5 @@
 CLASS net/minecraft/class_448 net/minecraft/src/SaveFormatOld
 	FIELD field_1706 field_22180_a Ljava/io/File;
+	METHOD method_1004 func_22173_b (Ljava/lang/String;)Lnet/minecraft/class_7;
 	METHOD method_1482 func_22179_a ([Ljava/io/File;)V
+	METHOD method_885 getSaveLoader (Ljava/lang/String;Z)Lnet/minecraft/class_52;

@@ -7,4 +7,5 @@ CLASS net/minecraft/class_182 net/minecraft/src/ISaveFormat
 	METHOD method_1006 func_22172_c (Ljava/lang/String;)V
 	METHOD method_1007 isOldMapFormat (Ljava/lang/String;)Z
 	METHOD method_1008 convertMapFormat (Ljava/lang/String;Lnet/minecraft/class_62;)Z
-	METHOD method_1009 getSaveLoader (Ljava/lang/String;Z)Lnet/minecraft/class_52;
+	METHOD method_885 getSaveLoader (Ljava/lang/String;Z)Lnet/minecraft/class_52;
+	
