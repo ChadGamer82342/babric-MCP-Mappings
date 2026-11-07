@@ -115,3 +115,14 @@ formatting and Javadoc, but not for choosing names.
 - [babric](https://github.com/babric) for Barn, intermediary, Loom and the rest of the Beta toolchain
 - [FabricMC](https://github.com/FabricMC) for Yarn, Enigma, Stitch, tiny-remapper and unpick
 - The original Mod Coder Pack team, whose names this project uses
+
+## Using with fabric-loom 1.17+ / babric-loom-extension
+
+Builds also publish a tiny v2 (`intermediary` → `named`) jar with the `v2` classifier. The default artifact stays tiny v1 for babric-loom 0.12.
+
+```groovy
+mappings 'com.github.ChadGamer82342:babric-MCP-Mappings:<tag>:v2'
+loom { clientOnlyMinecraftJar() } // instead of gluedMinecraftJar()
+```
+
+This needs a full JDK 21+ as `JAVA_HOME`. A JRE fails with `JAVA_COMPILER` missing.

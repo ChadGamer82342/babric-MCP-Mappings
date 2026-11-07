@@ -523,6 +523,58 @@ task tinyJar(type: Jar, dependsOn: [mergeTiny, combineUnpickDefinitions]) {
 	}
 }
 
+task buildTinyV2(dependsOn: mergeTiny, type: FileOutput) {
+	group = buildMappingGroup
+	output = new File(tempDir, "mappings-v2.tiny")
+	outputs.upToDateWhen { false }
+
+	doLast {
+		logger.lifecycle(":converting merged tiny to v2 (intermediary -> named)")
+		def lines = mergeTiny.output.readLines()
+		def header = lines[0].split('\t', -1)
+		if (header.drop(1).toList() != ['intermediary', 'glue', 'server', 'client', 'named']) {
+			throw new IllegalStateException("Unexpected tiny header: ${lines[0]}")
+		}
+		def classes = [:]
+		def members = [:].withDefault { [] }
+		lines.drop(1).each { l ->
+			def p = l.split('\t', -1)
+			if (p[0] == 'CLASS') {
+				classes[p[1]] = (p.length > 5 && p[5]) ? p[5] : p[1]
+			} else if ((p[0] == 'FIELD' || p[0] == 'METHOD') && p.length > 7 && p[7]) {
+				members[p[1]] << "\t${p[0] == 'FIELD' ? 'f' : 'm'}\t${p[2]}\t${p[3]}\t${p[7]}"
+			}
+		}
+		def sb = new StringBuilder("tiny\t2\t0\tintermediary\tnamed\n")
+		(classes.keySet() + members.keySet()).toSorted().each { owner ->
+			sb << "c\t${owner}\t${classes.getOrDefault(owner, owner)}\n"
+			members.getOrDefault(owner, []).each { sb << it << "\n" }
+		}
+		output.text = sb.toString()
+	}
+}
+
+task tinyV2Jar(type: Jar, dependsOn: [buildTinyV2, combineUnpickDefinitions]) {
+	group = buildMappingGroup
+	outputs.upToDateWhen { false }
+	archiveFileName = "barn-${yarnVersion}-v2.jar"
+	archiveClassifier = "v2"
+	destinationDirectory.set(file("build/libs"))
+	from(buildTinyV2.output) {
+		rename { "mappings/mappings.tiny" }
+	}
+	from(combineUnpickDefinitions.output) {
+		rename combineUnpickDefinitions.output.get().asFile.name, "extras/definitions.unpick"
+	}
+	from(file(unpickMetaFile)) {
+		expand version: project.unpick_version
+		rename unpickMetaFile.name, "extras/unpick.json"
+	}
+	manifest {
+		attributes("Minecraft-Version-Id": minecraft_version)
+	}
+}
+
 task compressTiny(dependsOn: [tinyJar, mergeTiny], type: FileOutput) {
 	group = buildMappingGroup
 	def outputFile = new File(libs, "barn-tiny-${yarnVersion}.gz")
@@ -557,7 +609,7 @@ clean.doFirst {
 	delete tempDir, cacheFilesMinecraft
 }
 
-tasks.build.dependsOn "compressTiny", "tinyJar"
+tasks.build.dependsOn "compressTiny", "tinyJar", "tinyV2Jar"
 
 task mapNamedJar(dependsOn: ["mergeTiny", "unpickIntermediaryJar"]) {
 	group = mapJarGroup
@@ -754,6 +806,9 @@ publishing {
 			version = ENV.JITPACK ? ENV.VERSION : yarnVersion
 
 			artifact(tinyJar)
+			artifact(tinyV2Jar) {
+				classifier = "v2"
+			}
 
 			artifact(constantsJar) {
 				classifier = "constants"
