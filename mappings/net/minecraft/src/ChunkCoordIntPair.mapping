@@ -1,4 +1,11 @@
 CLASS net/minecraft/class_515 net/minecraft/src/ChunkCoordIntPair
 	FIELD field_2378 chunkXPos I
 	FIELD field_2379 chunkZPos I
-	METHOD method_1854 chunkXZ2Int (II)I
+	METHOD <init> (II)V
+		ARG 1 x
+		ARG 2 z
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 1 other
+	METHOD method_1854 chunkXZtoInt (II)I
+		ARG 0 x
+		ARG 1 z
