@@ -58,6 +58,21 @@ See the [babric Loom fork](https://github.com/babric/fabric-loom) and the
 ./gradlew decompileCFR    # -> namedSrc/ (readable source, not meant to be recompiled)
 ```
 
+### Naming with `mapcli` (for AI agents)
+
+`./mapcli` is a small CLI over the same `mappings/` directory, built for agents with a small context budget.
+It uses Enigma's index and decompiles with [Vineflower](https://github.com/Vineflower/vineflower).
+
+```sh
+./mapcli next -n 10                 # unnamed methods/params, most used first
+./mapcli view method_835            # scoped view: signature + Vineflower body
+./mapcli usages method_835 --snippet
+echo "rename method_835 sendPacket" | ./mapcli apply
+```
+
+See `.claude/skills/mapcli/SKILL.md` for the full workflow. The Enigma GUI is still `./gradlew yarn`.
+`./gradlew decompileVineflower` writes the whole named jar as source to `namedSrc/`.
+
 ## Building
 
 Requirements:

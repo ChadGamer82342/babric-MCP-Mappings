@@ -653,7 +653,40 @@ tasks.withType(JavaCompile).configureEach {
 sourceSets {
 	constants
 	packageDocs // package info files
+	agent // mapcli: CLI for AI agents (see .claude/skills/mapcli)
 }
+
+// The agent CLI needs Java 17 (Enigma 2.x classes), unlike the Java 8 constants.
+tasks.named("compileAgentJava") {
+	options.release = 17
+	sourceCompatibility = "17"
+	targetCompatibility = "17"
+}
+
+dependencies {
+	agentImplementation "cuchaz:enigma:${project.enigma_version}"
+	agentImplementation "org.vineflower:vineflower:${project.vineflower_version}"
+	agentImplementation "net.fabricmc:name-proposal:${project.name_proposal_version}"
+	agentImplementation "org.ow2.asm:asm:${project.asm_version}"
+	agentImplementation "org.ow2.asm:asm-tree:${project.asm_version}"
+	agentImplementation "org.ow2.asm:asm-commons:${project.asm_version}"
+}
+
+task agentJar(type: Jar) {
+	from sourceSets.agent.output
+	archiveClassifier = "agent"
+	destinationDirectory = layout.buildDirectory.dir("agent-jar")
+}
+
+// Installs the CLI libs to build/agent-cli/lib, which the ./mapcli launcher uses.
+task installAgentCli(type: Sync) {
+	group = "yarn"
+	description = "Builds the mapcli agent CLI into build/agent-cli/lib"
+	from(agentJar)
+	from(configurations.agentRuntimeClasspath)
+	into layout.buildDirectory.dir("agent-cli/lib")
+}
+
 
 spotless {
 	java {
@@ -696,6 +729,18 @@ task decompileCFR(type: JavaExec, dependsOn: [mapNamedJar]) {
 	doFirst {
 		file("namedSrc").deleteDir()
 		classpath = configurations.decompileClasspath
+	}
+}
+
+task decompileVineflower(type: JavaExec, dependsOn: [mapNamedJar]) {
+	group = "yarn"
+	description = "Decompiles the named jar to namedSrc/ using Vineflower"
+	mainClass = "org.jetbrains.java.decompiler.main.decompiler.ConsoleDecompiler"
+	classpath = sourceSets.agent.runtimeClasspath
+	doFirst {
+		file("namedSrc").deleteDir()
+		file("namedSrc").mkdirs()
+		args "-log=WARN", "-dgs=1", "-hdc=0", "-asc=1", "-rsy=1", namedJar.absolutePath, file("namedSrc").absolutePath
 	}
 }
 

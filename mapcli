@@ -1,0 +1,13 @@
+#!/bin/sh
+# mapcli: token-efficient mapping CLI for AI agents. See .claude/skills/mapcli/SKILL.md
+ROOT=$(cd "$(dirname "$0")" && pwd)
+LIB="$ROOT/build/agent-cli/lib"
+JAR=$(ls "$LIB"/*-agent.jar 2>/dev/null | head -1)
+if [ -z "$JAR" ] || [ -n "$(find "$ROOT/src/agent" -name '*.java' -newer "$JAR" 2>/dev/null | head -1)" ]; then
+	(cd "$ROOT" && ./gradlew -q installAgentCli >&2) || exit 1
+fi
+MAPCLI_ROOT="$ROOT" # The JVM prints reflective-access warnings on stderr; hide them to keep agent output small.
+if [ -n "$MAPCLI_DEBUG" ]; then
+	exec java -Xmx2g -XX:+UseSerialGC -cp "$LIB/*" net.fabricmc.barn.agent.Main "$@"
+fi
+exec java -Xmx2g -XX:+UseSerialGC -XX:TieredStopAtLevel=1 -cp "$LIB/*" net.fabricmc.barn.agent.Main "$@" 2>/dev/null
