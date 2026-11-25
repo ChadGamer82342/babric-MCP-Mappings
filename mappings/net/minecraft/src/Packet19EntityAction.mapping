@@ -1,3 +1,6 @@
 CLASS net/minecraft/class_431 net/minecraft/src/Packet19EntityAction
 	FIELD field_1712 entityId I
 	FIELD field_1713 state I
+	METHOD <init> (Lnet/minecraft/class_57;I)V
+		ARG 1 entity
+		ARG 2 action

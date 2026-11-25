@@ -15,9 +15,18 @@ CLASS net/minecraft/class_271 net/minecraft/src/EnumOptions
 	FIELD field_1110 enumFloat Z
 	FIELD field_1111 enumBoolean Z
 	FIELD field_1112 enumString Ljava/lang/String;
-	FIELD field_1113 field_20141_n [Lnet/minecraft/class_271;
+	FIELD field_1113 ENUM_OPTIONS [Lnet/minecraft/class_271;
+	METHOD <init> (Ljava/lang/String;ILjava/lang/String;ZZ)V
+		ARG 1 name
+		ARG 2 ordinal
+		ARG 3 translationKey
+		ARG 4 enumFloat
+		ARG 5 enumBoolean
 	METHOD method_966 getEnumFloat ()Z
 	METHOD method_967 getEnumOptions (I)Lnet/minecraft/class_271;
+		ARG 0 index
 	METHOD method_968 getEnumBoolean ()Z
 	METHOD method_969 returnEnumOrdinal ()I
 	METHOD method_970 getEnumString ()Ljava/lang/String;
+	METHOD valueOf (Ljava/lang/String;)Lnet/minecraft/class_271;
+		ARG 0 name

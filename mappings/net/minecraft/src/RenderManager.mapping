@@ -10,16 +10,36 @@ CLASS net/minecraft/class_578 net/minecraft/src/RenderManager
 	FIELD field_2497 playerViewY F
 	FIELD field_2498 playerViewX F
 	FIELD field_2499 options Lnet/minecraft/class_322;
-	FIELD field_2500 field_1222_l D
-	FIELD field_2501 field_1221_m D
-	FIELD field_2502 field_1220_n D
+	FIELD field_2500 viewerPosX D
+	FIELD field_2501 viewerPosY D
+	FIELD field_2502 viewerPosZ D
 	FIELD field_2503 entityRenderMap Ljava/util/Map;
 	FIELD field_2504 fontRenderer Lnet/minecraft/class_34;
 	METHOD method_1914 getFontRenderer ()Lnet/minecraft/class_34;
-	METHOD method_1915 func_851_a (DDD)D
-	METHOD method_1916 func_852_a (Lnet/minecraft/class_18;)V
+	METHOD method_1915 getDistanceToCameraSquared (DDD)D
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD method_1916 setWorld (Lnet/minecraft/class_18;)V
+		ARG 1 world
 	METHOD method_1917 cacheActiveRenderInfo (Lnet/minecraft/class_18;Lnet/minecraft/class_76;Lnet/minecraft/class_34;Lnet/minecraft/class_127;Lnet/minecraft/class_322;F)V
+		ARG 1 world
+		ARG 2 renderEngine
+		ARG 3 fontRenderer
+		ARG 4 renderViewEntity
+		ARG 5 gameSettings
+		ARG 6 partialTick
 	METHOD method_1918 getEntityClassRenderObject (Ljava/lang/Class;)Lnet/minecraft/class_579;
+		ARG 1 entityClass
 	METHOD method_1919 getEntityRenderObject (Lnet/minecraft/class_57;)Lnet/minecraft/class_579;
+		ARG 1 entity
 	METHOD method_1920 renderEntityWithPosYaw (Lnet/minecraft/class_57;DDDFF)V
+		ARG 1 entity
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 yaw
+		ARG 9 partialTick
 	METHOD method_1921 renderEntity (Lnet/minecraft/class_57;F)V
+		ARG 1 entity
+		ARG 2 partialTick

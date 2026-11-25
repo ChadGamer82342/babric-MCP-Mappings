@@ -1,4 +1,37 @@
 CLASS net/minecraft/class_167 net/minecraft/src/PlayerManager
+	FIELD field_2129 players Ljava/util/List;
+	FIELD field_2130 playerInstances Lnet/minecraft/class_101;
+	FIELD field_2131 playerInstancesToUpdate Ljava/util/List;
+	FIELD field_2132 mcServer Lnet/minecraft/server/MinecraftServer;
+	FIELD field_2133 viewRadius I
+	FIELD field_2134 playerViewRadius I
+	FIELD field_2135 directionOffsets [[I
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;II)V
+		ARG 1 minecraftServer
+		ARG 2 dimension
+		ARG 3 viewRadius
+	METHOD method_1741 getWorldServer ()Lnet/minecraft/class_73;
+	METHOD method_1742 markBlockForUpdate (III)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD method_1743 isPlayerWatchingChunk (IIII)Z
+		ARG 1 chunkX
+		ARG 2 chunkZ
+		ARG 3 previousChunkX
+		ARG 4 previousChunkZ
+	METHOD method_1744 getPlayerInstance (IIZ)Lnet/minecraft/class_167$class_514;
+		ARG 1 chunkX
+		ARG 2 chunkZ
+		ARG 3 create
+	METHOD method_1745 addPlayer (Lnet/minecraft/class_69;)V
+		ARG 1 player
+	METHOD method_1747 updatePlayerInstances ()V
+	METHOD method_1748 removePlayer (Lnet/minecraft/class_69;)V
+		ARG 1 player
+	METHOD method_1750 getPlayerCount ()I
+	METHOD method_1751 updatePlayer (Lnet/minecraft/class_69;)V
+		ARG 1 player
 	CLASS class_514 PlayerInstance
 		FIELD field_2136 playerManager Lnet/minecraft/class_167;
 		FIELD field_2137 players Ljava/util/List;
@@ -13,11 +46,20 @@ CLASS net/minecraft/class_167 net/minecraft/src/PlayerManager
 		FIELD field_2146 maxY I
 		FIELD field_2147 minZ I
 		FIELD field_2148 maxZ I
-
-	FIELD field_2129 players Ljava/util/List;
-	FIELD field_2130 playerInstances Lnet/minecraft/class_101;
-	FIELD field_2131 playerInstancesToUpdate Ljava/util/List;
-	FIELD field_2132 mcServer Lnet/minecraft/server/MinecraftServer;
-	FIELD field_2133 field_28110_e I
-	FIELD field_2134 playerViewRadius I
-	FIELD field_2135 field_22089_e [[I
+		METHOD <init> (Lnet/minecraft/class_167;II)V
+			ARG 1 playerManager
+			ARG 2 chunkX
+			ARG 3 chunkZ
+		METHOD method_1752 onUpdate ()V
+		METHOD method_1753 markBlockForUpdate (III)V
+			ARG 1 x
+			ARG 2 y
+			ARG 3 z
+		METHOD method_1754 addPlayer (Lnet/minecraft/class_69;)V
+			ARG 1 player
+		METHOD method_1755 sendPacket (Lnet/minecraft/class_169;)V
+			ARG 1 packet
+		METHOD method_1756 updateTileEntity (Lnet/minecraft/class_55;)V
+			ARG 1 tileEntity
+		METHOD method_1757 removePlayer (Lnet/minecraft/class_69;)V
+			ARG 1 player

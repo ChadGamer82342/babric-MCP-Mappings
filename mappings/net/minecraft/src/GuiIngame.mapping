@@ -1,5 +1,5 @@
 CLASS net/minecraft/class_588 net/minecraft/src/GuiIngame
-	FIELD field_2541 field_933_a Ljava/lang/String;
+	FIELD field_2541 recordName Ljava/lang/String;
 	FIELD field_2542 damageGuiPartialTime F
 	FIELD field_2543 prevVignetteBrightness F
 	FIELD field_2544 itemRenderer Lnet/minecraft/class_92;
@@ -9,14 +9,35 @@ CLASS net/minecraft/class_588 net/minecraft/src/GuiIngame
 	FIELD field_2548 updateCounter I
 	FIELD field_2549 recordPlaying Ljava/lang/String;
 	FIELD field_2550 recordPlayingUpFor I
-	FIELD field_2551 field_22065_l Z
+	FIELD field_2551 recordPlayingMessageVisible Z
+	METHOD <init> (Lnet/minecraft/client/Minecraft;)V
+		ARG 1 minecraft
 	METHOD method_1944 updateTick ()V
 	METHOD method_1945 renderVignette (FII)V
+		ARG 1 partialTick
+		ARG 2 width
+		ARG 3 height
 	METHOD method_1946 renderGameOverlay (FZII)V
+		ARG 1 partialTick
+		ARG 2 renderDebugInfo
+		ARG 3 width
+		ARG 4 height
 	METHOD method_1947 renderPumpkinBlur (II)V
+		ARG 1 width
+		ARG 2 height
 	METHOD method_1948 renderInventorySlot (IIIF)V
+		ARG 1 slot
+		ARG 2 x
+		ARG 3 y
+		ARG 4 partialTick
 	METHOD method_1949 addChatMessage (Ljava/lang/String;)V
+		ARG 1 message
 	METHOD method_1950 clearChatMessages ()V
 	METHOD method_1951 renderPortalOverlay (FII)V
+		ARG 1 partialTick
+		ARG 2 width
+		ARG 3 height
 	METHOD method_1952 setRecordPlayingMessage (Ljava/lang/String;)V
+		ARG 1 recordName
 	METHOD method_1953 addChatMessageTranslate (Ljava/lang/String;)V
+		ARG 1 message

@@ -1,5 +1,5 @@
 CLASS net/minecraft/class_243 net/minecraft/src/IChunkLoader
-	METHOD method_810 func_814_a ()V
+	METHOD method_810 chunkTick ()V
 	METHOD method_811 loadChunk (Lnet/minecraft/class_18;II)Lnet/minecraft/class_43;
 		ARG 1 world
 		ARG 2 chunkX

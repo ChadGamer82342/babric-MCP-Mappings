@@ -4,21 +4,40 @@ CLASS net/minecraft/class_32 net/minecraft/src/GuiScreen
 	FIELD field_152 width I
 	FIELD field_153 height I
 	FIELD field_154 controlList Ljava/util/List;
-	FIELD field_155 field_948_f Z
+	FIELD field_155 allowUserInput Z
 	FIELD field_156 fontRenderer Lnet/minecraft/class_34;
-	FIELD field_157 field_25091_h Lnet/minecraft/class_35;
+	FIELD field_157 particleRenderer Lnet/minecraft/class_35;
 	METHOD method_117 keyTyped (CI)V
+		ARG 1 character
+		ARG 2 keyCode
 	METHOD method_118 drawScreen (IIF)V
+		ARG 1 mouseX
+		ARG 2 mouseY
+		ARG 3 partialTick
 	METHOD method_119 initGui ()V
 	METHOD method_120 actionPerformed (Lnet/minecraft/class_33;)V
+		ARG 1 button
 	METHOD method_121 doesGuiPauseGame ()Z
 	METHOD method_122 updateScreen ()V
 	METHOD method_123 drawWorldBackground (I)V
+		ARG 1 level
 	METHOD method_124 mouseClicked (III)V
+		ARG 1 mouseX
+		ARG 2 mouseY
+		ARG 3 button
 	METHOD method_125 setWorldAndResolution (Lnet/minecraft/client/Minecraft;II)V
+		ARG 1 minecraft
+		ARG 2 width
+		ARG 3 height
 	METHOD method_126 deleteWorld (ZI)V
+		ARG 1 deleteWorld
+		ARG 2 worldIndex
 	METHOD method_127 drawBackground (I)V
+		ARG 1 level
 	METHOD method_128 mouseMovedOrUp (III)V
+		ARG 1 mouseX
+		ARG 2 mouseY
+		ARG 3 button
 	METHOD method_129 getClipboardString ()Ljava/lang/String;
 	METHOD method_130 handleInput ()V
 	METHOD method_131 handleMouseInput ()V

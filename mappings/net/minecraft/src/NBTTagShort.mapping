@@ -1,2 +1,4 @@
 CLASS net/minecraft/class_462 net/minecraft/src/NBTTagShort
 	FIELD field_1770 shortValue S
+	METHOD <init> (S)V
+		ARG 1 value

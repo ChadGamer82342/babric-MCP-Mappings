@@ -1,5 +1,8 @@
 CLASS net/minecraft/class_486 net/minecraft/src/GuiVideoSettings
-	FIELD field_2000 field_22107_a Ljava/lang/String;
-	FIELD field_2001 field_22110_h Lnet/minecraft/class_32;
+	FIELD field_2000 title Ljava/lang/String;
+	FIELD field_2001 parentScreen Lnet/minecraft/class_32;
 	FIELD field_2002 guiGameSettings Lnet/minecraft/class_322;
-	FIELD field_2003 field_22108_k [Lnet/minecraft/class_271;
+	FIELD field_2003 videoOptions [Lnet/minecraft/class_271;
+	METHOD <init> (Lnet/minecraft/class_32;Lnet/minecraft/class_322;)V
+		ARG 1 parentScreen
+		ARG 2 gameSettings

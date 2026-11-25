@@ -1,2 +1,5 @@
 CLASS net/minecraft/class_449 net/minecraft/src/ItemRecord
 	FIELD field_1710 recordName Ljava/lang/String;
+	METHOD <init> (ILjava/lang/String;)V
+		ARG 1 itemId
+		ARG 2 recordName

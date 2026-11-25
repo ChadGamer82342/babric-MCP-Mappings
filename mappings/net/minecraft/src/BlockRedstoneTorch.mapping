@@ -1,5 +1,18 @@
 CLASS net/minecraft/class_619 net/minecraft/src/BlockRedstoneTorch
 	FIELD field_2685 torchActive Z
 	FIELD field_2686 torchUpdates Ljava/util/List;
+	METHOD <init> (IIZ)V
+		ARG 1 blockId
+		ARG 2 textureId
+		ARG 3 lit
 	METHOD method_2038 checkForBurnout (Lnet/minecraft/class_18;IIIZ)Z
-	METHOD method_2039 func_30002_h (Lnet/minecraft/class_18;III)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 addUpdate
+	METHOD method_2039 isIndirectlyPowered (Lnet/minecraft/class_18;III)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

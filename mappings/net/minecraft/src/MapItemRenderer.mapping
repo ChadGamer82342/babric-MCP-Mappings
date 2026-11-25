@@ -1,6 +1,13 @@
 CLASS net/minecraft/class_321 net/minecraft/src/MapItemRenderer
-	FIELD field_1218 field_28159_a [I
-	FIELD field_1219 field_28158_b I
-	FIELD field_1220 field_28161_c Lnet/minecraft/class_322;
-	FIELD field_1221 field_28160_d Lnet/minecraft/class_34;
-	METHOD method_1046 func_28157_a (Lnet/minecraft/class_54;Lnet/minecraft/class_76;Lnet/minecraft/class_198;)V
+	FIELD field_1218 mapPixels [I
+	FIELD field_1219 mapTexture I
+	FIELD field_1220 gameSettings Lnet/minecraft/class_322;
+	FIELD field_1221 fontRenderer Lnet/minecraft/class_34;
+	METHOD <init> (Lnet/minecraft/class_34;Lnet/minecraft/class_322;Lnet/minecraft/class_76;)V
+		ARG 1 fontRenderer
+		ARG 2 gameSettings
+		ARG 3 renderEngine
+	METHOD method_1046 renderMap (Lnet/minecraft/class_54;Lnet/minecraft/class_76;Lnet/minecraft/class_198;)V
+		ARG 1 player
+		ARG 2 renderEngine
+		ARG 3 mapData

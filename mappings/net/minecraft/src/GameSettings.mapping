@@ -2,11 +2,11 @@ CLASS net/minecraft/class_322 net/minecraft/src/GameSettings
 	FIELD field_1442 thirdPersonView Z
 	FIELD field_1443 showDebugInfo Z
 	FIELD field_1444 lastServer Ljava/lang/String;
-	FIELD field_1445 field_22275_C Z
+	FIELD field_1445 cameraZoomEnabled Z
 	FIELD field_1446 smoothCamera Z
-	FIELD field_1447 field_22273_E Z
-	FIELD field_1448 field_22272_F F
-	FIELD field_1449 field_22271_G F
+	FIELD field_1447 debugCamEnable Z
+	FIELD field_1448 cameraZoom F
+	FIELD field_1449 fovSetting F
 	FIELD field_1450 guiScale I
 	FIELD field_1451 RENDER_DISTANCES [Ljava/lang/String;
 	FIELD field_1452 DIFFICULTIES [Ljava/lang/String;
@@ -39,14 +39,29 @@ CLASS net/minecraft/class_322 net/minecraft/src/GameSettings
 	FIELD field_1479 mc Lnet/minecraft/client/Minecraft;
 	FIELD field_1480 difficulty I
 	FIELD field_1481 hideGUI Z
+	METHOD <init> (Lnet/minecraft/client/Minecraft;Ljava/io/File;)V
+		ARG 1 minecraft
+		ARG 2 optionsFile
 	METHOD method_1224 loadOptions ()V
 	METHOD method_1225 getKeyBindingDescription (I)Ljava/lang/String;
+		ARG 1 keyBindingIndex
 	METHOD method_1226 setKeyBinding (II)V
+		ARG 1 keyBindingIndex
+		ARG 2 keyCode
 	METHOD method_1227 getOptionFloatValue (Lnet/minecraft/class_271;)F
+		ARG 1 option
 	METHOD method_1228 setOptionFloatValue (Lnet/minecraft/class_271;F)V
+		ARG 1 option
+		ARG 2 value
 	METHOD method_1229 setOptionValue (Lnet/minecraft/class_271;I)V
+		ARG 1 option
+		ARG 2 value
 	METHOD method_1230 parseFloat (Ljava/lang/String;)F
+		ARG 1 value
 	METHOD method_1231 saveOptions ()V
 	METHOD method_1232 getOptionDisplayString (I)Ljava/lang/String;
+		ARG 1 keyBindingIndex
 	METHOD method_1233 getOptionOrdinalValue (Lnet/minecraft/class_271;)Z
+		ARG 1 option
 	METHOD method_1234 getKeyBinding (Lnet/minecraft/class_271;)Ljava/lang/String;
+		ARG 1 option

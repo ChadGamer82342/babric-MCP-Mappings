@@ -1,2 +1,7 @@
 CLASS net/minecraft/class_307 net/minecraft/src/BlockLeavesBase
 	FIELD field_1192 graphicsLevel Z
+	METHOD <init> (IILnet/minecraft/class_15;Z)V
+		ARG 1 blockId
+		ARG 2 textureId
+		ARG 3 material
+		ARG 4 opaque

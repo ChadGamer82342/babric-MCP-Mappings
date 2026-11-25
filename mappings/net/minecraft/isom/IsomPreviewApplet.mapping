@@ -1,1 +1,2 @@
 CLASS net/minecraft/isom/IsomPreviewApplet net/minecraft/isom/IsomPreviewApplet
+	FIELD field_2836 canvasPreview Lnet/minecraft/class_477;

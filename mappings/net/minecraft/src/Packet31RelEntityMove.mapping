@@ -1,1 +1,6 @@
 CLASS net/minecraft/class_418 net/minecraft/src/Packet31RelEntityMove
+	METHOD <init> (IBBB)V
+		ARG 1 entityId
+		ARG 2 deltaX
+		ARG 3 deltaY
+		ARG 4 deltaZ

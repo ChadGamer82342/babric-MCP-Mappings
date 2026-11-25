@@ -4,7 +4,7 @@ CLASS net/minecraft/class_191 net/minecraft/src/EnumArt
 	FIELD field_668 sizeY I
 	FIELD field_669 offsetX I
 	FIELD field_670 offsetY I
-	FIELD field_671 field_1630_D [Lnet/minecraft/class_191;
+	FIELD field_671 VALUES [Lnet/minecraft/class_191;
 	FIELD field_672 Kebab Lnet/minecraft/class_191;
 	FIELD field_673 Aztec Lnet/minecraft/class_191;
 	FIELD field_674 Alban Lnet/minecraft/class_191;
@@ -31,3 +31,13 @@ CLASS net/minecraft/class_191 net/minecraft/src/EnumArt
 	FIELD field_695 Skeleton Lnet/minecraft/class_191;
 	FIELD field_696 DonkeyKong Lnet/minecraft/class_191;
 	FIELD field_697 maxArtTitleLength I
+	METHOD <init> (Ljava/lang/String;ILjava/lang/String;IIII)V
+		ARG 1 name
+		ARG 2 ordinal
+		ARG 3 title
+		ARG 4 sizeX
+		ARG 5 sizeY
+		ARG 6 offsetX
+		ARG 7 offsetY
+	METHOD valueOf (Ljava/lang/String;)Lnet/minecraft/class_191;
+		ARG 0 name

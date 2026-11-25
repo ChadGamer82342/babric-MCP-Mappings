@@ -1,3 +1,6 @@
 CLASS net/minecraft/class_553 net/minecraft/src/BlockStep
-	FIELD field_2323 field_22037_a [Ljava/lang/String;
+	FIELD field_2323 STEP_SOUND_NAMES [Ljava/lang/String;
 	FIELD field_2324 blockType Z
+	METHOD <init> (IZ)V
+		ARG 1 blockId
+		ARG 2 doubleSlab

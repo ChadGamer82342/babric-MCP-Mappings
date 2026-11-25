@@ -5,3 +5,8 @@ CLASS net/minecraft/class_500 net/minecraft/src/ItemArmor
 	FIELD field_2085 renderIndex I
 	FIELD field_2086 damageReduceAmountArray [I
 	FIELD field_2087 maxDamageArray [I
+	METHOD <init> (IIII)V
+		ARG 1 itemId
+		ARG 2 textureIndex
+		ARG 3 armorMaterial
+		ARG 4 armorType

@@ -1,4 +1,16 @@
 CLASS net/minecraft/class_157 net/minecraft/src/SaveConverterMcRegion
-	METHOD method_535 func_22181_a (Ljava/io/File;Ljava/util/ArrayList;IILnet/minecraft/class_62;)V
-	METHOD method_536 func_22183_a (Ljava/io/File;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-	METHOD method_537 func_22182_a (Ljava/util/ArrayList;IILnet/minecraft/class_62;)V
+	METHOD method_535 convertChunksToRegionFormat (Ljava/io/File;Ljava/util/ArrayList;IILnet/minecraft/class_62;)V
+		ARG 1 worldDirectory
+		ARG 2 chunkFiles
+		ARG 3 processedChunkCount
+		ARG 4 totalChunkCount
+		ARG 5 progressUpdate
+	METHOD method_536 collectChunkFiles (Ljava/io/File;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+		ARG 1 chunkDirectory
+		ARG 2 chunkFiles
+		ARG 3 chunkDirectories
+	METHOD method_537 deleteLegacyChunkDirectories (Ljava/util/ArrayList;IILnet/minecraft/class_62;)V
+		ARG 1 chunkDirectories
+		ARG 2 deletedDirectoryCount
+		ARG 3 totalDirectoryCount
+		ARG 4 progressUpdate

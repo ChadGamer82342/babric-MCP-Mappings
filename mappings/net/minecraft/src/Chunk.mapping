@@ -17,38 +17,134 @@ CLASS net/minecraft/class_43 net/minecraft/src/Chunk
 	FIELD field_968 neverSave Z
 	FIELD field_969 hasEntities Z
 	FIELD field_970 lastSaveTime J
-	METHOD method_857 func_1014_a ()V
+	METHOD <init> (Lnet/minecraft/class_18;II)V
+		ARG 1 world
+		ARG 2 chunkX
+		ARG 3 chunkZ
+	METHOD <init> (Lnet/minecraft/class_18;[BII)V
+		ARG 1 world
+		ARG 2 blocks
+		ARG 3 chunkX
+		ARG 4 chunkZ
+	METHOD method_857 onChunkLoaded ()V
 	METHOD method_858 isAtLocation (II)Z
+		ARG 1 x
+		ARG 2 z
 	METHOD method_859 getBlockID (III)I
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
 	METHOD method_860 setBlockID (IIII)Z
+		ARG 1 localX
+		ARG 2 y
+		ARG 3 localZ
+		ARG 4 blockId
 	METHOD method_861 setBlockIDWithMetadata (IIIII)Z
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 blockId
+		ARG 5 metadata
 	METHOD method_862 setChunkBlockTileEntity (IIILnet/minecraft/class_55;)V
-	METHOD method_863 func_997_a (J)Ljava/util/Random;
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 tileEntity
+	METHOD method_863 getRandomWithSeed (J)Ljava/util/Random;
+		ARG 1 seed
 	METHOD method_864 getSavedLightValue (Lnet/minecraft/class_56;III)I
+		ARG 1 skyBlock
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_865 setLightValue (Lnet/minecraft/class_56;IIII)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 lightType
+		ARG 5 lightValue
 	METHOD method_866 getEntitiesOfTypeWithinAAAB (Ljava/lang/Class;Lnet/minecraft/class_25;Ljava/util/List;)V
+		ARG 1 entityClass
+		ARG 2 boundingBox
+		ARG 3 entities
 	METHOD method_867 addTileEntity (Lnet/minecraft/class_55;)V
+		ARG 1 tileEntity
 	METHOD method_868 addEntity (Lnet/minecraft/class_57;)V
+		ARG 1 entity
 	METHOD method_869 removeEntityAtIndex (Lnet/minecraft/class_57;I)V
+		ARG 1 entity
+		ARG 2 index
 	METHOD method_870 getEntitiesWithinAABBForEntity (Lnet/minecraft/class_57;Lnet/minecraft/class_25;Ljava/util/List;)V
+		ARG 1 excludedEntity
+		ARG 2 boundingBox
+		ARG 3 entities
 	METHOD method_871 needsSaving (Z)Z
-	METHOD method_873 func_1024_c ()V
+		ARG 1 save
+	METHOD method_872 getChunkData ([BIIIIIII)I
+		ARG 1 data
+		ARG 2 minX
+		ARG 3 minY
+		ARG 4 minZ
+		ARG 5 maxX
+		ARG 6 maxY
+		ARG 7 maxZ
+		ARG 8 offset
+	METHOD method_873 generateSkylightMap ()V
 	METHOD method_874 getHeightValue (II)I
+		ARG 1 x
+		ARG 2 z
 	METHOD method_875 getBlockMetadata (III)I
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
 	METHOD method_876 setBlockMetadata (IIII)V
+		ARG 1 localX
+		ARG 2 y
+		ARG 3 localZ
+		ARG 4 metadata
 	METHOD method_877 removeEntity (Lnet/minecraft/class_57;)V
-	METHOD method_878 func_4143_d ()V
+		ARG 1 entity
+	METHOD method_878 onChunkPopulate ()V
 	METHOD method_879 canBlockSeeTheSky (III)Z
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
 	METHOD method_880 getBlockLightValue (IIII)I
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 blockLight
 	METHOD method_881 onChunkLoad ()V
 	METHOD method_882 getChunkBlockTileEntity (III)Lnet/minecraft/class_55;
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
 	METHOD method_883 onChunkUnload ()V
 	METHOD method_884 removeChunkBlockTileEntity (III)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
 	METHOD method_885 setChunkModified ()V
-	METHOD method_886 func_21167_h ()Z
-	METHOD method_887 func_996_c (II)V
-	METHOD method_888 func_1020_f (III)V
-	METHOD method_889 func_1003_g (III)V
-	METHOD method_890 func_25124_i ()V
+	METHOD method_886 isChunkLoaded ()Z
+	METHOD method_887 updateSkylightNeighborHeight (II)V
+		ARG 1 localX
+		ARG 2 localZ
+	METHOD method_888 checkSkylightNeighborHeight (III)V
+		ARG 1 worldX
+		ARG 2 worldZ
+		ARG 3 neighborHeight
+	METHOD method_889 relightBlock (III)V
+		ARG 1 localX
+		ARG 2 blockY
+		ARG 3 localZ
+	METHOD method_890 remapBlockIds ()V
 	METHOD method_891 setChunkData ([BIIIIIII)I
+		ARG 1 data
+		ARG 2 minX
+		ARG 3 minY
+		ARG 4 minZ
+		ARG 5 maxX
+		ARG 6 maxY
+		ARG 7 maxZ
+		ARG 8 offset
 	METHOD method_892 generateHeightMap ()V

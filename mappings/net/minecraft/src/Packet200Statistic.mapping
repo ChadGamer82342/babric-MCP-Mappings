@@ -1,3 +1,6 @@
 CLASS net/minecraft/class_319 net/minecraft/src/Packet200Statistic
-	FIELD field_1213 field_27052_a I
-	FIELD field_1214 field_27051_b I
+	FIELD field_1213 statisticId I
+	FIELD field_1214 amount I
+	METHOD <init> (II)V
+		ARG 1 statisticId
+		ARG 2 amount

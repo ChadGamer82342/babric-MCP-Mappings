@@ -1,3 +1,6 @@
 CLASS net/minecraft/class_254 net/minecraft/src/MD5String
-	FIELD field_941 field_27370_a Ljava/lang/String;
-	METHOD method_852 func_27369_a (Ljava/lang/String;)Ljava/lang/String;
+	FIELD field_941 hashKey Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;)V
+		ARG 1 string
+	METHOD method_852 digest (Ljava/lang/String;)Ljava/lang/String;
+		ARG 1 string

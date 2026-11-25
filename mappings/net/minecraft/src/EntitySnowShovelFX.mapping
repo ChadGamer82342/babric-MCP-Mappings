@@ -1,2 +1,11 @@
 CLASS net/minecraft/class_461 net/minecraft/src/EntitySnowShovelFX
-	FIELD field_1769 field_27017_a F
+	FIELD field_1769 initialParticleScale F
+	METHOD <init> (Lnet/minecraft/class_18;DDDDDDF)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 motionX
+		ARG 10 motionY
+		ARG 12 motionZ
+		ARG 14 scale

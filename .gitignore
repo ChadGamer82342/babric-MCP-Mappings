@@ -26,3 +26,5 @@ bin/
 .claude/
 .codex/
 .aws/
+tools/
+progress-dashboard

@@ -5,3 +5,5 @@ CLASS net/minecraft/class_439 net/minecraft/src/Packet25EntityPainting
 	FIELD field_2035 zPosition I
 	FIELD field_2036 direction I
 	FIELD field_2037 title Ljava/lang/String;
+	METHOD <init> (Lnet/minecraft/class_107;)V
+		ARG 1 painting

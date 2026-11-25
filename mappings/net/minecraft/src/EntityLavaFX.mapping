@@ -1,2 +1,7 @@
 CLASS net/minecraft/class_178 net/minecraft/src/EntityLavaFX
-	FIELD field_618 field_674_a F
+	FIELD field_618 initialParticleScale F
+	METHOD <init> (Lnet/minecraft/class_18;DDD)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z

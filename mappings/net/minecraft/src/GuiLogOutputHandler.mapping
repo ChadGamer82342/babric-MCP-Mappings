@@ -1,8 +1,15 @@
 CLASS net/minecraft/class_631 net/minecraft/src/GuiLogOutputHandler
+	FIELD field_2706 formatter Ljava/util/logging/Formatter;
+	FIELD field_2707 lineLengths [I
+	FIELD field_2708 lineIndex I
+	FIELD field_2709 textArea Ljavax/swing/JTextArea;
+	METHOD <init> (Ljavax/swing/JTextArea;)V
+		ARG 1 textArea
+	METHOD publish (Ljava/util/logging/LogRecord;)V
+		ARG 1 record
 	CLASS 1 GuiLogFormatter
 		FIELD field_2710 outputHandler Lnet/minecraft/class_631;
-
-	FIELD field_2706 field_999_a Ljava/util/logging/Formatter;
-	FIELD field_2707 field_998_b [I
-	FIELD field_2708 field_1001_c I
-	FIELD field_2709 field_1000_d Ljavax/swing/JTextArea;
+		METHOD <init> (Lnet/minecraft/class_631;)V
+			ARG 1 handler
+		METHOD format (Ljava/util/logging/LogRecord;)Ljava/lang/String;
+			ARG 1 record

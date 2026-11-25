@@ -4,4 +4,13 @@ CLASS net/minecraft/class_193 net/minecraft/src/ShapedRecipes
 	FIELD field_700 recipeHeight I
 	FIELD field_701 recipeItems [Lnet/minecraft/class_31;
 	FIELD field_702 recipeOutput Lnet/minecraft/class_31;
-	METHOD method_652 func_21137_a (Lnet/minecraft/class_159;IIZ)Z
+	METHOD <init> (II[Lnet/minecraft/class_31;Lnet/minecraft/class_31;)V
+		ARG 1 recipeWidth
+		ARG 2 recipeHeight
+		ARG 3 recipeItems
+		ARG 4 recipeOutput
+	METHOD method_652 matchesRecipe (Lnet/minecraft/class_159;IIZ)Z
+		ARG 1 inventory
+		ARG 2 recipeRow
+		ARG 3 recipeColumn
+		ARG 4 mirrored

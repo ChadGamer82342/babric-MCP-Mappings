@@ -1,1 +1,5 @@
 CLASS net/minecraft/class_561 net/minecraft/src/ItemMapBase
+	METHOD method_1855 getMapPacket (Lnet/minecraft/class_31;Lnet/minecraft/class_18;Lnet/minecraft/class_54;)Lnet/minecraft/class_169;
+		ARG 1 itemStack
+		ARG 2 world
+		ARG 3 player

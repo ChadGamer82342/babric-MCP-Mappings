@@ -7,16 +7,29 @@ CLASS net/minecraft/class_549 net/minecraft/src/EntityMinecart
 	FIELD field_2277 pushX D
 	FIELD field_2278 pushZ D
 	FIELD field_2279 cargoItems [Lnet/minecraft/class_31;
-	FIELD field_2280 field_856_i Z
-	FIELD field_2281 field_855_j [[[I
-	FIELD field_2282 field_9415_k I
-	FIELD field_2283 field_9414_l D
-	FIELD field_2284 field_9413_m D
-	FIELD field_2285 field_9412_n D
-	FIELD field_2286 field_9411_o D
-	FIELD field_2287 field_9410_p D
-	FIELD field_2288 field_9409_q D
-	FIELD field_2289 field_9408_r D
-	FIELD field_2290 field_9407_s D
-	METHOD method_1813 func_514_g (DDD)Lnet/minecraft/class_26;
-	METHOD method_1814 func_515_a (DDDD)Lnet/minecraft/class_26;
+	FIELD field_2280 isInReverse Z
+	FIELD field_2281 RAIL_MATRIX [[[I
+	FIELD field_2282 turnProgress I
+	FIELD field_2283 targetX D
+	FIELD field_2284 targetY D
+	FIELD field_2285 targetZ D
+	FIELD field_2286 targetYaw D
+	FIELD field_2287 targetPitch D
+	FIELD field_2288 velocityX D
+	FIELD field_2289 velocityY D
+	FIELD field_2290 velocityZ D
+	METHOD <init> (Lnet/minecraft/class_18;DDDI)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 minecartType
+	METHOD method_1813 getPos (DDD)Lnet/minecraft/class_26;
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD method_1814 getPos (DDDD)Lnet/minecraft/class_26;
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+		ARG 7 distance

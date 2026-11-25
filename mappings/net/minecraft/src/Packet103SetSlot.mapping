@@ -2,3 +2,7 @@ CLASS net/minecraft/class_171 net/minecraft/src/Packet103SetSlot
 	FIELD field_593 windowId I
 	FIELD field_594 itemSlot I
 	FIELD field_595 myItemStack Lnet/minecraft/class_31;
+	METHOD <init> (IILnet/minecraft/class_31;)V
+		ARG 1 windowId
+		ARG 2 slot
+		ARG 3 itemStack

@@ -1,3 +1,6 @@
 CLASS net/minecraft/class_38 net/minecraft/src/ServerCommand
 	FIELD field_159 command Ljava/lang/String;
 	FIELD field_160 commandListener Lnet/minecraft/class_39;
+	METHOD <init> (Ljava/lang/String;Lnet/minecraft/class_39;)V
+		ARG 1 command
+		ARG 2 commandListener

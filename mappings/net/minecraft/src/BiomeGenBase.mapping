@@ -16,7 +16,7 @@ CLASS net/minecraft/class_153 net/minecraft/src/BiomeGenBase
 	FIELD field_889 color I
 	FIELD field_890 topBlock B
 	FIELD field_891 fillerBlock B
-	FIELD field_892 field_6502_q I
+	FIELD field_892 biomeId I
 	FIELD field_893 spawnableMonsterList Ljava/util/List;
 	FIELD field_894 spawnableCreatureList Ljava/util/List;
 	FIELD field_895 spawnableWaterCreatureList Ljava/util/List;
@@ -25,14 +25,24 @@ CLASS net/minecraft/class_153 net/minecraft/src/BiomeGenBase
 	FIELD field_898 biomeLookupTable [Lnet/minecraft/class_153;
 	METHOD method_785 generateBiomeLookup ()V
 	METHOD method_786 getBiomeFromLookup (DD)Lnet/minecraft/class_153;
+		ARG 0 temperature
+		ARG 2 humidity
 	METHOD method_787 getBiome (FF)Lnet/minecraft/class_153;
-	METHOD method_788 func_4124_a (I)Lnet/minecraft/class_153;
+		ARG 0 temperature
+		ARG 1 humidity
+	METHOD method_788 setBiomeID (I)Lnet/minecraft/class_153;
+		ARG 1 biomeId
 	METHOD method_789 getSpawnableList (Lnet/minecraft/class_238;)Ljava/util/List;
+		ARG 1 creatureType
 	METHOD method_790 setBiomeName (Ljava/lang/String;)Lnet/minecraft/class_153;
+		ARG 1 name
 	METHOD method_791 setEnableSnow ()Lnet/minecraft/class_153;
 	METHOD method_792 setColor (I)Lnet/minecraft/class_153;
+		ARG 1 color
 	METHOD method_793 getEnableSnow ()Z
 	METHOD method_794 canSpawnLightningBolt ()Z
 	METHOD method_795 setDisableRain ()Lnet/minecraft/class_153;
 	METHOD method_796 getSkyColorByTemp (F)I
+		ARG 1 temperature
 	METHOD method_797 getRandomWorldGenForTrees (Ljava/util/Random;)Lnet/minecraft/class_239;
+		ARG 1 random

@@ -1,3 +1,7 @@
 CLASS net/minecraft/class_616 net/minecraft/src/RenderGiantZombie
 	FIELD field_2666 scale F
+	METHOD <init> (Lnet/minecraft/class_173;FF)V
+		ARG 1 model
+		ARG 2 shadowSize
+		ARG 3 scale
 	METHOD method_2005 preRenderScale (Lnet/minecraft/class_311;F)V

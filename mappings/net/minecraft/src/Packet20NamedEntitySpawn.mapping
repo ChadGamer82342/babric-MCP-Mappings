@@ -7,3 +7,5 @@ CLASS net/minecraft/class_272 net/minecraft/src/Packet20NamedEntitySpawn
 	FIELD field_1119 rotation B
 	FIELD field_1120 pitch B
 	FIELD field_1121 currentItem I
+	METHOD <init> (Lnet/minecraft/class_54;)V
+		ARG 1 player

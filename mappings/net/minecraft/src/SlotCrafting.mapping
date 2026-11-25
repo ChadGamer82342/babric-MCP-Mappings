@@ -1,3 +1,10 @@
 CLASS net/minecraft/class_557 net/minecraft/src/SlotCrafting
 	FIELD field_2366 craftMatrix Lnet/minecraft/class_134;
 	FIELD field_2367 thePlayer Lnet/minecraft/class_54;
+	METHOD <init> (Lnet/minecraft/class_54;Lnet/minecraft/class_134;Lnet/minecraft/class_134;III)V
+		ARG 1 player
+		ARG 2 playerInventory
+		ARG 3 craftingInventory
+		ARG 4 slotIndex
+		ARG 5 x
+		ARG 6 y

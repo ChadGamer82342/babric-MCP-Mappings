@@ -1,1 +1,5 @@
 CLASS net/minecraft/class_402 net/minecraft/src/Packet32EntityLook
+	METHOD <init> (IBB)V
+		ARG 1 entityId
+		ARG 2 yaw
+		ARG 3 pitch

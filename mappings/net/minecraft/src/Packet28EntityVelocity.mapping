@@ -3,3 +3,10 @@ CLASS net/minecraft/class_119 net/minecraft/src/Packet28EntityVelocity
 	FIELD field_365 motionX I
 	FIELD field_366 motionY I
 	FIELD field_367 motionZ I
+	METHOD <init> (IDDD)V
+		ARG 1 entityId
+		ARG 2 motionX
+		ARG 4 motionY
+		ARG 6 motionZ
+	METHOD <init> (Lnet/minecraft/class_57;)V
+		ARG 1 entity

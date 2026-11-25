@@ -1,2 +1,4 @@
 CLASS net/minecraft/class_347 net/minecraft/src/NBTTagInt
 	FIELD field_1312 intValue I
+	METHOD <init> (I)V
+		ARG 1 value

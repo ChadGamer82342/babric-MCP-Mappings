@@ -1,2 +1,5 @@
 CLASS net/minecraft/class_387 net/minecraft/src/ChunkFilePattern
-	FIELD field_1485 field_22189_a Ljava/util/regex/Pattern;
+	FIELD field_1485 CHUNK_FILE_PATTERN Ljava/util/regex/Pattern;
+	METHOD accept (Ljava/io/File;Ljava/lang/String;)Z
+		ARG 1 directory
+		ARG 2 fileName

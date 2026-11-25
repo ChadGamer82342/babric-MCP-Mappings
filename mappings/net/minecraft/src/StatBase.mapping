@@ -1,17 +1,24 @@
 CLASS net/minecraft/class_139 net/minecraft/src/StatBase
-	FIELD field_2022 field_26902_a Lnet/minecraft/class_498;
-	FIELD field_2023 field_26903_b Ljava/text/NumberFormat;
-	FIELD field_2024 field_26904_c Ljava/text/DecimalFormat;
+	FIELD field_2022 type Lnet/minecraft/class_498;
+	FIELD field_2023 integerFormat Ljava/text/NumberFormat;
+	FIELD field_2024 decimalFormat Ljava/text/DecimalFormat;
 	FIELD field_2025 statId I
 	FIELD field_2026 statName Ljava/lang/String;
-	FIELD field_2027 field_27088_g Z
+	FIELD field_2027 independent Z
 	FIELD field_2028 statGuid Ljava/lang/String;
-	FIELD field_2029 field_27087_i Lnet/minecraft/class_498;
-	FIELD field_2030 field_27086_j Lnet/minecraft/class_498;
-	FIELD field_2031 field_27085_k Lnet/minecraft/class_498;
+	FIELD field_2029 simpleType Lnet/minecraft/class_498;
+	FIELD field_2030 timeType Lnet/minecraft/class_498;
+	FIELD field_2031 distanceType Lnet/minecraft/class_498;
+	METHOD <init> (ILjava/lang/String;)V
+		ARG 1 statId
+		ARG 2 statName
+	METHOD <init> (ILjava/lang/String;Lnet/minecraft/class_498;)V
+		ARG 1 id
+		ARG 2 name
+		ARG 3 type
 	METHOD method_1676 registerStat ()Lnet/minecraft/class_139;
-	METHOD method_1677 func_27082_h ()Lnet/minecraft/class_139;
-	METHOD method_1678 func_25067_a ()Z
-	METHOD method_1679 func_27084_a (I)Ljava/lang/String;
-	METHOD method_1680 func_27083_i ()Ljava/text/NumberFormat;
+	METHOD method_1677 setIndependent ()Lnet/minecraft/class_139;
+	METHOD method_1678 isAchievement ()Z
+	METHOD method_1679 getStatName (I)Ljava/lang/String;
+		ARG 1 value
 	METHOD method_1681 shake ()Ljava/text/DecimalFormat;

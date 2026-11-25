@@ -4,3 +4,9 @@ CLASS net/minecraft/class_382 net/minecraft/src/Packet60Explosion
 	FIELD field_1434 explosionZ D
 	FIELD field_1435 explosionSize F
 	FIELD field_1436 destroyedBlockPositions Ljava/util/Set;
+	METHOD <init> (DDDFLjava/util/Set;)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+		ARG 7 strength
+		ARG 8 affectedBlocks

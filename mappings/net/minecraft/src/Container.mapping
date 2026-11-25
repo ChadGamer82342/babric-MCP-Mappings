@@ -1,22 +1,55 @@
 CLASS net/minecraft/class_71 net/minecraft/src/Container
-	FIELD field_2731 field_20917_a S
-	FIELD field_2732 field_20918_b Ljava/util/Set;
-	FIELD field_2733 field_20123_d Ljava/util/List;
+	FIELD field_2731 transactionId S
+	FIELD field_2732 playerList Ljava/util/Set;
+	FIELD field_2733 inventoryItemStacks Ljava/util/List;
 	FIELD field_2734 slots Ljava/util/List;
 	FIELD field_2735 windowId I
-	FIELD field_2736 field_20121_g Ljava/util/List;
+	FIELD field_2736 crafters Ljava/util/List;
 	METHOD method_2075 updateCraftingResults ()V
-	METHOD method_2077 func_20112_a (II)V
-	METHOD method_2078 func_27280_a (IIZLnet/minecraft/class_54;)Lnet/minecraft/class_31;
+	METHOD method_2076 addCraftingToCrafters (Lnet/minecraft/class_633;)V
+		ARG 1 craftingListener
+	METHOD method_2077 slotClick (II)V
+		ARG 1 slotId
+		ARG 2 mouseButton
+	METHOD method_2078 slotClick (IIZLnet/minecraft/class_54;)Lnet/minecraft/class_31;
+		ARG 1 slotIndex
+		ARG 2 mouseButton
+		ARG 3 shiftClick
+		ARG 4 player
 	METHOD method_2079 addSlot (Lnet/minecraft/class_133;)V
-	METHOD method_2081 func_28125_a (Lnet/minecraft/class_31;IIZ)V
+		ARG 1 slot
+	METHOD method_2080 setCanCraft (Lnet/minecraft/class_54;Z)V
+		ARG 1 player
+		ARG 2 canCraft
+	METHOD method_2081 mergeItemStack (Lnet/minecraft/class_31;IIZ)V
+		ARG 1 itemStack
+		ARG 2 startIndex
+		ARG 3 endIndex
+		ARG 4 reverseDirection
+	METHOD method_2082 getSlotFromInventory (Lnet/minecraft/class_134;I)Lnet/minecraft/class_133;
+		ARG 1 inventory
+		ARG 2 slotIndex
+	METHOD method_2083 getInventory ()Ljava/util/List;
 	METHOD method_2084 getSlot (I)Lnet/minecraft/class_133;
+		ARG 1 slotIndex
+	METHOD method_2085 canInteractWith (Lnet/minecraft/class_54;)Z
+		ARG 1 player
 	METHOD method_2086 getStackInSlot (I)Lnet/minecraft/class_31;
+		ARG 1 slotIndex
 	METHOD method_2087 onCraftGuiClosed (Lnet/minecraft/class_54;)V
+		ARG 1 player
 	METHOD method_2088 onCraftMatrixChanged (Lnet/minecraft/class_134;)V
+		ARG 1 inventory
 	METHOD method_2089 putStackInSlot (ILnet/minecraft/class_31;)V
-	METHOD method_2090 func_20111_a (Lnet/minecraft/class_136;)S
-	METHOD method_2091 func_20113_a (S)V
+		ARG 1 slotIndex
+		ARG 2 itemStack
+	METHOD method_2090 getNextTransactionId (Lnet/minecraft/class_136;)S
+		ARG 1 inventory
+	METHOD method_2091 putStackInSlot (S)V
+		ARG 1 transactionId
 	METHOD method_2092 putStacksInSlots ([Lnet/minecraft/class_31;)V
-	METHOD method_2093 func_20110_b (S)V
+		ARG 1 itemStacks
+	METHOD method_2093 putStacksInSlots (S)V
+		ARG 1 transactionId
 	METHOD method_2094 crafters (Lnet/minecraft/class_54;)Z
+		ARG 1 player

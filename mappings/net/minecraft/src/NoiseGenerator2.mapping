@@ -1,11 +1,25 @@
 CLASS net/minecraft/class_459 net/minecraft/src/NoiseGenerator2
-	FIELD field_2166 field_4292_a D
-	FIELD field_2167 field_4291_b D
-	FIELD field_2168 field_4297_c D
-	FIELD field_2169 field_4296_d [[I
-	FIELD field_2170 field_4295_e [I
-	FIELD field_2171 field_4294_f D
-	FIELD field_2172 field_4293_g D
+	FIELD field_2166 xOffset D
+	FIELD field_2167 yOffset D
+	FIELD field_2168 zOffset D
+	FIELD field_2169 gradients [[I
+	FIELD field_2170 permutation [I
+	FIELD field_2171 SKEW_FACTOR D
+	FIELD field_2172 UNSKEW_FACTOR D
+	METHOD <init> (Ljava/util/Random;)V
+		ARG 1 random
 	METHOD method_1758 wrap (D)I
-	METHOD method_1759 func_4157_a ([DDDIIDDD)V
+		ARG 0 value
+	METHOD method_1759 generateNoise ([DDDIIDDD)V
+		ARG 1 result
+		ARG 2 x
+		ARG 4 z
+		ARG 6 width
+		ARG 7 height
+		ARG 8 xScale
+		ARG 10 zScale
+		ARG 12 scale
 	METHOD method_1760 ticksInAir ([IDD)D
+		ARG 0 values
+		ARG 1 x
+		ARG 3 z

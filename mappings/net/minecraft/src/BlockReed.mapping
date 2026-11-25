@@ -1,2 +1,9 @@
 CLASS net/minecraft/class_376 net/minecraft/src/BlockReed
+	METHOD <init> (II)V
+		ARG 1 blockId
+		ARG 2 textureId
 	METHOD method_1208 checkBlockCoordValid (Lnet/minecraft/class_18;III)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

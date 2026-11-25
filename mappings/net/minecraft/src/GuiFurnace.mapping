@@ -1,2 +1,5 @@
 CLASS net/minecraft/class_524 net/minecraft/src/GuiFurnace
 	FIELD field_2191 furnaceInventory Lnet/minecraft/class_138;
+	METHOD <init> (Lnet/minecraft/class_136;Lnet/minecraft/class_138;)V
+		ARG 1 playerInventory
+		ARG 2 furnace

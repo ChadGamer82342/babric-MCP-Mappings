@@ -1,15 +1,25 @@
 CLASS net/minecraft/class_472 net/minecraft/src/RenderList
-	FIELD field_2480 field_1242_a I
-	FIELD field_2481 field_1241_b I
-	FIELD field_2482 field_1240_c I
-	FIELD field_2483 field_1239_d F
-	FIELD field_2484 field_1238_e F
-	FIELD field_2485 field_1237_f F
-	FIELD field_2486 field_1236_g Ljava/nio/IntBuffer;
-	FIELD field_2487 field_1235_h Z
-	FIELD field_2488 field_1234_i Z
-	METHOD method_1909 func_860_a ()V
-	METHOD method_1910 func_858_a (I)V
-	METHOD method_1911 func_862_a (III)Z
-	METHOD method_1912 func_861_a (IIIDDD)V
-	METHOD method_1913 func_859_b ()V
+	FIELD field_2480 chunkX I
+	FIELD field_2481 chunkY I
+	FIELD field_2482 chunkZ I
+	FIELD field_2483 renderX F
+	FIELD field_2484 renderY F
+	FIELD field_2485 renderZ F
+	FIELD field_2486 displayListBuffer Ljava/nio/IntBuffer;
+	FIELD field_2487 hasPosition Z
+	FIELD field_2488 initialized Z
+	METHOD method_1909 render ()V
+	METHOD method_1910 addDisplayList (I)V
+		ARG 1 displayList
+	METHOD method_1911 isAtPosition (III)Z
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD method_1912 setup (IIIDDD)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 renderX
+		ARG 6 renderY
+		ARG 8 renderZ
+	METHOD method_1913 clear ()V

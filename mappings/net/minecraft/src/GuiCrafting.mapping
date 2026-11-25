@@ -1,1 +1,7 @@
 CLASS net/minecraft/class_516 net/minecraft/src/GuiCrafting
+	METHOD <init> (Lnet/minecraft/class_136;Lnet/minecraft/class_18;III)V
+		ARG 1 playerInventory
+		ARG 2 world
+		ARG 3 x
+		ARG 4 y
+		ARG 5 z

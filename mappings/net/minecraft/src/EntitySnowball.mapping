@@ -8,4 +8,17 @@ CLASS net/minecraft/class_484 net/minecraft/src/EntitySnowball
 	FIELD field_1996 thrower Lnet/minecraft/class_127;
 	FIELD field_1997 ticksInGroundSnowball I
 	FIELD field_1998 ticksInAirSnowball I
+	METHOD <init> (Lnet/minecraft/class_18;DDD)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+	METHOD <init> (Lnet/minecraft/class_18;Lnet/minecraft/class_127;)V
+		ARG 1 world
+		ARG 2 thrower
 	METHOD method_1656 setSnowballHeading (DDDFF)V
+		ARG 1 directionX
+		ARG 3 directionY
+		ARG 5 directionZ
+		ARG 7 velocity
+		ARG 8 inaccuracy

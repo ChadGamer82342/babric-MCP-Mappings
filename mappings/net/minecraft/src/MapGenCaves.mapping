@@ -1,3 +1,21 @@
 CLASS net/minecraft/class_415 net/minecraft/src/MapGenCaves
-	METHOD method_1399 func_870_a (II[BDDD)V
+	METHOD method_1399 generateCaveNode (II[BDDD)V
+		ARG 1 chunkX
+		ARG 2 chunkZ
+		ARG 3 blocks
+		ARG 4 caveX
+		ARG 6 caveY
+		ARG 8 caveZ
 	METHOD method_1400 releaseEntitySkin (II[BDDDFFFIID)V
+		ARG 1 chunkX
+		ARG 2 chunkZ
+		ARG 3 blocks
+		ARG 4 caveX
+		ARG 6 caveY
+		ARG 8 caveZ
+		ARG 10 radius
+		ARG 11 yaw
+		ARG 12 pitch
+		ARG 13 startStep
+		ARG 14 endStep
+		ARG 15 verticalScale

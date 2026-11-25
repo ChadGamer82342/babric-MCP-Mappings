@@ -8,5 +8,13 @@ CLASS net/minecraft/class_60 net/minecraft/src/Explosion
 	FIELD field_1397 destroyedBlockPositions Ljava/util/Set;
 	FIELD field_1398 ExplosionRNG Ljava/util/Random;
 	FIELD field_1399 worldObj Lnet/minecraft/class_18;
+	METHOD <init> (Lnet/minecraft/class_18;Lnet/minecraft/class_57;DDDF)V
+		ARG 1 world
+		ARG 2 exploder
+		ARG 3 x
+		ARG 5 y
+		ARG 7 z
+		ARG 9 size
 	METHOD method_1195 doExplosionA ()V
 	METHOD method_1196 doExplosionB (Z)V
+		ARG 1 spawnParticles

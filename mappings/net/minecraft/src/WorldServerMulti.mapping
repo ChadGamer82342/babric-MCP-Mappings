@@ -1,1 +1,8 @@
 CLASS net/minecraft/class_120 net/minecraft/src/WorldServerMulti
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/class_52;Ljava/lang/String;IJLnet/minecraft/class_73;)V
+		ARG 1 minecraftServer
+		ARG 2 saveHandler
+		ARG 3 worldName
+		ARG 4 dimension
+		ARG 5 randomSeed
+		ARG 7 parentWorld

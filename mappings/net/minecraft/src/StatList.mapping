@@ -2,16 +2,16 @@ CLASS net/minecraft/class_217 net/minecraft/src/StatList
 	FIELD field_806 playerKillsStat Lnet/minecraft/class_139;
 	FIELD field_807 fishCaughtStat Lnet/minecraft/class_139;
 	FIELD field_808 mineBlockStatArray [Lnet/minecraft/class_139;
-	FIELD field_809 field_25158_z [Lnet/minecraft/class_139;
-	FIELD field_810 field_25172_A [Lnet/minecraft/class_139;
-	FIELD field_811 field_25170_B [Lnet/minecraft/class_139;
-	FIELD field_812 field_25166_D Z
-	FIELD field_813 field_25164_E Z
-	FIELD field_814 field_25169_C Ljava/util/Map;
-	FIELD field_815 field_25188_a Ljava/util/List;
-	FIELD field_816 field_25187_b Ljava/util/List;
-	FIELD field_817 field_25186_c Ljava/util/List;
-	FIELD field_818 field_25185_d Ljava/util/List;
+	FIELD field_809 craftingStats [Lnet/minecraft/class_139;
+	FIELD field_810 itemUseStats [Lnet/minecraft/class_139;
+	FIELD field_811 itemDamageStats [Lnet/minecraft/class_139;
+	FIELD field_812 blockStatsInitialized Z
+	FIELD field_813 itemStatsInitialized Z
+	FIELD field_814 statsById Ljava/util/Map;
+	FIELD field_815 allStats Ljava/util/List;
+	FIELD field_816 blockStats Ljava/util/List;
+	FIELD field_817 itemStats Ljava/util/List;
+	FIELD field_818 generalStats Ljava/util/List;
 	FIELD field_819 startGameStat Lnet/minecraft/class_139;
 	FIELD field_820 createWorldStat Lnet/minecraft/class_139;
 	FIELD field_821 loadWorldStat Lnet/minecraft/class_139;
@@ -33,13 +33,30 @@ CLASS net/minecraft/class_217 net/minecraft/src/StatList
 	FIELD field_837 damageTakenStat Lnet/minecraft/class_139;
 	FIELD field_838 deathsStat Lnet/minecraft/class_139;
 	FIELD field_839 mobKillsStat Lnet/minecraft/class_139;
-	METHOD method_748 func_27360_a ()V
-	METHOD method_749 func_25153_a (Ljava/lang/String;I)[Lnet/minecraft/class_139;
+	METHOD method_748 initialize ()V
+	METHOD method_749 initializeBlockStats (Ljava/lang/String;I)[Lnet/minecraft/class_139;
+		ARG 0 translationKey
+		ARG 1 statIdStart
 	METHOD method_750 replaceAllSimilarBlocks ([Lnet/minecraft/class_139;)V
+		ARG 0 stats
 	METHOD method_751 replaceSimilarBlocks ([Lnet/minecraft/class_139;II)V
-	METHOD method_752 func_25155_a ([Lnet/minecraft/class_139;Ljava/lang/String;III)[Lnet/minecraft/class_139;
-	METHOD method_753 func_25154_a ()V
-	METHOD method_754 func_25149_b ([Lnet/minecraft/class_139;Ljava/lang/String;III)[Lnet/minecraft/class_139;
-	METHOD method_755 func_25151_b ()V
-	METHOD method_756 func_25157_c ()V
-	METHOD method_757 func_27361_a (I)Lnet/minecraft/class_139;
+		ARG 0 stats
+		ARG 1 sourceId
+		ARG 2 targetId
+	METHOD method_752 initializeItemStats ([Lnet/minecraft/class_139;Ljava/lang/String;III)[Lnet/minecraft/class_139;
+		ARG 0 stats
+		ARG 1 translationKey
+		ARG 2 statIdOffset
+		ARG 3 startItemId
+		ARG 4 endItemId
+	METHOD method_753 initializeBlockStats ()V
+	METHOD method_754 initializeItemDamageStats ([Lnet/minecraft/class_139;Ljava/lang/String;III)[Lnet/minecraft/class_139;
+		ARG 0 stats
+		ARG 1 translationKey
+		ARG 2 statIdOffset
+		ARG 3 startItemId
+		ARG 4 endItemId
+	METHOD method_755 initializeItemStats ()V
+	METHOD method_756 initializeCraftingStats ()V
+	METHOD method_757 getStatForItem (I)Lnet/minecraft/class_139;
+		ARG 0 itemId

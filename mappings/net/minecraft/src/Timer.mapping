@@ -7,6 +7,8 @@ CLASS net/minecraft/class_559 net/minecraft/src/Timer
 	FIELD field_2373 lastHRTime D
 	FIELD field_2374 lastSyncSysClock J
 	FIELD field_2375 lastSyncHRClock J
-	FIELD field_2376 field_28132_i J
+	FIELD field_2376 timeSyncCounter J
 	FIELD field_2377 timeSyncAdjustment D
+	METHOD <init> (F)V
+		ARG 1 ticksPerSecond
 	METHOD method_1853 updateTimer ()V

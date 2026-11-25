@@ -6,8 +6,21 @@ CLASS net/minecraft/class_410 net/minecraft/src/EntityArrow
 	FIELD field_1578 yTile I
 	FIELD field_1579 zTile I
 	FIELD field_1580 inTile I
-	FIELD field_1581 field_28019_h I
+	FIELD field_1581 inData I
 	FIELD field_1582 inGround Z
 	FIELD field_1583 ticksInGround I
 	FIELD field_1584 ticksInAir I
+	METHOD <init> (Lnet/minecraft/class_18;DDD)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+	METHOD <init> (Lnet/minecraft/class_18;Lnet/minecraft/class_127;)V
+		ARG 1 world
+		ARG 2 shooter
 	METHOD method_1291 setArrowHeading (DDDFF)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+		ARG 7 speed
+		ARG 8 divergence

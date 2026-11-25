@@ -1,28 +1,45 @@
 CLASS net/minecraft/class_186 net/minecraft/src/WorldGenBigTree
-	FIELD field_645 field_882_a [B
-	FIELD field_646 field_881_b Ljava/util/Random;
+	FIELD field_645 DIRECTION_MAP [B
+	FIELD field_646 rand Ljava/util/Random;
 	FIELD field_647 worldObj Lnet/minecraft/class_18;
 	FIELD field_648 basePos [I
-	FIELD field_649 field_878_e I
+	FIELD field_649 heightLimit I
 	FIELD field_650 height I
-	FIELD field_651 field_876_g D
-	FIELD field_652 field_875_h D
-	FIELD field_653 field_874_i D
-	FIELD field_654 field_873_j D
-	FIELD field_655 field_872_k D
-	FIELD field_656 field_871_l I
-	FIELD field_657 field_870_m I
-	FIELD field_658 field_869_n I
-	FIELD field_659 field_868_o [[I
-	METHOD method_611 func_519_e ()Z
-	METHOD method_612 func_521_a ()V
-	METHOD method_613 func_528_a (I)F
-	METHOD method_614 func_520_a (III)V
-	METHOD method_615 func_523_a (IIIFBI)V
-	METHOD method_616 func_524_a ([I[I)I
-	METHOD method_617 func_522_a ([I[II)V
-	METHOD method_618 func_518_b ()V
-	METHOD method_619 func_526_b (I)F
-	METHOD method_620 func_529_c ()V
-	METHOD method_621 func_527_c (I)Z
+	FIELD field_651 heightAttenuation D
+	FIELD field_652 branchDensityScale D
+	FIELD field_653 branchSlope D
+	FIELD field_654 scaleWidth D
+	FIELD field_655 branchDensity D
+	FIELD field_656 trunkSize I
+	FIELD field_657 heightLimitLimit I
+	FIELD field_658 leafDistanceLimit I
+	FIELD field_659 leafNodes [[I
+	METHOD method_611 isValidTreeLocation ()Z
+	METHOD method_612 generateLeafNodeList ()V
+	METHOD method_613 layerSize (I)F
+		ARG 1 layer
+	METHOD method_614 generateLeafNodeBase (III)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD method_615 generateLeafNode (IIIFBI)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 height
+		ARG 5 branchSlope
+		ARG 6 branchLength
+	METHOD method_616 checkBlockLine ([I[I)I
+		ARG 1 start
+		ARG 2 end
+	METHOD method_617 placeBlockLine ([I[II)V
+		ARG 1 start
+		ARG 2 end
+		ARG 3 blockId
+	METHOD method_618 generateLeaves ()V
+	METHOD method_619 leafSize (I)F
+		ARG 1 layer
+	METHOD method_620 generateTrunk ()V
+	METHOD method_621 leafNodeNeedsBase (I)Z
+		ARG 1 layer
 	METHOD method_622 random0 ()V

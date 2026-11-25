@@ -1,7 +1,10 @@
 CLASS net/minecraft/class_613 net/minecraft/src/EntitySheep
 	FIELD field_2698 fleeceColorTable [[F
 	METHOD method_2044 getRandomFleeceColor (Ljava/util/Random;)I
+		ARG 0 random
 	METHOD method_2045 setSheared (Z)V
+		ARG 1 sheared
 	METHOD method_2046 setFleeceColor (I)V
+		ARG 1 fleeceColor
 	METHOD method_2047 getFleeceColor ()I
 	METHOD method_2048 getSheared ()Z

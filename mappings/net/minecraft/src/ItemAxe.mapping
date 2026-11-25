@@ -1,2 +1,5 @@
 CLASS net/minecraft/class_420 net/minecraft/src/ItemAxe
 	FIELD field_1681 blocksEffectiveAgainst [Lnet/minecraft/class_17;
+	METHOD <init> (ILnet/minecraft/class_428;)V
+		ARG 1 itemId
+		ARG 2 toolMaterial

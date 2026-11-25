@@ -1,4 +1,8 @@
 CLASS net/minecraft/class_152 net/minecraft/src/WorldChunkManagerHell
-	FIELD field_554 field_4201_e Lnet/minecraft/class_153;
-	FIELD field_555 field_4200_f D
-	FIELD field_556 field_4199_g D
+	FIELD field_554 biome Lnet/minecraft/class_153;
+	FIELD field_555 biomeTemperature D
+	FIELD field_556 biomeHumidity D
+	METHOD <init> (Lnet/minecraft/class_153;DD)V
+		ARG 1 biome
+		ARG 2 temperature
+		ARG 4 humidity

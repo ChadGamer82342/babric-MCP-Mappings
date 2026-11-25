@@ -3,3 +3,8 @@ CLASS net/minecraft/class_632 net/minecraft/src/ItemTool
 	FIELD field_2712 blocksEffectiveAgainst [Lnet/minecraft/class_17;
 	FIELD field_2713 efficiencyOnProperMaterial F
 	FIELD field_2714 damageVsEntity I
+	METHOD <init> (IILnet/minecraft/class_428;[Lnet/minecraft/class_17;)V
+		ARG 1 itemId
+		ARG 2 texture
+		ARG 3 toolMaterial
+		ARG 4 blocksEffectiveAgainst

@@ -2,3 +2,19 @@ CLASS net/minecraft/class_391 net/minecraft/src/PropertyManager
 	FIELD field_1519 logger Ljava/util/logging/Logger;
 	FIELD field_1520 serverProperties Ljava/util/Properties;
 	FIELD field_1521 serverPropertiesFile Ljava/io/File;
+	METHOD <init> (Ljava/io/File;)V
+		ARG 1 propertiesFile
+	METHOD method_1245 generateNewProperties ()V
+	METHOD method_1246 getPropertyInteger (Ljava/lang/String;I)I
+		ARG 1 key
+		ARG 2 defaultValue
+	METHOD method_1247 getProperty (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+		ARG 1 key
+		ARG 2 defaultValue
+	METHOD method_1248 getBoolean (Ljava/lang/String;Z)Z
+		ARG 1 key
+		ARG 2 defaultValue
+	METHOD method_1249 saveProperties ()V
+	METHOD method_1250 setProperty (Ljava/lang/String;Z)V
+		ARG 1 key
+		ARG 2 value

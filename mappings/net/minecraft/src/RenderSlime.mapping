@@ -1,4 +1,8 @@
 CLASS net/minecraft/class_450 net/minecraft/src/RenderSlime
 	FIELD field_1711 scaleAmount Lnet/minecraft/class_173;
+	METHOD <init> (Lnet/minecraft/class_173;Lnet/minecraft/class_173;F)V
+		ARG 1 model
+		ARG 2 armorModel
+		ARG 3 shadowSize
 	METHOD method_1489 scaleSlime (Lnet/minecraft/class_451;F)V
 	METHOD method_1490 renderSlimePassModel (Lnet/minecraft/class_451;IF)Z

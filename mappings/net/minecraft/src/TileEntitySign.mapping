@@ -1,4 +1,7 @@
 CLASS net/minecraft/class_140 net/minecraft/src/TileEntitySign
 	FIELD field_2269 signText [Ljava/lang/String;
 	FIELD field_2270 lineBeingEdited I
-	FIELD field_2271 field_25062_c Z
+	FIELD field_2271 isEditable Z
+	METHOD method_1810 isEditing ()Z
+	METHOD method_1811 setEditing (Z)V
+		ARG 1 editing

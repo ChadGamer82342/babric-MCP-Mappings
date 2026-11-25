@@ -1,1 +1,4 @@
 CLASS net/minecraft/class_495 net/minecraft/src/ItemSoup
+	METHOD <init> (II)V
+		ARG 1 itemId
+		ARG 2 healAmount

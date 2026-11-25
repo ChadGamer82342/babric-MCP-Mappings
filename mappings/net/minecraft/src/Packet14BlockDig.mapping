@@ -4,3 +4,9 @@ CLASS net/minecraft/class_228 net/minecraft/src/Packet14BlockDig
 	FIELD field_854 zPosition I
 	FIELD field_855 face I
 	FIELD field_856 status I
+	METHOD <init> (IIIII)V
+		ARG 1 status
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 face

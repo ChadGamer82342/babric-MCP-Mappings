@@ -1,3 +1,7 @@
 CLASS net/minecraft/class_460 net/minecraft/src/BlockSign
 	FIELD field_1759 signEntityClass Ljava/lang/Class;
 	FIELD field_1760 isFreestanding Z
+	METHOD <init> (ILjava/lang/Class;Z)V
+		ARG 1 blockId
+		ARG 2 tileEntityClass
+		ARG 3 standing

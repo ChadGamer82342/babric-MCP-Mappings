@@ -6,5 +6,13 @@ CLASS net/minecraft/class_366 net/minecraft/src/NextTickListEntry
 	FIELD field_1404 scheduledTime J
 	FIELD field_1405 nextTickEntryID J
 	FIELD field_1406 tickEntryID J
+	METHOD <init> (IIII)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 blockId
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 1 other
 	METHOD method_1197 setScheduledTime (J)Lnet/minecraft/class_366;
+		ARG 1 scheduledTime
 	METHOD method_1198 comparer (Lnet/minecraft/class_366;)I

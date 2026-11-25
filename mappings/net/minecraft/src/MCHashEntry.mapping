@@ -3,5 +3,12 @@ CLASS net/minecraft/class_232 net/minecraft/src/MCHashEntry
 	FIELD field_2114 valueEntry Ljava/lang/Object;
 	FIELD field_2115 nextEntry Lnet/minecraft/class_232;
 	FIELD field_2116 slotHash I
+	METHOD <init> (IILjava/lang/Object;Lnet/minecraft/class_232;)V
+		ARG 1 key
+		ARG 2 hash
+		ARG 3 value
+		ARG 4 next
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 1 other
 	METHOD method_1726 getHash ()I
 	METHOD method_1727 getValue ()Ljava/lang/Object;

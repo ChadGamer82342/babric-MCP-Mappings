@@ -2,5 +2,15 @@ CLASS net/minecraft/class_552 net/minecraft/src/TexturedQuad
 	FIELD field_2518 vertexPositions [Lnet/minecraft/class_290;
 	FIELD field_2519 nVertices I
 	FIELD field_2520 invertNormal Z
+	METHOD <init> ([Lnet/minecraft/class_290;)V
+		ARG 1 vertices
+	METHOD <init> ([Lnet/minecraft/class_290;IIII)V
+		ARG 1 vertices
+		ARG 2 textureX
+		ARG 3 textureY
+		ARG 4 textureWidth
+		ARG 5 textureHeight
 	METHOD method_1925 flipFace ()V
 	METHOD method_1926 draw (Lnet/minecraft/class_67;F)V
+		ARG 1 tessellator
+		ARG 2 scale

@@ -4,4 +4,11 @@ CLASS net/minecraft/class_309 net/minecraft/src/CodecMus
 		FIELD field_1196 codec Lnet/minecraft/class_309;
 		FIELD field_1197 hash I
 		FIELD field_1198 inputStream Ljava/io/InputStream;
-
+		METHOD <init> (Lnet/minecraft/class_309;Ljava/net/URL;Ljava/io/InputStream;)V
+			ARG 1 codec
+			ARG 2 url
+			ARG 3 input
+		METHOD read ([BII)I
+			ARG 1 buffer
+			ARG 2 offset
+			ARG 3 length

@@ -9,3 +9,5 @@ CLASS net/minecraft/class_295 net/minecraft/src/Packet21PickupSpawn
 	FIELD field_1163 itemID I
 	FIELD field_1164 count I
 	FIELD field_1165 itemDamage I
+	METHOD <init> (Lnet/minecraft/class_142;)V
+		ARG 1 item

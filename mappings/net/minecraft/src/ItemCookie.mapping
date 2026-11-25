@@ -1,1 +1,6 @@
 CLASS net/minecraft/class_355 net/minecraft/src/ItemCookie
+	METHOD <init> (IIZI)V
+		ARG 1 itemId
+		ARG 2 healAmount
+		ARG 3 wolfFavorite
+		ARG 4 maxStackSize

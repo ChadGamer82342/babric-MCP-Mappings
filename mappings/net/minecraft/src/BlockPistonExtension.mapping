@@ -1,5 +1,10 @@
 CLASS net/minecraft/class_205 net/minecraft/src/BlockPistonExtension
-	FIELD field_756 field_31053_a I
-	METHOD method_727 func_31050_c (I)I
-	METHOD method_728 func_31051_a ()V
-	METHOD method_729 func_31052_a_ (I)V
+	FIELD field_756 textureIndex I
+	METHOD <init> (II)V
+		ARG 1 blockId
+		ARG 2 textureId
+	METHOD method_727 getDirectionFromMetadata (I)I
+		ARG 0 metadata
+	METHOD method_728 resetTextureIndex ()V
+	METHOD method_729 setTextureIndex (I)V
+		ARG 1 textureIndex

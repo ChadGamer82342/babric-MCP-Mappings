@@ -2,3 +2,7 @@ CLASS net/minecraft/class_292 net/minecraft/src/Packet105UpdateProgressbar
 	FIELD field_1149 windowId I
 	FIELD field_1150 progressBar I
 	FIELD field_1151 progressBarValue I
+	METHOD <init> (III)V
+		ARG 1 windowId
+		ARG 2 progressBar
+		ARG 3 value

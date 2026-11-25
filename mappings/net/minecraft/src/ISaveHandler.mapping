@@ -1,7 +1,14 @@
 CLASS net/minecraft/class_52 net/minecraft/src/ISaveHandler
 	METHOD method_1732 saveWorldInfo (Lnet/minecraft/class_7;)V
+		ARG 1 worldInfo
 	METHOD method_1733 saveWorldInfoAndPlayer (Lnet/minecraft/class_7;Ljava/util/List;)V
+		ARG 1 worldInfo
+		ARG 2 players
 	METHOD method_1734 getChunkLoader (Lnet/minecraft/class_50;)Lnet/minecraft/class_243;
-	METHOD method_1735 func_22150_b ()V
-	METHOD method_1736 func_28113_a (Ljava/lang/String;)Ljava/io/File;
+		ARG 1 worldProvider
+	METHOD method_1735 checkSessionLock ()V
+	METHOD method_1736 getWorldDirectory (Ljava/lang/String;)Ljava/io/File;
+		ARG 1 worldName
 	METHOD method_1737 loadWorldInfo ()Lnet/minecraft/class_7;
+	METHOD method_1738 getPlayerFileData ()Lnet/minecraft/class_168;
+	METHOD method_1739 flush ()V

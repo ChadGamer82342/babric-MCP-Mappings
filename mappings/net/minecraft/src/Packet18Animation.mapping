@@ -1,3 +1,6 @@
 CLASS net/minecraft/class_305 net/minecraft/src/Packet18Animation
 	FIELD field_1189 entityId I
 	FIELD field_1190 animate I
+	METHOD <init> (Lnet/minecraft/class_57;I)V
+		ARG 1 entity
+		ARG 2 animation

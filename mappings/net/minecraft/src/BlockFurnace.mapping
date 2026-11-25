@@ -2,5 +2,17 @@ CLASS net/minecraft/class_421 net/minecraft/src/BlockFurnace
 	FIELD field_1682 furnaceRand Ljava/util/Random;
 	FIELD field_1683 isActive Z
 	FIELD field_1684 keepFurnaceInventory Z
+	METHOD <init> (IZ)V
+		ARG 1 blockId
+		ARG 2 burning
 	METHOD method_1403 updateFurnaceBlockState (ZLnet/minecraft/class_18;III)V
+		ARG 0 active
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_1404 setDefaultDirection (Lnet/minecraft/class_18;III)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

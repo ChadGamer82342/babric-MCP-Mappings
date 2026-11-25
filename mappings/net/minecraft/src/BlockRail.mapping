@@ -1,4 +1,40 @@
 CLASS net/minecraft/class_16 net/minecraft/src/BlockRail
+	FIELD field_1262 isPowered Z
+	METHOD <init> (IIZ)V
+		ARG 1 blockId
+		ARG 2 textureId
+		ARG 3 powered
+	METHOD method_1103 canConnectRail (Lnet/minecraft/class_18;IIIIZI)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 metadata
+		ARG 6 connected
+		ARG 7 depth
+	METHOD method_1104 updateRailState (Lnet/minecraft/class_18;IIIZ)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 powered
+	METHOD method_1105 canConnectRail (Lnet/minecraft/class_18;IIIZII)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 powered
+		ARG 6 metadata
+		ARG 7 depth
+	METHOD method_1106 isPoweredBlockRail (Lnet/minecraft/class_16;)Z
+	METHOD method_1107 isRailBlock (I)Z
+		ARG 0 blockId
+	METHOD method_1108 getIsPowered ()Z
+	METHOD method_1109 isRailBlockAt (Lnet/minecraft/class_18;III)Z
+		ARG 0 world
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
 	CLASS class_338 RailLogic
 		FIELD field_1263 rail Lnet/minecraft/class_16;
 		FIELD field_1264 worldObj Lnet/minecraft/class_18;
@@ -7,24 +43,37 @@ CLASS net/minecraft/class_16 net/minecraft/src/BlockRail
 		FIELD field_1267 trackZ I
 		FIELD field_1268 isPoweredRail Z
 		FIELD field_1269 connectedTracks Ljava/util/List;
-		METHOD method_1110 func_785_b ()V
+		METHOD <init> (Lnet/minecraft/class_16;Lnet/minecraft/class_18;III)V
+			ARG 1 blockRail
+			ARG 2 world
+			ARG 3 x
+			ARG 4 y
+			ARG 5 z
+		METHOD method_1110 removeInvalidConnections ()V
 		METHOD method_1111 setConnections (I)V
+			ARG 1 metadata
 		METHOD method_1112 isMinecartTrack (III)Z
+			ARG 1 x
+			ARG 2 y
+			ARG 3 z
 		METHOD method_1113 getNAdjacentTracks (Lnet/minecraft/class_16$class_338;)I
 		METHOD method_1114 getMinecartTrackLogic (Lnet/minecraft/class_339;)Lnet/minecraft/class_16$class_338;
-		METHOD method_1115 func_792_a (ZZ)V
+			ARG 1 position
+		METHOD method_1115 updateRailShape (ZZ)V
+			ARG 1 powered
+			ARG 2 forceUpdate
 		METHOD method_1116 getAdjacentTracks ()I
 		METHOD method_1117 isInTrack (III)Z
+			ARG 1 x
+			ARG 2 y
+			ARG 3 z
 		METHOD method_1118 isConnectedTo (Lnet/minecraft/class_16$class_338;)Z
-		METHOD method_1119 func_786_c (III)Z
+			ARG 1 railLogic
+		METHOD method_1119 updateConnection (III)Z
+			ARG 1 x
+			ARG 2 y
+			ARG 3 z
 		METHOD method_1120 handleKeyPress (Lnet/minecraft/class_16$class_338;)Z
-		METHOD method_1121 func_788_d (Lnet/minecraft/class_16$class_338;)V
-
-	FIELD field_1262 isPowered Z
-	METHOD method_1103 func_27044_a (Lnet/minecraft/class_18;IIIIZI)Z
-	METHOD method_1104 func_4031_h (Lnet/minecraft/class_18;IIIZ)V
-	METHOD method_1105 func_27043_a (Lnet/minecraft/class_18;IIIZII)Z
-	METHOD method_1106 isPoweredBlockRail (Lnet/minecraft/class_16;)Z
-	METHOD method_1107 isRailBlock (I)Z
-	METHOD method_1108 getIsPowered ()Z
-	METHOD method_1109 isRailBlockAt (Lnet/minecraft/class_18;III)Z
+			ARG 1 railLogic
+		METHOD method_1121 connectToRail (Lnet/minecraft/class_16$class_338;)V
+			ARG 1 railLogic

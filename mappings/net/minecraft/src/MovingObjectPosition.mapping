@@ -6,3 +6,11 @@ CLASS net/minecraft/class_27 net/minecraft/src/MovingObjectPosition
 	FIELD field_1987 sideHit I
 	FIELD field_1988 hitVec Lnet/minecraft/class_26;
 	FIELD field_1989 entityHit Lnet/minecraft/class_57;
+	METHOD <init> (IIIILnet/minecraft/class_26;)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 side
+		ARG 5 hitVec
+	METHOD <init> (Lnet/minecraft/class_57;)V
+		ARG 1 entity

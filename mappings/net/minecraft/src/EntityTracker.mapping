@@ -3,4 +3,29 @@ CLASS net/minecraft/class_488 net/minecraft/src/EntityTracker
 	FIELD field_2005 trackedEntityHashTable Lnet/minecraft/class_80;
 	FIELD field_2006 mcServer Lnet/minecraft/server/MinecraftServer;
 	FIELD field_2007 maxTrackingDistanceThreshold I
-	FIELD field_2008 field_28113_e I
+	FIELD field_2008 dimension I
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;I)V
+		ARG 1 minecraftServer
+		ARG 2 dimension
+	METHOD method_1663 updateTrackedEntities ()V
+	METHOD method_1664 updatePlayerEntities (Lnet/minecraft/class_69;)V
+		ARG 1 player
+	METHOD method_1665 addEntityToTracker (Lnet/minecraft/class_57;)V
+		ARG 1 entity
+	METHOD method_1666 trackEntity (Lnet/minecraft/class_57;II)V
+		ARG 1 entity
+		ARG 2 trackingDistance
+		ARG 3 updateFrequency
+	METHOD method_1667 trackEntity (Lnet/minecraft/class_57;IIZ)V
+		ARG 1 entity
+		ARG 2 trackingDistance
+		ARG 3 updateFrequency
+		ARG 4 sendVelocityUpdates
+	METHOD method_1668 sendPacketToTrackedPlayers (Lnet/minecraft/class_57;Lnet/minecraft/class_169;)V
+		ARG 1 entity
+		ARG 2 packet
+	METHOD method_1669 untrackEntity (Lnet/minecraft/class_57;)V
+		ARG 1 entity
+	METHOD method_1670 sendPacketToTrackedPlayersAndSelf (Lnet/minecraft/class_57;Lnet/minecraft/class_169;)V
+		ARG 1 entity
+		ARG 2 packet

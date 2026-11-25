@@ -1,2 +1,5 @@
 CLASS net/minecraft/class_380 net/minecraft/src/ItemSeeds
-	FIELD field_1430 field_318_a I
+	FIELD field_1430 blockId I
+	METHOD <init> (II)V
+		ARG 1 itemId
+		ARG 2 blockId

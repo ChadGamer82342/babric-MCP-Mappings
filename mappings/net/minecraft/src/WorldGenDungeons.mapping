@@ -1,3 +1,5 @@
 CLASS net/minecraft/class_30 net/minecraft/src/WorldGenDungeons
 	METHOD method_115 pickCheckLootItem (Ljava/util/Random;)Lnet/minecraft/class_31;
+		ARG 1 random
 	METHOD method_116 pickMobSpawner (Ljava/util/Random;)Ljava/lang/String;
+		ARG 1 random

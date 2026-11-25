@@ -1,6 +1,11 @@
 CLASS net/minecraft/class_15 net/minecraft/src/Material
-	FIELD field_971 field_31068_A Lnet/minecraft/class_15;
-	FIELD field_972 field_31067_B Lnet/minecraft/class_15;
+	FIELD field_1000 cactus Lnet/minecraft/class_15;
+	FIELD field_1001 clay Lnet/minecraft/class_15;
+	FIELD field_1002 pumpkin Lnet/minecraft/class_15;
+	FIELD field_1003 portal Lnet/minecraft/class_15;
+	FIELD field_1004 cakeMaterial Lnet/minecraft/class_15;
+	FIELD field_971 WEB Lnet/minecraft/class_15;
+	FIELD field_972 PISTON Lnet/minecraft/class_15;
 	FIELD field_973 materialMapColor Lnet/minecraft/class_259;
 	FIELD field_974 canBurn Z
 	FIELD field_975 groundCover Z
@@ -24,15 +29,12 @@ CLASS net/minecraft/class_15 net/minecraft/src/Material
 	FIELD field_993 circuits Lnet/minecraft/class_15;
 	FIELD field_994 glass Lnet/minecraft/class_15;
 	FIELD field_995 tnt Lnet/minecraft/class_15;
-	FIELD field_996 field_4262_q Lnet/minecraft/class_15;
+	FIELD field_996 DRAGON_EGG Lnet/minecraft/class_15;
 	FIELD field_997 ice Lnet/minecraft/class_15;
 	FIELD field_998 snow Lnet/minecraft/class_15;
 	FIELD field_999 builtSnow Lnet/minecraft/class_15;
-	FIELD field_1000 cactus Lnet/minecraft/class_15;
-	FIELD field_1001 clay Lnet/minecraft/class_15;
-	FIELD field_1002 pumpkin Lnet/minecraft/class_15;
-	FIELD field_1003 portal Lnet/minecraft/class_15;
-	FIELD field_1004 cakeMaterial Lnet/minecraft/class_15;
+	METHOD <init> (Lnet/minecraft/class_259;)V
+		ARG 1 mapColor
 	METHOD method_893 getIsLiquid ()Z
 	METHOD method_894 getBurning ()Z
 	METHOD method_895 setIsGroundCover ()Lnet/minecraft/class_15;

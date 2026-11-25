@@ -1,4 +1,15 @@
 CLASS net/minecraft/class_123 net/minecraft/src/BlockSand
 	FIELD field_375 fallInstantly Z
+	METHOD <init> (II)V
+		ARG 1 blockId
+		ARG 2 textureId
 	METHOD method_435 canFallBelow (Lnet/minecraft/class_18;III)Z
+		ARG 0 world
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
 	METHOD method_436 tryToFall (Lnet/minecraft/class_18;III)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

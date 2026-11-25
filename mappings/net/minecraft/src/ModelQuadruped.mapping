@@ -5,3 +5,6 @@ CLASS net/minecraft/class_491 net/minecraft/src/ModelQuadruped
 	FIELD field_2013 leg2 Lnet/minecraft/class_163;
 	FIELD field_2014 leg3 Lnet/minecraft/class_163;
 	FIELD field_2015 leg4 Lnet/minecraft/class_163;
+	METHOD <init> (IF)V
+		ARG 1 legHeight
+		ARG 2 scale

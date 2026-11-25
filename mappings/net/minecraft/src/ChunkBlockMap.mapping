@@ -1,3 +1,4 @@
 CLASS net/minecraft/class_490 net/minecraft/src/ChunkBlockMap
-	FIELD field_2009 field_26003_a [B
-	METHOD method_1671 func_26002_a ([B)V
+	FIELD field_2009 blockIdRemap [B
+	METHOD method_1671 remapBlockIds ([B)V
+		ARG 0 blockIds

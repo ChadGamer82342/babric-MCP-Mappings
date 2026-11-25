@@ -3,9 +3,34 @@ CLASS net/minecraft/class_34 net/minecraft/src/FontRenderer
 	FIELD field_2462 charWidth [I
 	FIELD field_2463 fontDisplayLists I
 	FIELD field_2464 buffer Ljava/nio/IntBuffer;
+	METHOD <init> (Lnet/minecraft/class_322;Ljava/lang/String;Lnet/minecraft/class_76;)V
+		ARG 1 gameSettings
+		ARG 2 fontTexture
+		ARG 3 renderEngine
 	METHOD method_1901 getStringWidth (Ljava/lang/String;)I
-	METHOD method_1902 func_27277_a (Ljava/lang/String;I)I
+		ARG 1 text
+	METHOD method_1902 splitStringWidth (Ljava/lang/String;I)I
+		ARG 1 text
+		ARG 2 maxWidth
 	METHOD method_1903 drawStringWithShadow (Ljava/lang/String;III)V
-	METHOD method_1904 func_27278_a (Ljava/lang/String;IIII)V
+		ARG 1 text
+		ARG 2 x
+		ARG 3 y
+		ARG 4 color
+	METHOD method_1904 drawSplitString (Ljava/lang/String;IIII)V
+		ARG 1 text
+		ARG 2 x
+		ARG 3 y
+		ARG 4 maxWidth
+		ARG 5 color
 	METHOD method_1905 renderString (Ljava/lang/String;IIIZ)V
+		ARG 1 text
+		ARG 2 x
+		ARG 3 y
+		ARG 4 color
+		ARG 5 shadow
 	METHOD method_1906 drawString (Ljava/lang/String;III)V
+		ARG 1 text
+		ARG 2 x
+		ARG 3 y
+		ARG 4 color

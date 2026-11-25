@@ -1,11 +1,24 @@
 CLASS net/minecraft/class_499 net/minecraft/src/EntityEgg
-	FIELD field_2038 field_20057_a I
-	FIELD field_2039 field_20056_b I
-	FIELD field_2040 field_20055_c I
-	FIELD field_2041 field_20054_d I
-	FIELD field_2042 field_20053_e I
-	FIELD field_2043 field_20052_f Z
-	FIELD field_2044 field_20051_g Lnet/minecraft/class_127;
-	FIELD field_2045 field_20050_h I
-	FIELD field_2046 field_20049_i I
+	FIELD field_2038 shake I
+	FIELD field_2039 tileX I
+	FIELD field_2040 tileY I
+	FIELD field_2041 tileZ I
+	FIELD field_2042 inTile I
+	FIELD field_2043 inGround Z
+	FIELD field_2044 thrower Lnet/minecraft/class_127;
+	FIELD field_2045 ticksInGround I
+	FIELD field_2046 ticksInAir I
+	METHOD <init> (Lnet/minecraft/class_18;DDD)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+	METHOD <init> (Lnet/minecraft/class_18;Lnet/minecraft/class_127;)V
+		ARG 1 world
+		ARG 2 thrower
 	METHOD method_1682 zTile (DDDFF)V
+		ARG 1 directionX
+		ARG 3 directionY
+		ARG 5 directionZ
+		ARG 7 velocity
+		ARG 8 inaccuracy

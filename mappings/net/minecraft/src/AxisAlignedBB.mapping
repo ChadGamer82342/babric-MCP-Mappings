@@ -7,25 +7,79 @@ CLASS net/minecraft/class_25 net/minecraft/src/AxisAlignedBB
 	FIELD field_134 maxZ D
 	FIELD field_135 boundingBoxes Ljava/util/List;
 	FIELD field_136 numBoundingBoxesInUse I
+	METHOD <init> (DDDDDD)V
+		ARG 1 minX
+		ARG 3 minY
+		ARG 5 minZ
+		ARG 7 maxX
+		ARG 9 maxY
+		ARG 11 maxZ
+	METHOD method_100 isVecInXZ (Lnet/minecraft/class_26;)Z
+		ARG 1 vector
+	METHOD method_101 calculateZOffset (Lnet/minecraft/class_25;D)D
+		ARG 1 otherBox
+		ARG 2 offset
+	METHOD method_102 offset (DDD)Lnet/minecraft/class_25;
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD method_103 isVecInXY (Lnet/minecraft/class_26;)Z
+		ARG 1 vector
+	METHOD method_104 contract (DDD)Lnet/minecraft/class_25;
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+	METHOD method_105 clearBoundingBoxes ()V
+	METHOD method_106 getAverageEdgeLength ()D
 	METHOD method_85 clearBoundingBoxPool ()V
 	METHOD method_86 addCoord (DDD)Lnet/minecraft/class_25;
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
 	METHOD method_87 getBoundingBox (DDDDDD)Lnet/minecraft/class_25;
+		ARG 0 minX
+		ARG 2 minY
+		ARG 4 minZ
+		ARG 6 maxX
+		ARG 8 maxY
+		ARG 10 maxZ
 	METHOD method_88 isVecInside (Lnet/minecraft/class_26;)Z
-	METHOD method_89 func_1169_a (Lnet/minecraft/class_26;Lnet/minecraft/class_26;)Lnet/minecraft/class_27;
+		ARG 1 vector
+	METHOD method_89 calculateIntercept (Lnet/minecraft/class_26;Lnet/minecraft/class_26;)Lnet/minecraft/class_27;
+		ARG 1 start
+		ARG 2 end
 	METHOD method_90 intersectsWith (Lnet/minecraft/class_25;)Z
+		ARG 1 otherBox
 	METHOD method_91 calculateXOffset (Lnet/minecraft/class_25;D)D
+		ARG 1 otherBox
+		ARG 2 offset
 	METHOD method_92 copy ()Lnet/minecraft/class_25;
 	METHOD method_93 expand (DDD)Lnet/minecraft/class_25;
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
 	METHOD method_94 getBoundingBoxFromPool (DDDDDD)Lnet/minecraft/class_25;
+		ARG 0 minX
+		ARG 2 minY
+		ARG 4 minZ
+		ARG 6 maxX
+		ARG 8 maxY
+		ARG 10 maxZ
 	METHOD method_95 isVecInYZ (Lnet/minecraft/class_26;)Z
+		ARG 1 vector
 	METHOD method_96 setBB (Lnet/minecraft/class_25;)V
+		ARG 1 boundingBox
 	METHOD method_97 calculateYOffset (Lnet/minecraft/class_25;D)D
+		ARG 1 otherBox
+		ARG 2 offset
 	METHOD method_98 getOffsetBoundingBox (DDD)Lnet/minecraft/class_25;
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
 	METHOD method_99 setBounds (DDDDDD)Lnet/minecraft/class_25;
-	METHOD method_100 isVecInXZ (Lnet/minecraft/class_26;)Z
-	METHOD method_101 calculateZOffset (Lnet/minecraft/class_25;D)D
-	METHOD method_102 offset (DDD)Lnet/minecraft/class_25;
-	METHOD method_103 isVecInXY (Lnet/minecraft/class_26;)Z
-	METHOD method_104 func_28195_e (DDD)Lnet/minecraft/class_25;
-	METHOD method_105 func_28196_a ()V
-	METHOD method_106 getAverageEdgeLength ()D
+		ARG 1 minX
+		ARG 3 minY
+		ARG 5 minZ
+		ARG 7 maxX
+		ARG 9 maxY
+		ARG 11 maxZ

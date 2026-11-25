@@ -1,3 +1,6 @@
 CLASS net/minecraft/class_72 net/minecraft/src/WorldManager
 	FIELD field_267 mcServer Lnet/minecraft/server/MinecraftServer;
-	FIELD field_268 field_28134_b Lnet/minecraft/class_73;
+	FIELD field_268 worldServer Lnet/minecraft/class_73;
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/class_73;)V
+		ARG 1 minecraftServer
+		ARG 2 world

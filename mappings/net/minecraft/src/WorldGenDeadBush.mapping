@@ -1,2 +1,4 @@
 CLASS net/minecraft/class_246 net/minecraft/src/WorldGenDeadBush
-	FIELD field_911 field_28058_a I
+	FIELD field_911 blockId I
+	METHOD <init> (I)V
+		ARG 1 blockId

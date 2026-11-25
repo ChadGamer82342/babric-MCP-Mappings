@@ -1,3 +1,11 @@
 CLASS net/minecraft/class_315 net/minecraft/src/BlockStationary
-	METHOD method_1037 func_30004_j (Lnet/minecraft/class_18;III)V
-	METHOD method_1038 func_301_k (Lnet/minecraft/class_18;III)Z
+	METHOD method_1037 convertToFlowing (Lnet/minecraft/class_18;III)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+	METHOD method_1038 isBurning (Lnet/minecraft/class_18;III)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

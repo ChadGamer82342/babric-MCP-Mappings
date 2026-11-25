@@ -1,8 +1,13 @@
 CLASS net/minecraft/class_357 net/minecraft/src/Packet27Position
-	FIELD field_1330 field_22039_a F
-	FIELD field_1331 field_22038_b F
-	FIELD field_1332 field_22043_c Z
-	FIELD field_1333 field_22042_d Z
-	FIELD field_1334 field_22041_e F
-	FIELD field_1335 field_22040_f F
+	FIELD field_1330 xPosition F
+	FIELD field_1331 yPosition F
+	FIELD field_1332 onGround Z
+	FIELD field_1333 rotating Z
+	FIELD field_1334 stance F
+	FIELD field_1335 zPosition F
+	METHOD method_1174 getXPosition ()F
+	METHOD method_1175 getYPosition ()F
+	METHOD method_1176 getStance ()F
+	METHOD method_1177 getZPosition ()F
+	METHOD method_1178 isOnGround ()Z
 	METHOD method_1179 yawRotation ()Z

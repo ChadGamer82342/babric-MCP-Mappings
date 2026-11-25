@@ -4,12 +4,30 @@ CLASS net/minecraft/class_11 net/minecraft/src/NetServerHandler
 	FIELD field_918 connectionClosed Z
 	FIELD field_919 mcServer Lnet/minecraft/server/MinecraftServer;
 	FIELD field_920 playerEntity Lnet/minecraft/class_69;
-	FIELD field_921 field_15_f I
-	FIELD field_922 field_22004_g I
+	FIELD field_921 ticksSinceLastKeepAlive I
+	FIELD field_922 lastKeepAliveTick I
 	FIELD field_923 playerInAirTime I
-	FIELD field_924 field_22003_h Z
+	FIELD field_924 receivedMovementPacket Z
 	FIELD field_925 lastPosX D
 	FIELD field_926 lastPosY D
 	FIELD field_927 lastPosZ D
 	FIELD field_928 hasMoved Z
-	FIELD field_929 field_10_k Ljava/util/Map;
+	FIELD field_929 pendingTransactions Ljava/util/Map;
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/class_117;Lnet/minecraft/class_69;)V
+		ARG 1 minecraftServer
+		ARG 2 networkManager
+		ARG 3 player
+	METHOD method_831 processReadPackets ()V
+	METHOD method_832 teleportTo (DDDFF)V
+		ARG 1 x
+		ARG 3 y
+		ARG 5 z
+		ARG 7 yaw
+		ARG 8 pitch
+	METHOD method_833 kickPlayer (Ljava/lang/String;)V
+		ARG 1 reason
+	METHOD method_834 getPendingPacketCount ()I
+	METHOD method_835 sendPacket (Lnet/minecraft/class_169;)V
+		ARG 1 packet
+	METHOD method_836 handleCommand (Ljava/lang/String;)V
+		ARG 1 command

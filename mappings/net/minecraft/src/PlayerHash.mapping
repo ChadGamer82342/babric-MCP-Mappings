@@ -3,4 +3,29 @@ CLASS net/minecraft/class_101 net/minecraft/src/PlayerHash
 	FIELD field_325 numHashElements I
 	FIELD field_326 capacity I
 	FIELD field_327 percentUsable F
-	FIELD field_328 field_950_e I
+	FIELD field_328 modificationCount I
+	METHOD method_383 computeHash (I)I
+		ARG 0 value
+	METHOD method_384 getSlotIndex (II)I
+		ARG 0 hash
+		ARG 1 bucketCount
+	METHOD method_385 addEntry (IJLjava/lang/Object;I)V
+		ARG 1 hash
+		ARG 2 key
+		ARG 4 value
+		ARG 5 bucketIndex
+	METHOD method_386 getValueByKey (J)Ljava/lang/Object;
+		ARG 1 key
+	METHOD method_387 addKey (JLjava/lang/Object;)V
+		ARG 1 key
+		ARG 3 value
+	METHOD method_388 rehash ([Lnet/minecraft/class_102;)V
+		ARG 1 newHashArray
+	METHOD method_389 resize (I)V
+		ARG 1 newCapacity
+	METHOD method_390 getValueForKey (J)Ljava/lang/Object;
+		ARG 1 key
+	METHOD method_391 removeEntry (J)Lnet/minecraft/class_102;
+		ARG 1 key
+	METHOD method_393 computeHash (J)I
+		ARG 0 key

@@ -1,2 +1,9 @@
 CLASS net/minecraft/class_207 net/minecraft/src/BlockPortal
+	METHOD <init> (II)V
+		ARG 1 blockId
+		ARG 2 textureId
 	METHOD method_736 tryToCreatePortal (Lnet/minecraft/class_18;III)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

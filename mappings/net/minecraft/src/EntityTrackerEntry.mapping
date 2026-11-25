@@ -1,7 +1,7 @@
 CLASS net/minecraft/class_174 net/minecraft/src/EntityTrackerEntry
 	FIELD field_597 trackedEntity Lnet/minecraft/class_57;
 	FIELD field_598 trackingDistanceThreshold I
-	FIELD field_599 field_9234_e I
+	FIELD field_599 updateFrequency I
 	FIELD field_600 encodedPosX I
 	FIELD field_601 encodedPosY I
 	FIELD field_602 encodedPosZ I
@@ -18,4 +18,27 @@ CLASS net/minecraft/class_174 net/minecraft/src/EntityTrackerEntry
 	FIELD field_613 lastTrackedEntityPosZ D
 	FIELD field_614 firstUpdateDone Z
 	FIELD field_615 shouldSendMotionUpdates Z
-	FIELD field_616 field_28165_t I
+	FIELD field_616 ticksSinceLastUpdate I
+	METHOD <init> (Lnet/minecraft/class_57;IIZ)V
+		ARG 1 entity
+		ARG 2 trackingDistance
+		ARG 3 updateFrequency
+		ARG 4 sendVelocityUpdates
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 1 other
+	METHOD method_596 sendDestroyEntity ()V
+	METHOD method_597 removePlayer (Lnet/minecraft/class_69;)V
+		ARG 1 player
+	METHOD method_598 sendPacketToTrackedPlayers (Lnet/minecraft/class_169;)V
+		ARG 1 packet
+	METHOD method_599 updatePlayerEntities (Ljava/util/List;)V
+		ARG 1 players
+	METHOD method_600 getSpawnPacket ()Lnet/minecraft/class_169;
+	METHOD method_601 addTrackedPlayer (Lnet/minecraft/class_69;)V
+		ARG 1 player
+	METHOD method_602 sendPacketToTrackedPlayersAndSelf (Lnet/minecraft/class_169;)V
+		ARG 1 packet
+	METHOD method_603 addTrackedPlayers (Ljava/util/List;)V
+		ARG 1 players
+	METHOD method_604 removeTrackedPlayer (Lnet/minecraft/class_69;)V
+		ARG 1 player

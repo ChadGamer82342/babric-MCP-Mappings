@@ -1,1 +1,3 @@
 CLASS net/minecraft/class_523 net/minecraft/src/BlockSponge
+	METHOD <init> (I)V
+		ARG 1 blockId

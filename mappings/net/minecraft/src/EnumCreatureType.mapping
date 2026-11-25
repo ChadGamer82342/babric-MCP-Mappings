@@ -6,8 +6,17 @@ CLASS net/minecraft/class_238 net/minecraft/src/EnumCreatureType
 	FIELD field_946 maxNumberOfCreature I
 	FIELD field_947 creatureMaterial Lnet/minecraft/class_15;
 	FIELD field_948 isPeacefulCreature Z
-	FIELD field_949 field_6518_e [Lnet/minecraft/class_238;
+	FIELD field_949 VALUES [Lnet/minecraft/class_238;
+	METHOD <init> (Ljava/lang/String;ILjava/lang/Class;ILnet/minecraft/class_15;Z)V
+		ARG 1 name
+		ARG 2 ordinal
+		ARG 3 creatureClass
+		ARG 4 maxNumberOfEntity
+		ARG 5 material
+		ARG 6 peaceful
 	METHOD method_853 getCreatureClass ()Ljava/lang/Class;
 	METHOD method_854 getMaxNumberOfCreature ()I
 	METHOD method_855 getCreatureMaterial ()Lnet/minecraft/class_15;
 	METHOD method_856 getPeacefulCreature ()Z
+	METHOD valueOf (Ljava/lang/String;)Lnet/minecraft/class_238;
+		ARG 0 name

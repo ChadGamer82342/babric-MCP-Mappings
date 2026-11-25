@@ -1,6 +1,29 @@
 CLASS net/minecraft/class_209 net/minecraft/src/NoiseGeneratorOctaves
 	FIELD field_1744 generatorCollection [Lnet/minecraft/class_369;
-	FIELD field_1745 field_1191_b I
-	METHOD method_1513 func_806_a (DD)D
+	FIELD field_1745 octaves I
+	METHOD <init> (Ljava/util/Random;I)V
+		ARG 1 random
+		ARG 2 octaveCount
+	METHOD method_1513 generateNoise (DD)D
+		ARG 1 x
+		ARG 3 y
 	METHOD method_1514 generateNoiseOctaves ([DDDDIIIDDD)[D
-	METHOD method_1515 func_4109_a ([DIIIIDDD)[D
+		ARG 1 result
+		ARG 2 xOffset
+		ARG 4 yOffset
+		ARG 6 zOffset
+		ARG 8 xSize
+		ARG 9 ySize
+		ARG 10 zSize
+		ARG 11 xScale
+		ARG 13 yScale
+		ARG 15 zScale
+	METHOD method_1515 generateNoiseOctaves ([DIIIIDDD)[D
+		ARG 1 result
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 width
+		ARG 6 height
+		ARG 8 xScale
+		ARG 10 zScale

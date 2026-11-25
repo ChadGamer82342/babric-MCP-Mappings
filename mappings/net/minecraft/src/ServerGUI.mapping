@@ -1,13 +1,30 @@
 CLASS net/minecraft/class_481 net/minecraft/src/ServerGUI
+	FIELD field_1977 logger Ljava/util/logging/Logger;
+	FIELD field_1978 mcServer Lnet/minecraft/server/MinecraftServer;
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;)V
+		ARG 1 minecraftServer
+	METHOD method_1650 createStatsPanel ()Ljavax/swing/JComponent;
+	METHOD method_1651 startServerGUI (Lnet/minecraft/server/MinecraftServer;)V
+		ARG 0 minecraftServer
+	METHOD method_1653 createPlayerListPanel ()Ljavax/swing/JComponent;
+	METHOD method_1654 createLogPanel ()Ljavax/swing/JComponent;
 	CLASS 1 ServerWindowAdapter
 		FIELD field_1979 mcServer Lnet/minecraft/server/MinecraftServer;
-
+		METHOD <init> (Lnet/minecraft/server/MinecraftServer;)V
+			ARG 1 minecraftServer
+		METHOD windowClosing (Ljava/awt/event/WindowEvent;)V
+			ARG 1 event
 	CLASS 2 ServerGuiCommandListener
 		FIELD field_1980 textField Ljavax/swing/JTextField;
 		FIELD field_1981 mcServerGui Lnet/minecraft/class_481;
-
+		METHOD <init> (Lnet/minecraft/class_481;Ljavax/swing/JTextField;)V
+			ARG 1 serverGui
+			ARG 2 textField
+		METHOD actionPerformed (Ljava/awt/event/ActionEvent;)V
+			ARG 1 event
 	CLASS 3 ServerGuiFocusAdapter
 		FIELD field_1982 mcServerGui Lnet/minecraft/class_481;
-
-	FIELD field_1977 logger Ljava/util/logging/Logger;
-	FIELD field_1978 mcServer Lnet/minecraft/server/MinecraftServer;
+		METHOD <init> (Lnet/minecraft/class_481;)V
+			ARG 1 serverGui
+		METHOD focusGained (Ljava/awt/event/FocusEvent;)V
+			ARG 1 event

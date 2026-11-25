@@ -1,3 +1,5 @@
 CLASS net/minecraft/class_413 net/minecraft/src/MovementInputFromOptions
 	FIELD field_1661 movementKeyStates [Z
 	FIELD field_1662 gameSettings Lnet/minecraft/class_322;
+	METHOD <init> (Lnet/minecraft/class_322;)V
+		ARG 1 gameSettings

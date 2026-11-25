@@ -1,3 +1,6 @@
 CLASS net/minecraft/class_210 net/minecraft/src/Packet38EntityStatus
 	FIELD field_784 entityId I
 	FIELD field_785 entityStatus B
+	METHOD <init> (IB)V
+		ARG 1 entityId
+		ARG 2 status

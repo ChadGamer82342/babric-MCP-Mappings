@@ -2,6 +2,18 @@ CLASS net/minecraft/class_570 net/minecraft/src/ImageBufferDownload
 	FIELD field_2445 imageData [I
 	FIELD field_2446 imageWidth I
 	FIELD field_2447 imageHeight I
-	METHOD method_1898 func_885_a (IIII)V
-	METHOD method_1899 func_884_b (IIII)V
-	METHOD method_1900 func_886_c (IIII)Z
+	METHOD method_1898 removeAlpha (IIII)V
+		ARG 1 minX
+		ARG 2 minY
+		ARG 3 maxX
+		ARG 4 maxY
+	METHOD method_1899 setAlpha (IIII)V
+		ARG 1 minX
+		ARG 2 minY
+		ARG 3 maxX
+		ARG 4 maxY
+	METHOD method_1900 hasTransparentPixels (IIII)Z
+		ARG 1 minX
+		ARG 2 minY
+		ARG 3 maxX
+		ARG 4 maxY

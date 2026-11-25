@@ -122,7 +122,7 @@ CLASS net/minecraft/class_17 net/minecraft/src/Block
 	FIELD field_1941 lightOpacity [I
 	FIELD field_1942 canBlockGrass [Z
 	FIELD field_1943 lightValue [I
-	FIELD field_1944 field_28032_t [Z
+	FIELD field_1944 DISABLE_NEIGHBOR_NOTIFY [Z
 	FIELD field_1945 stone Lnet/minecraft/class_17;
 	FIELD field_1946 grass Lnet/minecraft/class_476;
 	FIELD field_1947 dirt Lnet/minecraft/class_17;
@@ -137,7 +137,17 @@ CLASS net/minecraft/class_17 net/minecraft/src/Block
 		ARG 1 id
 		ARG 2 material
 	METHOD method_1560 onEntityWalking (Lnet/minecraft/class_18;IIILnet/minecraft/class_57;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 entity
 	METHOD method_1561 canPlaceBlockOnSide (Lnet/minecraft/class_18;IIII)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 side
 	METHOD method_1562 getCollidingBoundingBoxes (Lnet/minecraft/class_18;IIILnet/minecraft/class_25;Ljava/util/ArrayList;)V
 		ARG 1 world
 		ARG 2 x
@@ -146,16 +156,53 @@ CLASS net/minecraft/class_17 net/minecraft/src/Block
 		ARG 5 aabb
 		ARG 6 boundingBoxPool
 	METHOD method_1563 playBlock (Lnet/minecraft/class_18;IIIII)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 blockId
+		ARG 6 metadata
 	METHOD method_1564 collisionRayTrace (Lnet/minecraft/class_18;IIILnet/minecraft/class_26;Lnet/minecraft/class_26;)Lnet/minecraft/class_27;
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 start
+		ARG 6 end
 	METHOD method_1565 tickRate ()I
 	METHOD method_1566 canBlockStay (Lnet/minecraft/class_18;III)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_1567 canPlaceBlockAt (Lnet/minecraft/class_18;III)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_1568 isPoweringTo (Lnet/minecraft/class_14;IIII)Z
+		ARG 1 blockAccess
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 side
 	METHOD method_1569 canProvidePower ()Z
 	METHOD method_1570 isIndirectlyPoweringTo (Lnet/minecraft/class_18;IIII)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 side
 	METHOD method_1571 canCollideCheck (IZ)Z
 		ARG 1 meta
+		ARG 2 hitIfLiquid
 	METHOD method_1572 velocityToAddToEntity (Lnet/minecraft/class_18;IIILnet/minecraft/class_57;Lnet/minecraft/class_26;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 entity
+		ARG 6 velocity
 	METHOD method_1573 getIsBlockSolid (Lnet/minecraft/class_14;IIII)Z
 		ARG 1 access
 		ARG 2 x
@@ -164,6 +211,7 @@ CLASS net/minecraft/class_17 net/minecraft/src/Block
 		ARG 5 meta
 	METHOD method_1574 getMobilityFlag ()I
 	METHOD method_1575 getExplosionResistance (Lnet/minecraft/class_57;)F
+		ARG 1 entity
 	METHOD method_1576 isCollidable ()Z
 	METHOD method_1577 setLightValue (F)Lnet/minecraft/class_17;
 		ARG 1 value
@@ -175,24 +223,40 @@ CLASS net/minecraft/class_17 net/minecraft/src/Block
 		ARG 5 maxY
 		ARG 6 maxZ
 	METHOD method_1579 isVecInsideYZBounds (Lnet/minecraft/class_26;)Z
+		ARG 1 vector
 	METHOD method_1580 setStepSound (Lnet/minecraft/class_475;)Lnet/minecraft/class_17;
 		ARG 1 material
 	METHOD method_1581 dropBlockAsItem_do (Lnet/minecraft/class_18;IIILnet/minecraft/class_31;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 itemStack
 	METHOD method_1582 blockStrength (Lnet/minecraft/class_54;)F
+		ARG 1 player
 	METHOD method_1583 setBlockName (Ljava/lang/String;)Lnet/minecraft/class_17;
+		ARG 1 name
 	METHOD method_1584 setTickOnLoad (Z)Lnet/minecraft/class_17;
 		ARG 1 tickOnLoad
 	METHOD method_1585 setResistance (F)Lnet/minecraft/class_17;
 		ARG 1 resistance
 	METHOD method_1586 isVecInsideXZBounds (Lnet/minecraft/class_26;)Z
+		ARG 1 vector
 	METHOD method_1587 setHardness (F)Lnet/minecraft/class_17;
 		ARG 1 hardness
 	METHOD method_1588 isVecInsideXYBounds (Lnet/minecraft/class_26;)Z
+		ARG 1 vector
 	METHOD method_1589 getRenderColor (I)I
+		ARG 1 metadata
 	METHOD method_1590 setLightOpacity (I)Lnet/minecraft/class_17;
 		ARG 1 opacity
 	METHOD method_1591 disableNeighborNotifyOnMetadataChange ()Lnet/minecraft/class_17;
 	METHOD method_1592 dropBlockAsItem (Lnet/minecraft/class_18;IIII)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 metadata
 	METHOD method_1593 initializeBlock ()V
 	METHOD method_1594 setBlockUnbreakable ()Lnet/minecraft/class_17;
 	METHOD method_1595 getHardness ()F
@@ -201,9 +265,21 @@ CLASS net/minecraft/class_17 net/minecraft/src/Block
 	METHOD method_1598 getEnableStats ()Z
 	METHOD method_1599 disableStats ()Lnet/minecraft/class_17;
 	METHOD method_1600 colorMultiplier (Lnet/minecraft/class_14;III)I
+		ARG 1 blockAccess
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_1601 idDropped (ILjava/util/Random;)I
+		ARG 1 metadata
+		ARG 2 random
 	METHOD method_1602 updateTick (Lnet/minecraft/class_18;IIILjava/util/Random;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 random
 	METHOD method_1603 quantityDropped (Ljava/util/Random;)I
+		ARG 1 random
 	METHOD method_1604 getBlockBrightness (Lnet/minecraft/class_14;III)F
 		ARG 1 access
 		ARG 2 x
@@ -211,18 +287,70 @@ CLASS net/minecraft/class_17 net/minecraft/src/Block
 		ARG 4 z
 	METHOD method_1605 setBlockBoundsForItemRender ()V
 	METHOD method_1606 onBlockPlaced (Lnet/minecraft/class_18;IIII)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 side
 	METHOD method_1607 getBlockTextureFromSide (I)I
 		ARG 1 side
 	METHOD method_1608 blockActivated (Lnet/minecraft/class_18;IIILnet/minecraft/class_54;)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 player
 	METHOD method_1609 onNeighborBlockChange (Lnet/minecraft/class_18;IIII)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 blockId
 	METHOD method_1610 onBlockClicked (Lnet/minecraft/class_18;IIILnet/minecraft/class_54;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 player
 	METHOD method_1611 onBlockAdded (Lnet/minecraft/class_18;III)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_1612 onBlockDestroyedByPlayer (Lnet/minecraft/class_18;IIII)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 metadata
 	METHOD method_1613 onBlockDestroyedByExplosion (Lnet/minecraft/class_18;III)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_1614 onBlockPlacedBy (Lnet/minecraft/class_18;IIILnet/minecraft/class_127;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 entity
 	METHOD method_1615 onEntityCollidedWithBlock (Lnet/minecraft/class_18;IIILnet/minecraft/class_57;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 entity
 	METHOD method_1616 setBlockBoundsBasedOnState (Lnet/minecraft/class_14;III)V
+		ARG 1 blockAccess
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_1617 randomDisplayTick (Lnet/minecraft/class_18;IIILjava/util/Random;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 random
 	METHOD method_1618 shouldSideBeRendered (Lnet/minecraft/class_14;IIII)Z
 		ARG 1 access
 		ARG 2 x
@@ -244,6 +372,12 @@ CLASS net/minecraft/class_17 net/minecraft/src/Block
 		ARG 3 y
 		ARG 4 z
 	METHOD method_1625 dropBlockAsItemWithChance (Lnet/minecraft/class_18;IIIIF)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 metadata
+		ARG 6 chance
 	METHOD method_1626 getBlockTexture (Lnet/minecraft/class_14;IIII)I
 		ARG 1 access
 		ARG 2 x
@@ -254,5 +388,16 @@ CLASS net/minecraft/class_17 net/minecraft/src/Block
 		ARG 1 id
 		ARG 2 meta
 	METHOD method_1628 harvestBlock (Lnet/minecraft/class_18;Lnet/minecraft/class_54;IIII)V
+		ARG 1 world
+		ARG 2 player
+		ARG 3 x
+		ARG 4 y
+		ARG 5 z
+		ARG 6 metadata
 	METHOD method_1629 damageDropped (I)I
+		ARG 1 metadata
 	METHOD method_1630 requiresSelfNotify (Lnet/minecraft/class_18;III)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

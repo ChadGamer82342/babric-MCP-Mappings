@@ -1,11 +1,20 @@
 CLASS net/minecraft/class_182 net/minecraft/src/ISaveFormat
-	METHOD method_1001 func_22178_a ()Ljava/lang/String;
-	METHOD method_1002 func_22176_b ()Ljava/util/List;
+	METHOD method_1001 getName ()Ljava/lang/String;
+	METHOD method_1002 getSaveList ()Ljava/util/List;
 	METHOD method_1003 flushCache ()V
-	METHOD method_1004 func_22173_b (Ljava/lang/String;)Lnet/minecraft/class_7;
-	METHOD method_1005 func_22170_a (Ljava/lang/String;Ljava/lang/String;)V
-	METHOD method_1006 func_22172_c (Ljava/lang/String;)V
+	METHOD method_1004 getWorldInfo (Ljava/lang/String;)Lnet/minecraft/class_7;
+		ARG 1 worldName
+	METHOD method_1005 renameWorld (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 saveName
+		ARG 2 displayName
+	METHOD method_1006 deleteWorldDirectory (Ljava/lang/String;)V
+		ARG 1 worldName
 	METHOD method_1007 isOldMapFormat (Ljava/lang/String;)Z
+		ARG 1 worldName
 	METHOD method_1008 convertMapFormat (Ljava/lang/String;Lnet/minecraft/class_62;)Z
+		ARG 1 worldName
+		ARG 2 progressUpdate
+	METHOD method_1009 getSaveHandler (Ljava/lang/String;Z)Lnet/minecraft/class_52;
+		ARG 1 worldName
+		ARG 2 createPlayerDirectory
 	METHOD method_885 getSaveLoader (Ljava/lang/String;Z)Lnet/minecraft/class_52;
-	

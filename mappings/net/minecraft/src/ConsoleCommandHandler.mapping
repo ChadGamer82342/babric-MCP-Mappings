@@ -1,3 +1,19 @@
 CLASS net/minecraft/class_426 net/minecraft/src/ConsoleCommandHandler
 	FIELD field_1686 minecraftLogger Ljava/util/logging/Logger;
 	FIELD field_1687 minecraftServer Lnet/minecraft/server/MinecraftServer;
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;)V
+		ARG 1 minecraftServer
+	METHOD method_1411 executeCommand (Lnet/minecraft/class_38;)V
+		ARG 1 command
+	METHOD method_1412 parseInt (Ljava/lang/String;I)I
+		ARG 1 value
+		ARG 2 defaultValue
+	METHOD method_1413 sendCommandResult (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 command
+		ARG 2 result
+	METHOD method_1414 handleWhitelistCommand (Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_39;)V
+		ARG 1 username
+		ARG 2 command
+		ARG 3 commandListener
+	METHOD method_1415 showHelp (Lnet/minecraft/class_39;)V
+		ARG 1 commandListener

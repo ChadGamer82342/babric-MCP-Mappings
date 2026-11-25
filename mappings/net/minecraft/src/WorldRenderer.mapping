@@ -31,13 +31,27 @@ CLASS net/minecraft/class_66 net/minecraft/src/WorldRenderer
 	FIELD field_252 isVisible Z
 	FIELD field_253 isWaitingOnOcclusionQuery Z
 	FIELD field_254 glOcclusionQuery I
+	METHOD <init> (Lnet/minecraft/class_18;Ljava/util/List;IIIII)V
+		ARG 1 world
+		ARG 2 tileEntities
+		ARG 3 x
+		ARG 4 y
+		ARG 5 z
+		ARG 6 width
+		ARG 7 height
 	METHOD method_296 updateRenderer ()V
 	METHOD method_297 getGLCallListForPass (I)I
+		ARG 1 renderPass
 	METHOD method_298 setPosition (III)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
 	METHOD method_299 distanceToEntitySquared (Lnet/minecraft/class_57;)F
+		ARG 1 entity
 	METHOD method_300 updateInFrustrum (Lnet/minecraft/class_68;)V
+		ARG 1 camera
 	METHOD method_301 setDontDraw ()V
-	METHOD method_302 func_1204_c ()V
+	METHOD method_302 clearWorldRenderer ()V
 	METHOD method_303 callOcclusionQueryList ()V
 	METHOD method_304 skipAllRenderPasses ()Z
 	METHOD method_305 markDirty ()V

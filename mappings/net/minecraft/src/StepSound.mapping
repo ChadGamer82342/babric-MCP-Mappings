@@ -1,8 +1,12 @@
 CLASS net/minecraft/class_475 net/minecraft/src/StepSound
-	FIELD field_2598 field_1678_a Ljava/lang/String;
-	FIELD field_2599 field_1677_b F
-	FIELD field_2600 field_1679_c F
+	FIELD field_2598 soundName Ljava/lang/String;
+	FIELD field_2599 volume F
+	FIELD field_2600 pitch F
+	METHOD <init> (Ljava/lang/String;FF)V
+		ARG 1 soundName
+		ARG 2 volume
+		ARG 3 pitch
 	METHOD method_1976 getVolume ()F
 	METHOD method_1977 getPitch ()F
-	METHOD method_1978 func_1145_d ()Ljava/lang/String;
+	METHOD method_1978 getStepSound ()Ljava/lang/String;
 	METHOD method_1979 stepSoundDir ()Ljava/lang/String;

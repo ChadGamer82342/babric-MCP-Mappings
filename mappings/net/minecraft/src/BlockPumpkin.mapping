@@ -1,2 +1,6 @@
 CLASS net/minecraft/class_49 net/minecraft/src/BlockPumpkin
 	FIELD field_178 blockType Z
+	METHOD <init> (IIZ)V
+		ARG 1 blockId
+		ARG 2 textureId
+		ARG 3 lit

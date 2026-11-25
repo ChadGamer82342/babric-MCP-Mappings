@@ -6,8 +6,38 @@ CLASS net/minecraft/class_69 net/minecraft/src/EntityPlayerMP
 	FIELD field_259 playerInventory [Lnet/minecraft/class_31;
 	FIELD field_260 currentWindowId I
 	FIELD field_261 itemInWorldManager Lnet/minecraft/class_70;
-	FIELD field_262 field_9155_d D
-	FIELD field_263 field_9154_e D
+	FIELD field_262 lastPosX D
+	FIELD field_263 lastPosZ D
 	FIELD field_264 loadedChunks Ljava/util/List;
-	FIELD field_265 field_420_ah Ljava/util/Set;
+	FIELD field_265 loadedChunksSet Ljava/util/Set;
 	FIELD field_266 isChangingQuantityOnly Z
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/class_18;Ljava/lang/String;Lnet/minecraft/class_70;)V
+		ARG 1 minecraftServer
+		ARG 2 world
+		ARG 3 username
+		ARG 4 itemInWorldManager
+	METHOD method_307 closeContainer ()V
+	METHOD method_308 mountEntityAndWakeUp ()V
+	METHOD method_309 resetHealth ()V
+	METHOD method_310 setMovementInput (FFZZFF)V
+		ARG 1 strafe
+		ARG 2 forward
+		ARG 3 jumping
+		ARG 4 sneaking
+		ARG 5 pitch
+		ARG 6 yaw
+	METHOD method_311 sendContainerToPlayer (Lnet/minecraft/class_71;)V
+		ARG 1 container
+	METHOD method_312 sendTileEntityUpdate (Lnet/minecraft/class_55;)V
+		ARG 1 tileEntity
+	METHOD method_313 onUpdateEntity (Z)V
+		ARG 1 sendChunkUpdates
+	METHOD method_314 updateWindowId ()V
+	METHOD method_315 updateFallStateFromPacket (DZ)V
+		ARG 1 distanceFallen
+		ARG 3 onGround
+	METHOD method_316 getCurrentItemOrArmor (I)Lnet/minecraft/class_31;
+		ARG 1 slot
+	METHOD method_317 updateCraftingInventory ()V
+	METHOD method_318 resetPlayer ()V
+	METHOD method_319 sendCursorItemToPlayer ()V

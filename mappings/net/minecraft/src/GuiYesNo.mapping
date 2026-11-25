@@ -2,6 +2,13 @@ CLASS net/minecraft/class_565 net/minecraft/src/GuiYesNo
 	FIELD field_2394 parentScreen Lnet/minecraft/class_32;
 	FIELD field_2395 message1 Ljava/lang/String;
 	FIELD field_2396 message2 Ljava/lang/String;
-	FIELD field_2397 field_22106_k Ljava/lang/String;
-	FIELD field_2398 field_22105_l Ljava/lang/String;
+	FIELD field_2397 title Ljava/lang/String;
+	FIELD field_2398 message Ljava/lang/String;
 	FIELD field_2399 worldNumber I
+	METHOD <init> (Lnet/minecraft/class_32;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+		ARG 1 parentScreen
+		ARG 2 message1
+		ARG 3 message2
+		ARG 4 confirmButtonText
+		ARG 5 cancelButtonText
+		ARG 6 id

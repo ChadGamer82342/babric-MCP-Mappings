@@ -1,3 +1,12 @@
 CLASS net/minecraft/class_457 net/minecraft/src/BlockPressurePlate
 	FIELD field_1743 triggerMobType Lnet/minecraft/class_389;
+	METHOD <init> (IILnet/minecraft/class_389;Lnet/minecraft/class_15;)V
+		ARG 1 blockId
+		ARG 2 textureId
+		ARG 3 triggerMobType
+		ARG 4 material
 	METHOD method_1512 setStateIfMobInteractsWithPlate (Lnet/minecraft/class_18;III)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

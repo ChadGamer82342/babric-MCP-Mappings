@@ -1,3 +1,5 @@
 CLASS net/minecraft/class_218 net/minecraft/src/GuiDownloadTerrain
 	FIELD field_840 netHandler Lnet/minecraft/class_219;
 	FIELD field_841 updateCounter I
+	METHOD <init> (Lnet/minecraft/class_219;)V
+		ARG 1 netClientHandler

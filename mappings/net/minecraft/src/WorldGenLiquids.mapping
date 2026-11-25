@@ -1,2 +1,4 @@
 CLASS net/minecraft/class_529 net/minecraft/src/WorldGenLiquids
 	FIELD field_2209 liquidBlockId I
+	METHOD <init> (I)V
+		ARG 1 blockId

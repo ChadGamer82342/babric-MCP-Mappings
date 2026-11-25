@@ -1,21 +1,9 @@
 CLASS net/minecraft/class_117 net/minecraft/src/NetworkManager
-	CLASS 1 NetworkWriterThread
-		FIELD field_1299 netManager Lnet/minecraft/class_117;
-
-	CLASS 2 ThreadMonitorConnection
-		FIELD field_1300 field_28109_a Lnet/minecraft/class_117;
-
-	CLASS 3 NetworkMasterThread
-		FIELD field_1301 netManager Lnet/minecraft/class_117;
-
-	CLASS 4 NetworkReaderThread
-		FIELD field_1302 netManager Lnet/minecraft/class_117;
-
 	FIELD field_1274 threadSyncObject Ljava/lang/Object;
 	FIELD field_1275 numReadThreads I
 	FIELD field_1276 numWriteThreads I
-	FIELD field_1277 field_28145_d [I
-	FIELD field_1278 field_28144_e [I
+	FIELD field_1277 packetSentBytes [I
+	FIELD field_1278 packetReceivedBytes [I
 	FIELD field_1279 chunkDataSendCounter I
 	FIELD field_1280 sendQueueLock Ljava/lang/Object;
 	FIELD field_1281 networkSocket Ljava/net/Socket;
@@ -32,24 +20,51 @@ CLASS net/minecraft/class_117 net/minecraft/src/NetworkManager
 	FIELD field_1292 readThread Ljava/lang/Thread;
 	FIELD field_1293 isTerminating Z
 	FIELD field_1294 terminationReason Ljava/lang/String;
-	FIELD field_1295 field_20101_t [Ljava/lang/Object;
+	FIELD field_1295 terminationArguments [Ljava/lang/Object;
 	FIELD field_1296 timeSinceLastRead I
 	FIELD field_1297 sendQueueByteLength I
-	FIELD field_1298 field_20100_w I
+	FIELD field_1298 chunkDataSendDelay I
+	METHOD <init> (Ljava/net/Socket;Ljava/lang/String;Lnet/minecraft/class_240;)V
+		ARG 1 socket
+		ARG 2 remoteAddress
+		ARG 3 netHandler
 	METHOD method_1122 wakeThreads ()V
 	METHOD method_1123 addToSendQueue (Lnet/minecraft/class_169;)V
+		ARG 1 packet
 	METHOD method_1124 onNetworkError (Ljava/lang/Exception;)V
+		ARG 1 error
 	METHOD method_1125 networkShutdown (Ljava/lang/String;[Ljava/lang/Object;)V
+		ARG 1 reason
+		ARG 2 arguments
 	METHOD method_1126 isRunning (Lnet/minecraft/class_117;)Z
-	METHOD method_1127 func_30005_a (Lnet/minecraft/class_117;Ljava/lang/Exception;)V
+	METHOD method_1128 setNetHandler (Lnet/minecraft/class_240;)V
+		ARG 1 netHandler
 	METHOD method_1129 processReadPackets ()V
 	METHOD method_1130 isServerTerminating (Lnet/minecraft/class_117;)Z
+	METHOD method_1131 getRemoteSocketAddress ()Ljava/net/SocketAddress;
 	METHOD method_1132 readNetworkPacket (Lnet/minecraft/class_117;)Z
-	METHOD method_1133 func_28142_c ()V
+	METHOD method_1133 closeConnection ()V
 	METHOD method_1134 sendNetworkPacket (Lnet/minecraft/class_117;)Z
-	METHOD method_1136 func_28140_f (Lnet/minecraft/class_117;)Ljava/io/DataOutputStream;
+	METHOD method_1135 getPendingPacketCount ()I
 	METHOD method_1137 sendPacket ()Z
-	METHOD method_1138 func_28138_e (Lnet/minecraft/class_117;)Z
 	METHOD method_1139 readPacket ()Z
 	METHOD method_1140 getReadThread (Lnet/minecraft/class_117;)Ljava/lang/Thread;
 	METHOD method_1141 getWriteThread (Lnet/minecraft/class_117;)Ljava/lang/Thread;
+	CLASS 1 NetworkWriterThread
+		FIELD field_1299 netManager Lnet/minecraft/class_117;
+		METHOD <init> (Lnet/minecraft/class_117;Ljava/lang/String;)V
+			ARG 1 networkManager
+			ARG 2 threadName
+	CLASS 2 ThreadMonitorConnection
+		FIELD field_1300 networkManager Lnet/minecraft/class_117;
+		METHOD <init> (Lnet/minecraft/class_117;)V
+			ARG 1 networkManager
+	CLASS 3 NetworkMasterThread
+		FIELD field_1301 netManager Lnet/minecraft/class_117;
+		METHOD <init> (Lnet/minecraft/class_117;)V
+			ARG 1 networkManager
+	CLASS 4 NetworkReaderThread
+		FIELD field_1302 netManager Lnet/minecraft/class_117;
+		METHOD <init> (Lnet/minecraft/class_117;Ljava/lang/String;)V
+			ARG 1 networkManager
+			ARG 2 threadName

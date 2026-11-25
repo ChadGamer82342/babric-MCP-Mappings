@@ -1,12 +1,24 @@
 CLASS net/minecraft/class_40 net/minecraft/src/EntityPlayerSP
 	FIELD field_161 movementInput Lnet/minecraft/class_41;
 	FIELD field_162 mc Lnet/minecraft/client/Minecraft;
-	FIELD field_163 field_21903_bJ Lnet/minecraft/class_12;
-	FIELD field_164 field_21904_bK Lnet/minecraft/class_12;
-	FIELD field_165 field_21902_bL Lnet/minecraft/class_12;
+	FIELD field_163 movementInputHandler Lnet/minecraft/class_12;
+	FIELD field_164 movementInputLast Lnet/minecraft/class_12;
+	FIELD field_165 movementInputOld Lnet/minecraft/class_12;
+	METHOD <init> (Lnet/minecraft/client/Minecraft;Lnet/minecraft/class_18;Lnet/minecraft/class_237;I)V
+		ARG 1 minecraft
+		ARG 2 world
+		ARG 3 session
+		ARG 4 dimension
 	METHOD method_136 handleKeyPress (IZ)V
+		ARG 1 keyCode
+		ARG 2 pressed
 	METHOD method_137 sendChatMessage (Ljava/lang/String;)V
+		ARG 1 message
 	METHOD method_138 isBlockTranslucent (III)Z
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
 	METHOD method_139 setHealth (I)V
+		ARG 1 health
 	METHOD method_140 resetPlayerKeyState ()V
 	METHOD method_141 getPlayerArmorValue ()I

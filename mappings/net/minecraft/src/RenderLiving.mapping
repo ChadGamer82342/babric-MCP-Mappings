@@ -1,17 +1,57 @@
 CLASS net/minecraft/class_245 net/minecraft/src/RenderLiving
 	FIELD field_909 mainModel Lnet/minecraft/class_173;
 	FIELD field_910 renderPassModel Lnet/minecraft/class_173;
+	METHOD <init> (Lnet/minecraft/class_173;F)V
+		ARG 1 model
+		ARG 2 shadowSize
 	METHOD method_815 setRenderPassModel (Lnet/minecraft/class_173;)V
+		ARG 1 model
 	METHOD method_816 getDeathMaxRotation (Lnet/minecraft/class_127;)F
+		ARG 1 entity
 	METHOD method_817 getColorMultiplier (Lnet/minecraft/class_127;FF)I
+		ARG 1 entity
+		ARG 2 partialTick
+		ARG 3 brightness
 	METHOD method_818 renderLivingLabel (Lnet/minecraft/class_127;Ljava/lang/String;DDDI)V
-	METHOD method_819 func_27005_b (Lnet/minecraft/class_127;IF)Z
-	METHOD method_820 func_167_c (Lnet/minecraft/class_127;F)F
+		ARG 1 entity
+		ARG 2 label
+		ARG 3 x
+		ARG 5 y
+		ARG 7 z
+		ARG 9 maxDistance
+	METHOD method_819 renderPass (Lnet/minecraft/class_127;IF)Z
+		ARG 1 entity
+		ARG 2 pass
+		ARG 3 partialTick
+	METHOD method_820 getSwingProgress (Lnet/minecraft/class_127;F)F
+		ARG 1 entity
+		ARG 2 partialTick
 	METHOD method_821 passSpecialRender (Lnet/minecraft/class_127;DDD)V
+		ARG 1 entity
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
 	METHOD method_822 doRenderLiving (Lnet/minecraft/class_127;DDDFF)V
 	METHOD method_823 preRenderCallback (Lnet/minecraft/class_127;F)V
+		ARG 1 entity
+		ARG 2 partialTick
 	METHOD method_824 rotateCorpse (Lnet/minecraft/class_127;FFF)V
+		ARG 1 entity
+		ARG 2 yaw
+		ARG 3 partialTick
+		ARG 4 unused
 	METHOD method_825 shouldRenderPass (Lnet/minecraft/class_127;IF)Z
-	METHOD method_826 func_22012_b (Lnet/minecraft/class_127;DDD)V
+		ARG 1 entity
+		ARG 2 pass
+		ARG 3 partialTick
+	METHOD method_826 renderLivingAt (Lnet/minecraft/class_127;DDD)V
+		ARG 1 entity
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
 	METHOD method_827 renderEquippedItems (Lnet/minecraft/class_127;F)V
-	METHOD method_828 func_170_d (Lnet/minecraft/class_127;F)F
+		ARG 1 entity
+		ARG 2 partialTick
+	METHOD method_828 getAgeInTicks (Lnet/minecraft/class_127;F)F
+		ARG 1 entity
+		ARG 2 partialTick

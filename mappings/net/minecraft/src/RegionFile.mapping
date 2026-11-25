@@ -1,30 +1,73 @@
 CLASS net/minecraft/class_353 net/minecraft/src/RegionFile
-	CLASS class_354 RegionFileChunkBuffer
-		FIELD field_1323 field_22284_a Lnet/minecraft/class_353;
-		FIELD field_1324 field_22283_b I
-		FIELD field_1325 field_22285_c I
-
 	FIELD field_1315 emptySector [B
 	FIELD field_1316 fileName Ljava/io/File;
 	FIELD field_1317 dataFile Ljava/io/RandomAccessFile;
 	FIELD field_1318 offsets [I
-	FIELD field_1319 field_22217_e [I
+	FIELD field_1319 timestamps [I
 	FIELD field_1320 sectorFree Ljava/util/ArrayList;
 	FIELD field_1321 sizeDelta I
-	FIELD field_1322 field_22214_h J
-	METHOD method_1158 func_22209_a ()I
+	FIELD field_1322 lastModified J
+	METHOD <init> (Ljava/io/File;)V
+		ARG 1 regionFile
+	METHOD method_1158 getAndResetSizeDelta ()I
 	METHOD method_1159 getChunkDataInputStream (II)Ljava/io/DataInputStream;
+		ARG 1 localChunkX
+		ARG 2 localChunkZ
 	METHOD method_1160 setOffset (III)V
+		ARG 1 localChunkX
+		ARG 2 localChunkZ
+		ARG 3 offset
 	METHOD method_1161 write (II[BI)V
+		ARG 1 localChunkX
+		ARG 2 localChunkZ
+		ARG 3 chunkData
+		ARG 4 dataLength
 	METHOD method_1162 write (I[BI)V
-	METHOD method_1163 func_22211_a (Ljava/lang/String;)V
-	METHOD method_1164 func_22197_a (Ljava/lang/String;IIILjava/lang/String;)V
-	METHOD method_1165 func_22199_a (Ljava/lang/String;IILjava/lang/String;)V
-	METHOD method_1166 func_22196_b ()V
+		ARG 1 sectorNumber
+		ARG 2 chunkData
+		ARG 3 dataLength
+	METHOD method_1163 logDebugMessage (Ljava/lang/String;)V
+		ARG 1 message
+	METHOD method_1164 logChunkOperation (Ljava/lang/String;IIILjava/lang/String;)V
+		ARG 1 operation
+		ARG 2 localChunkX
+		ARG 3 localChunkZ
+		ARG 4 dataLength
+		ARG 5 detail
+	METHOD method_1165 logRegionMessage (Ljava/lang/String;IILjava/lang/String;)V
+		ARG 1 operation
+		ARG 2 localChunkX
+		ARG 3 localChunkZ
+		ARG 4 detail
+	METHOD method_1166 close ()V
 	METHOD method_1167 getChunkDataOutputStream (II)Ljava/io/DataOutputStream;
-	METHOD method_1168 func_22208_b (III)V
+		ARG 1 localChunkX
+		ARG 2 localChunkZ
+	METHOD method_1168 setChunkTimestamp (III)V
+		ARG 1 localChunkX
+		ARG 2 localChunkZ
+		ARG 3 timestamp
 	METHOD method_1169 debugln (Ljava/lang/String;)V
+		ARG 1 message
 	METHOD method_1170 debugln (Ljava/lang/String;IILjava/lang/String;)V
-	METHOD method_1171 func_22202_c (II)Z
+		ARG 1 message
+		ARG 2 localChunkX
+		ARG 3 localChunkZ
+		ARG 4 detail
+	METHOD method_1171 hasChunk (II)Z
+		ARG 1 localChunkX
+		ARG 2 localChunkZ
 	METHOD method_1172 outOfBounds (II)Z
+		ARG 1 localChunkX
+		ARG 2 localChunkZ
 	METHOD method_1173 lastModified (II)I
+		ARG 1 localChunkX
+		ARG 2 localChunkZ
+	CLASS class_354 RegionFileChunkBuffer
+		FIELD field_1323 regionFile Lnet/minecraft/class_353;
+		FIELD field_1324 chunkX I
+		FIELD field_1325 chunkZ I
+		METHOD <init> (Lnet/minecraft/class_353;II)V
+			ARG 1 regionFile
+			ARG 2 localChunkX
+			ARG 3 localChunkZ

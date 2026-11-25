@@ -3,11 +3,29 @@ CLASS net/minecraft/class_75 net/minecraft/src/EffectRenderer
 	FIELD field_270 fxLayers [Ljava/util/List;
 	FIELD field_271 renderer Lnet/minecraft/class_76;
 	FIELD field_272 rand Ljava/util/Random;
+	METHOD <init> (Lnet/minecraft/class_18;Lnet/minecraft/class_76;)V
+		ARG 1 world
+		ARG 2 renderEngine
 	METHOD method_320 updateEffects ()V
 	METHOD method_321 addBlockHitEffects (IIII)V
+		ARG 1 blockX
+		ARG 2 blockY
+		ARG 3 blockZ
+		ARG 4 side
 	METHOD method_322 addBlockDestroyEffects (IIIII)V
+		ARG 1 blockX
+		ARG 2 blockY
+		ARG 3 blockZ
+		ARG 4 blockId
+		ARG 5 metadata
 	METHOD method_323 clearEffects (Lnet/minecraft/class_18;)V
+		ARG 1 world
 	METHOD method_324 renderParticles (Lnet/minecraft/class_57;F)V
+		ARG 1 camera
+		ARG 2 partialTick
 	METHOD method_325 addEffect (Lnet/minecraft/class_77;)V
+		ARG 1 effect
 	METHOD method_326 getStatistics ()Ljava/lang/String;
-	METHOD method_327 func_1187_b (Lnet/minecraft/class_57;F)V
+	METHOD method_327 renderLitParticles (Lnet/minecraft/class_57;F)V
+		ARG 1 camera
+		ARG 2 partialTick

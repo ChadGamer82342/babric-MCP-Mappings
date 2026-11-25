@@ -1,13 +1,25 @@
 CLASS net/minecraft/class_9 net/minecraft/src/NetworkListenThread
-	CLASS 1 NetworkAcceptThread
-		FIELD field_36 mcServer Lnet/minecraft/server/MinecraftServer;
-		FIELD field_37 field_985_b Lnet/minecraft/class_9;
-
 	FIELD field_28 logger Ljava/util/logging/Logger;
-	FIELD field_29 field_973_b Z
+	FIELD field_29 running Z
 	FIELD field_30 mcServer Lnet/minecraft/server/MinecraftServer;
 	FIELD field_31 serverSocket Ljava/net/ServerSocket;
 	FIELD field_32 networkAcceptThread Ljava/lang/Thread;
-	FIELD field_33 field_977_f I
+	FIELD field_33 connectionCounter I
 	FIELD field_34 pendingConnections Ljava/util/ArrayList;
 	FIELD field_35 playerList Ljava/util/ArrayList;
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Ljava/net/InetAddress;I)V
+		ARG 1 minecraftServer
+		ARG 2 bindAddress
+		ARG 3 port
+	METHOD method_34 processNetwork ()V
+	METHOD method_37 addPendingConnection (Lnet/minecraft/class_10;)V
+		ARG 1 loginHandler
+	METHOD method_38 addPlayer (Lnet/minecraft/class_11;)V
+		ARG 1 playerHandler
+	CLASS 1 NetworkAcceptThread
+		FIELD field_36 mcServer Lnet/minecraft/server/MinecraftServer;
+		FIELD field_37 networkListenThread Lnet/minecraft/class_9;
+		METHOD <init> (Lnet/minecraft/class_9;Ljava/lang/String;Lnet/minecraft/server/MinecraftServer;)V
+			ARG 1 networkListenThread
+			ARG 2 threadName
+			ARG 3 minecraftServer

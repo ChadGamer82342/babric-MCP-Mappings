@@ -16,3 +16,6 @@ CLASS net/minecraft/class_259 net/minecraft/src/MapColor
 	FIELD field_2751 woodColor Lnet/minecraft/class_259;
 	FIELD field_2752 colorValue I
 	FIELD field_2753 colorIndex I
+	METHOD <init> (II)V
+		ARG 1 colorIndex
+		ARG 2 colorValue

@@ -10,14 +10,27 @@ CLASS net/minecraft/class_135 net/minecraft/src/EntityFish
 	FIELD field_1074 ticksInGround I
 	FIELD field_1075 ticksInAir I
 	FIELD field_1076 ticksCatchable I
-	FIELD field_1077 field_6388_l I
-	FIELD field_1078 field_6387_m D
-	FIELD field_1079 field_6386_n D
-	FIELD field_1080 field_6385_o D
-	FIELD field_1081 field_6384_p D
-	FIELD field_1082 field_6383_q D
+	FIELD field_1077 newPosRotationIncrements I
+	FIELD field_1078 newPosX D
+	FIELD field_1079 newPosY D
+	FIELD field_1080 newPosZ D
+	FIELD field_1081 newRotationYaw D
+	FIELD field_1082 newRotationPitch D
 	FIELD field_1083 velocityX D
 	FIELD field_1084 velocityY D
 	FIELD field_1085 velocityZ D
-	METHOD method_955 func_4042_a (DDDFF)V
+	METHOD <init> (Lnet/minecraft/class_18;DDD)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+	METHOD <init> (Lnet/minecraft/class_18;Lnet/minecraft/class_54;)V
+		ARG 1 world
+		ARG 2 angler
+	METHOD method_955 setThrowableHeading (DDDFF)V
+		ARG 1 directionX
+		ARG 3 directionY
+		ARG 5 directionZ
+		ARG 7 velocity
+		ARG 8 inaccuracy
 	METHOD method_956 catchFish ()I

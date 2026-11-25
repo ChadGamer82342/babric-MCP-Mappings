@@ -1,21 +1,21 @@
 CLASS net/minecraft/class_127 net/minecraft/src/EntityLiving
 	FIELD field_1009 heartsHalvesLife I
-	FIELD field_1010 field_9365_p F
-	FIELD field_1011 field_9363_r F
+	FIELD field_1010 randomYaw F
+	FIELD field_1011 randomOffset F
 	FIELD field_1012 renderYawOffset F
 	FIELD field_1013 prevRenderYawOffset F
-	FIELD field_1014 field_9362_u F
-	FIELD field_1015 field_9361_v F
-	FIELD field_1016 field_9360_w F
-	FIELD field_1017 field_9359_x F
-	FIELD field_1018 field_9358_y Z
+	FIELD field_1014 prevMovementAmount F
+	FIELD field_1015 movementAmount F
+	FIELD field_1016 movementAngle F
+	FIELD field_1017 prevMovementAngle F
+	FIELD field_1018 canPickUpLoot Z
 	FIELD field_1019 texture Ljava/lang/String;
-	FIELD field_1020 field_9355_A Z
-	FIELD field_1021 field_9353_B F
-	FIELD field_1022 field_9351_C Ljava/lang/String;
-	FIELD field_1023 field_9349_D F
+	FIELD field_1020 persistenceRequired Z
+	FIELD field_1021 rotationYawHead F
+	FIELD field_1022 entityType Ljava/lang/String;
+	FIELD field_1023 renderScale F
 	FIELD field_1024 scoreValue I
-	FIELD field_1025 field_9345_F F
+	FIELD field_1025 bodyRotation F
 	FIELD field_1026 isMultiplayerEntity Z
 	FIELD field_1027 prevSwingProgress F
 	FIELD field_1028 livingSoundTime I
@@ -34,21 +34,21 @@ CLASS net/minecraft/class_127 net/minecraft/src/EntityLiving
 	FIELD field_1041 deathTime I
 	FIELD field_1042 attackTime I
 	FIELD field_1043 cameraPitch F
-	FIELD field_1044 field_9328_R F
+	FIELD field_1044 prevCameraPitch F
 	FIELD field_1045 unused_flag Z
-	FIELD field_1046 field_9326_T I
-	FIELD field_1047 field_9325_U F
-	FIELD field_1048 field_705_Q F
-	FIELD field_1049 field_704_R F
-	FIELD field_1050 field_703_S F
+	FIELD field_1046 lastAttackedEntityId I
+	FIELD field_1047 randomBodyRotation F
+	FIELD field_1048 prevLimbSwingAmount F
+	FIELD field_1049 limbSwingAmount F
+	FIELD field_1050 limbSwing F
 	FIELD field_1051 newPosRotationIncrements I
 	FIELD field_1052 newPosX D
 	FIELD field_1053 newPosY D
 	FIELD field_1054 newPosZ D
 	FIELD field_1055 newRotationYaw D
 	FIELD field_1056 newRotationPitch D
-	FIELD field_1057 field_9348_ae F
-	FIELD field_1058 field_9346_af I
+	FIELD field_1057 unusedFloat F
+	FIELD field_1058 recentlyHit I
 	FIELD field_1059 entityAge I
 	FIELD field_1060 moveStrafing F
 	FIELD field_1061 currentTarget Lnet/minecraft/class_57;
@@ -61,20 +61,37 @@ CLASS net/minecraft/class_127 net/minecraft/src/EntityLiving
 	METHOD method_915 getSoundVolume ()F
 	METHOD method_916 getMaxSpawnedInChunk ()I
 	METHOD method_917 getItemIcon (Lnet/minecraft/class_31;)I
+		ARG 1 itemStack
 	METHOD method_918 playLivingSound ()V
 	METHOD method_919 spawnExplosionParticle ()V
-	METHOD method_920 func_27021_X ()V
+	METHOD method_920 despawnEntity ()V
 	METHOD method_921 hasCurrentTarget ()Z
 	METHOD method_922 getCurrentTarget ()Lnet/minecraft/class_57;
 	METHOD method_923 onEntityDeath ()V
 	METHOD method_924 faceEntity (Lnet/minecraft/class_57;FF)V
+		ARG 1 target
+		ARG 2 yawLimit
+		ARG 3 pitchLimit
 	METHOD method_925 knockBack (Lnet/minecraft/class_57;IDD)V
+		ARG 1 attacker
+		ARG 2 knockbackStrength
+		ARG 3 motionXRatio
+		ARG 5 motionZRatio
 	METHOD method_926 getLook (F)Lnet/minecraft/class_26;
+		ARG 1 partialTick
 	METHOD method_927 updateRotation (FFF)F
+		ARG 1 currentRotation
+		ARG 2 targetRotation
+		ARG 3 maxChange
 	METHOD method_928 canEntityBeSeen (Lnet/minecraft/class_57;)Z
+		ARG 1 entity
 	METHOD method_929 rayTrace (DF)Lnet/minecraft/class_27;
+		ARG 1 distance
+		ARG 3 partialTick
 	METHOD method_930 getSwingProgress (F)F
+		ARG 1 partialTick
 	METHOD method_931 getPosition (F)Lnet/minecraft/class_26;
+		ARG 1 partialTick
 	METHOD method_932 isOnLadder ()Z
 	METHOD method_933 dropFewItems ()V
 	METHOD method_934 canBreatheUnderwater ()Z
@@ -82,11 +99,16 @@ CLASS net/minecraft/class_127 net/minecraft/src/EntityLiving
 	METHOD method_936 getTalkInterval ()I
 	METHOD method_937 onLivingUpdate ()V
 	METHOD method_938 onDeath (Lnet/minecraft/class_57;)V
+		ARG 1 attacker
 	METHOD method_939 heal (I)V
+		ARG 1 amount
 	METHOD method_940 canDespawn ()Z
-	METHOD method_941 func_25026_x ()I
+	METHOD method_941 getVerticalFaceSpeed ()I
 	METHOD method_942 isMovementBlocked ()Z
 	METHOD method_943 isPlayerSleeping ()Z
 	METHOD method_944 jump ()V
 	METHOD method_945 moveEntityWithHeading (FF)V
+		ARG 1 strafe
+		ARG 2 forward
 	METHOD method_946 entityType (I)V
+		ARG 1 entityType

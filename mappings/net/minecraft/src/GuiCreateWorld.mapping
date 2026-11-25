@@ -1,8 +1,12 @@
 CLASS net/minecraft/class_180 net/minecraft/src/GuiCreateWorld
-	FIELD field_631 field_22131_a Lnet/minecraft/class_32;
+	FIELD field_631 parentScreen Lnet/minecraft/class_32;
 	FIELD field_632 textboxWorldName Lnet/minecraft/class_181;
 	FIELD field_633 textboxSeed Lnet/minecraft/class_181;
 	FIELD field_634 folderName Ljava/lang/String;
 	FIELD field_635 createClicked Z
+	METHOD <init> (Lnet/minecraft/class_32;)V
+		ARG 1 parentScreen
 	METHOD method_607 generateUnusedFolderName (Lnet/minecraft/class_182;Ljava/lang/String;)Ljava/lang/String;
-	METHOD method_608 func_22129_j ()V
+		ARG 0 saveFormat
+		ARG 1 worldName
+	METHOD method_608 updateFolderName ()V

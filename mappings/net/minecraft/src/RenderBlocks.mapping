@@ -1,19 +1,25 @@
 CLASS net/minecraft/class_13 net/minecraft/src/RenderBlocks
-	FIELD field_41 field_22371_s F
-	FIELD field_42 field_22370_t F
-	FIELD field_43 field_22369_u F
-	FIELD field_44 field_22368_v F
-	FIELD field_45 field_22367_w F
-	FIELD field_46 field_22366_x F
-	FIELD field_47 field_22365_y F
-	FIELD field_48 field_22364_z F
-	FIELD field_49 field_22362_A F
-	FIELD field_50 field_22360_B F
-	FIELD field_51 field_22358_C F
-	FIELD field_52 field_22356_D F
-	FIELD field_53 field_22354_E F
-	FIELD field_54 field_22353_F F
-	FIELD field_55 field_22352_G I
+	FIELD field_100 aoBrightnessXNegZNegBottom F
+	FIELD field_101 aoBrightnessXNegBottom F
+	FIELD field_102 aoBrightnessXNegZPosBottom F
+	FIELD field_103 aoBrightnessZNegBottom F
+	FIELD field_104 aoBrightnessZPosBottom F
+	FIELD field_105 aoBrightnessXPosZNegBottom F
+	FIELD field_41 aoBrightnessXPosBottom F
+	FIELD field_42 aoBrightnessXPosZPos F
+	FIELD field_43 aoBrightnessXNegZNeg F
+	FIELD field_44 aoBrightnessXNegTop F
+	FIELD field_45 aoBrightnessXNegZPos F
+	FIELD field_46 aoBrightnessZNegTop F
+	FIELD field_47 aoBrightnessXPosZNeg F
+	FIELD field_48 aoBrightnessXPosTop F
+	FIELD field_49 aoBrightnessZPosTop F
+	FIELD field_50 aoBrightnessXPosZPosTop F
+	FIELD field_51 aoBrightnessXNegSide F
+	FIELD field_52 aoBrightnessXPosSide F
+	FIELD field_53 aoBrightnessXNegFront F
+	FIELD field_54 aoBrightnessXPosFront F
+	FIELD field_55 aoBrightness I
 	FIELD field_56 colorRedTopLeft F
 	FIELD field_57 colorRedBottomLeft F
 	FIELD field_58 colorRedBottomRight F
@@ -27,29 +33,29 @@ CLASS net/minecraft/class_13 net/minecraft/src/RenderBlocks
 	FIELD field_66 colorBlueBottomRight F
 	FIELD field_67 fancyGrass Z
 	FIELD field_68 colorBlueTopRight F
-	FIELD field_69 field_22339_T Z
-	FIELD field_70 field_22338_U Z
-	FIELD field_71 field_22337_V Z
-	FIELD field_72 field_22336_W Z
-	FIELD field_73 field_22335_X Z
-	FIELD field_74 field_22334_Y Z
-	FIELD field_75 field_22333_Z Z
-	FIELD field_76 field_22363_aa Z
-	FIELD field_77 field_22361_ab Z
-	FIELD field_78 field_22359_ac Z
-	FIELD field_79 field_22357_ad Z
-	FIELD field_80 field_22355_ae Z
-	FIELD field_81 field_31088_b Z
+	FIELD field_69 aoGrassYPosZNeg Z
+	FIELD field_70 aoGrassXPosYPos Z
+	FIELD field_71 aoGrassXNegYPos Z
+	FIELD field_72 aoGrassYPosZPos Z
+	FIELD field_73 aoGrassXNegZNeg Z
+	FIELD field_74 aoGrassXPosZPos Z
+	FIELD field_75 aoGrassXNegZPos Z
+	FIELD field_76 aoGrassXPosZNeg Z
+	FIELD field_77 aoGrassYNegZPos Z
+	FIELD field_78 aoGrassYNegZNeg Z
+	FIELD field_79 aoGrassXNegYNeg Z
+	FIELD field_80 aoGrassXPosYNeg Z
+	FIELD field_81 renderWithColor Z
 	FIELD field_82 blockAccess Lnet/minecraft/class_14;
 	FIELD field_83 overrideBlockTexture I
 	FIELD field_84 flipTexture Z
 	FIELD field_85 renderAllFaces Z
-	FIELD field_86 field_31087_g I
-	FIELD field_87 field_31086_h I
-	FIELD field_88 field_31085_i I
-	FIELD field_89 field_31084_j I
-	FIELD field_90 field_31083_k I
-	FIELD field_91 field_31082_l I
+	FIELD field_86 eastFaceTextureRotation I
+	FIELD field_87 westFaceTextureRotation I
+	FIELD field_88 southFaceTextureRotation I
+	FIELD field_89 northFaceTextureRotation I
+	FIELD field_90 topFaceTextureRotation I
+	FIELD field_91 bottomFaceTextureRotation I
 	FIELD field_92 enableAO Z
 	FIELD field_93 lightValueOwn F
 	FIELD field_94 aoLightValueXNeg F
@@ -58,51 +64,247 @@ CLASS net/minecraft/class_13 net/minecraft/src/RenderBlocks
 	FIELD field_97 aoLightValueXPos F
 	FIELD field_98 aoLightValueYPos F
 	FIELD field_99 aoLightValueZPos F
-	FIELD field_100 field_22377_m F
-	FIELD field_101 field_22376_n F
-	FIELD field_102 field_22375_o F
-	FIELD field_103 field_22374_p F
-	FIELD field_104 field_22373_q F
-	FIELD field_105 field_22372_r F
-	METHOD method_41 func_31076_a (DDDDDDFD)V
+	METHOD <init> (Lnet/minecraft/class_14;)V
+		ARG 1 blockAccess
+	METHOD method_41 renderPistonExtensionFaceX (DDDDDDFD)V
+		ARG 1 minX
+		ARG 3 minY
+		ARG 5 minZ
+		ARG 7 maxX
+		ARG 9 maxY
+		ARG 11 maxZ
+		ARG 13 partialTick
+		ARG 14 textureOffset
 	METHOD method_42 renderItemIn3d (I)Z
-	METHOD method_43 func_1224_a (IIILnet/minecraft/class_15;)F
+		ARG 0 blockId
+	METHOD method_43 getFluidHeight (IIILnet/minecraft/class_15;)F
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 material
 	METHOD method_44 renderBlockMinecartTrack (Lnet/minecraft/class_16;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_45 renderTorchAtAngle (Lnet/minecraft/class_17;DDDDD)V
+		ARG 1 block
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 renderOffsetX
+		ARG 10 renderOffsetY
 	METHOD method_46 renderBottomFace (Lnet/minecraft/class_17;DDDI)V
+		ARG 1 block
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 texture
 	METHOD method_47 renderCrossedSquares (Lnet/minecraft/class_17;IDDD)V
+		ARG 1 block
+		ARG 2 metadata
+		ARG 3 x
+		ARG 5 y
+		ARG 7 z
 	METHOD method_48 renderBlockOnInventory (Lnet/minecraft/class_17;IF)V
-	METHOD method_49 func_31075_a (Lnet/minecraft/class_17;III)V
+		ARG 1 block
+		ARG 2 metadata
+		ARG 3 brightness
+	METHOD method_49 renderBlockAllFaces (Lnet/minecraft/class_17;III)V
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_50 renderStandardBlockWithAmbientOcclusion (Lnet/minecraft/class_17;IIIFFF)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 red
+		ARG 6 green
+		ARG 7 blue
 	METHOD method_51 renderBlockUsingTexture (Lnet/minecraft/class_17;IIII)V
-	METHOD method_52 func_31079_a (Lnet/minecraft/class_17;IIIZ)V
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 side
+	METHOD method_52 renderPistonExtensionAllFaces (Lnet/minecraft/class_17;IIIZ)V
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 renderAllFaces
 	METHOD method_53 renderBlockFallingSand (Lnet/minecraft/class_17;Lnet/minecraft/class_18;III)V
-	METHOD method_54 func_31081_b (DDDDDDFD)V
+		ARG 1 block
+		ARG 2 world
+		ARG 3 x
+		ARG 4 y
+		ARG 5 z
+	METHOD method_54 renderPistonExtensionFaceY (DDDDDDFD)V
+		ARG 1 minX
+		ARG 3 minY
+		ARG 5 minZ
+		ARG 7 maxX
+		ARG 9 maxY
+		ARG 11 maxZ
+		ARG 13 partialTick
+		ARG 14 textureOffset
 	METHOD method_55 renderTopFace (Lnet/minecraft/class_17;DDDI)V
-	METHOD method_56 func_1245_b (Lnet/minecraft/class_17;IDDD)V
+		ARG 1 block
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 texture
+	METHOD method_56 renderBlockAsItem (Lnet/minecraft/class_17;IDDD)V
+		ARG 1 block
+		ARG 2 metadata
+		ARG 3 x
+		ARG 5 y
+		ARG 7 z
 	METHOD method_57 renderBlockByRenderType (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_58 renderStandardBlockWithColorMultiplier (Lnet/minecraft/class_17;IIIFFF)Z
-	METHOD method_59 func_31074_b (Lnet/minecraft/class_17;IIIZ)Z
-	METHOD method_60 func_31077_c (DDDDDDFD)V
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 red
+		ARG 6 green
+		ARG 7 blue
+	METHOD method_59 renderPistonBase (Lnet/minecraft/class_17;IIIZ)Z
+		ARG 1 block
+		ARG 2 metadata
+		ARG 3 x
+		ARG 4 y
+		ARG 5 renderAllFaces
+	METHOD method_60 renderPistonExtensionFaceZ (DDDDDDFD)V
+		ARG 1 minX
+		ARG 3 minY
+		ARG 5 minZ
+		ARG 7 maxX
+		ARG 9 maxY
+		ARG 11 maxZ
+		ARG 13 partialTick
+		ARG 14 textureOffset
 	METHOD method_61 renderEastFace (Lnet/minecraft/class_17;DDDI)V
+		ARG 1 block
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 texture
 	METHOD method_62 renderBlockTorch (Lnet/minecraft/class_17;III)Z
-	METHOD method_63 func_1230_b (Lnet/minecraft/class_17;IIIFFF)Z
-	METHOD method_64 func_31080_c (Lnet/minecraft/class_17;IIIZ)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+	METHOD method_63 renderStandardBlockWithColor (Lnet/minecraft/class_17;IIIFFF)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 red
+		ARG 6 green
+		ARG 7 blue
+	METHOD method_64 renderPistonExtension (Lnet/minecraft/class_17;IIIZ)Z
+		ARG 1 block
+		ARG 2 metadata
+		ARG 3 x
+		ARG 4 y
+		ARG 5 renderAllFaces
 	METHOD method_65 renderWestFace (Lnet/minecraft/class_17;DDDI)V
-	METHOD method_66 func_31078_d (Lnet/minecraft/class_17;III)V
+		ARG 1 block
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 texture
+	METHOD method_66 renderPistonBaseAllFaces (Lnet/minecraft/class_17;III)V
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_67 renderNorthFace (Lnet/minecraft/class_17;DDDI)V
+		ARG 1 block
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 texture
 	METHOD method_68 renderBlockLever (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_69 renderSouthFace (Lnet/minecraft/class_17;DDDI)V
+		ARG 1 block
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 texture
 	METHOD method_70 renderBlockFire (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_71 renderBlockRedstoneWire (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_72 renderBlockLadder (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_73 renderBlockReed (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_74 renderBlockCrops (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_75 renderBlockFluids (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_76 renderStandardBlock (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_77 renderBlockCactus (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_78 renderBlockFence (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_79 renderBlockStairs (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_80 renderBlockDoor (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_81 renderBlockBed (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_82 renderBlockRepeater (Lnet/minecraft/class_17;III)Z
+		ARG 1 block
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

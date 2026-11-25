@@ -1,2 +1,4 @@
 CLASS net/minecraft/class_203 net/minecraft/src/CanvasMojangLogo
 	FIELD field_755 logo Ljava/awt/image/BufferedImage;
+	METHOD paint (Ljava/awt/Graphics;)V
+		ARG 1 graphics

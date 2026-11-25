@@ -1,3 +1,11 @@
 CLASS net/minecraft/class_473 net/minecraft/src/BlockFlower
+	METHOD <init> (II)V
+		ARG 1 blockId
+		ARG 2 texture
 	METHOD method_1683 canThisPlantGrowOnThisBlockID (I)Z
-	METHOD method_1684 func_268_h (Lnet/minecraft/class_18;III)V
+		ARG 1 blockId
+	METHOD method_1684 checkFlowerStay (Lnet/minecraft/class_18;III)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

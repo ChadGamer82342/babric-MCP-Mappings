@@ -1,19 +1,6 @@
 CLASS net/minecraft/server/MinecraftServer net/minecraft/server/MinecraftServer
-	CLASS class_643 ThreadServerApplication
-		FIELD field_2856 mcServer Lnet/minecraft/server/MinecraftServer;
-
-	CLASS class_644 ConvertProgressUpdater
-		FIELD field_2857 mcServer Lnet/minecraft/server/MinecraftServer;
-		FIELD field_2858 lastTimeMillis J
-
-	CLASS class_645 ThreadCommandReader
-		FIELD field_2859 mcServer Lnet/minecraft/server/MinecraftServer;
-
-	CLASS class_646 ThreadSleepForever
-		FIELD field_2860 mc Lnet/minecraft/server/MinecraftServer;
-
 	FIELD field_2837 logger Ljava/util/logging/Logger;
-	FIELD field_2838 field_6037_b Ljava/util/HashMap;
+	FIELD field_2838 scheduledTasks Ljava/util/HashMap;
 	FIELD field_2839 networkServer Lnet/minecraft/class_9;
 	FIELD field_2840 propertyManagerObj Lnet/minecraft/class_391;
 	FIELD field_2841 worldMngr [Lnet/minecraft/class_73;
@@ -29,5 +16,52 @@ CLASS net/minecraft/server/MinecraftServer net/minecraft/server/MinecraftServer
 	FIELD field_2851 allowFlight Z
 	FIELD field_2852 commandHandler Lnet/minecraft/class_426;
 	FIELD field_2853 serverRunning Z
-	FIELD field_2854 field_9010_p Ljava/util/List;
+	FIELD field_2854 updatePlayerList Ljava/util/List;
 	FIELD field_2855 commands Ljava/util/List;
+	METHOD main ([Ljava/lang/String;)V
+		ARG 0 arguments
+	METHOD method_2156 stopServer ()V
+	METHOD method_2157 getWorld (I)Lnet/minecraft/class_73;
+		ARG 1 dimension
+	METHOD method_2158 addServerThread (Lnet/minecraft/class_46;)V
+		ARG 1 updatePlayerListBox
+	METHOD method_2159 loadAllWorlds (Lnet/minecraft/class_182;Ljava/lang/String;J)V
+		ARG 1 saveFormat
+		ARG 2 worldName
+		ARG 3 seed
+	METHOD method_2160 getFile (Ljava/lang/String;)Ljava/io/File;
+		ARG 1 path
+	METHOD method_2161 setLoadingProgress (Ljava/lang/String;I)V
+		ARG 1 task
+		ARG 2 percent
+	METHOD method_2162 addCommand (Ljava/lang/String;Lnet/minecraft/class_39;)V
+		ARG 1 command
+		ARG 2 commandListener
+	METHOD method_2164 processCommandQueue ()V
+	METHOD method_2165 getEntityTracker (I)Lnet/minecraft/class_488;
+		ARG 1 dimension
+	METHOD method_2166 startServer ()Z
+	METHOD method_2167 logWarning (Ljava/lang/String;)V
+		ARG 1 message
+	METHOD method_2168 clearLoadingProgress ()V
+	METHOD method_2169 saveAllWorlds ()V
+	METHOD method_2170 shutdownServer ()V
+	METHOD method_2171 tick ()V
+	CLASS class_643 ThreadServerApplication
+		FIELD field_2856 mcServer Lnet/minecraft/server/MinecraftServer;
+		METHOD <init> (Ljava/lang/String;Lnet/minecraft/server/MinecraftServer;)V
+			ARG 1 serverName
+			ARG 2 minecraftServer
+	CLASS class_644 ConvertProgressUpdater
+		FIELD field_2857 mcServer Lnet/minecraft/server/MinecraftServer;
+		FIELD field_2858 lastTimeMillis J
+		METHOD <init> (Lnet/minecraft/server/MinecraftServer;)V
+			ARG 1 minecraftServer
+	CLASS class_645 ThreadCommandReader
+		FIELD field_2859 mcServer Lnet/minecraft/server/MinecraftServer;
+		METHOD <init> (Lnet/minecraft/server/MinecraftServer;)V
+			ARG 1 minecraftServer
+	CLASS class_646 ThreadSleepForever
+		FIELD field_2860 mc Lnet/minecraft/server/MinecraftServer;
+		METHOD <init> (Lnet/minecraft/server/MinecraftServer;)V
+			ARG 1 minecraftServer

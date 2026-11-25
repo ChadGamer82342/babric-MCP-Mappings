@@ -1,3 +1,6 @@
 CLASS net/minecraft/class_453 net/minecraft/src/ShapelessRecipes
 	FIELD field_1719 recipeOutput Lnet/minecraft/class_31;
 	FIELD field_1720 recipeItems Ljava/util/List;
+	METHOD <init> (Lnet/minecraft/class_31;Ljava/util/List;)V
+		ARG 1 recipeOutput
+		ARG 2 recipeItems

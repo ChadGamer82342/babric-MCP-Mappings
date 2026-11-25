@@ -4,3 +4,9 @@ CLASS net/minecraft/class_573 net/minecraft/src/Frustrum
 	FIELD field_2467 yPosition D
 	FIELD field_2468 zPosition D
 	METHOD method_1907 isBoxInFrustum (DDDDDD)Z
+		ARG 1 minX
+		ARG 3 minY
+		ARG 5 minZ
+		ARG 7 maxX
+		ARG 9 maxY
+		ARG 11 maxZ

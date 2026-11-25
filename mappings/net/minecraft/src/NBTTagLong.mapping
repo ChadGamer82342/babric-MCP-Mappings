@@ -1,2 +1,4 @@
 CLASS net/minecraft/class_273 net/minecraft/src/NBTTagLong
 	FIELD field_1122 longValue J
+	METHOD <init> (J)V
+		ARG 1 value

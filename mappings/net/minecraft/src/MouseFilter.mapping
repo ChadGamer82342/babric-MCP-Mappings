@@ -1,5 +1,7 @@
 CLASS net/minecraft/class_12 net/minecraft/src/MouseFilter
-	FIELD field_38 field_22388_a F
-	FIELD field_39 field_22387_b F
-	FIELD field_40 field_22389_c F
-	METHOD method_40 func_22386_a (FF)F
+	FIELD field_38 lastDelta F
+	FIELD field_39 smoothedDelta F
+	FIELD field_40 previousDelta F
+	METHOD method_40 smooth (FF)F
+		ARG 1 input
+		ARG 2 smoothingFactor

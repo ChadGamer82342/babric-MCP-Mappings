@@ -1,2 +1,4 @@
 CLASS net/minecraft/class_47 net/minecraft/src/RenderSnowball
 	FIELD field_177 itemIconIndex I
+	METHOD <init> (I)V
+		ARG 1 itemId

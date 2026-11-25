@@ -1,9 +1,44 @@
 CLASS net/minecraft/class_584 net/minecraft/src/Gui
 	FIELD field_2522 zLevel F
-	METHOD method_1931 func_27100_a (IIII)V
+	METHOD method_1931 drawTexturedModalRect (IIII)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 textureX
+		ARG 4 textureY
 	METHOD method_1932 drawRect (IIIII)V
+		ARG 1 left
+		ARG 2 top
+		ARG 3 right
+		ARG 4 bottom
+		ARG 5 color
 	METHOD method_1933 drawGradientRect (IIIIII)V
+		ARG 1 left
+		ARG 2 top
+		ARG 3 right
+		ARG 4 bottom
+		ARG 5 startColor
+		ARG 6 endColor
 	METHOD method_1934 drawCenteredString (Lnet/minecraft/class_34;Ljava/lang/String;III)V
-	METHOD method_1935 func_27099_b (IIII)V
+		ARG 1 fontRenderer
+		ARG 2 text
+		ARG 3 x
+		ARG 4 y
+		ARG 5 color
+	METHOD method_1935 drawVerticalLine (IIII)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 textureX
+		ARG 4 textureY
 	METHOD method_1936 drawTexturedModalRect (IIIIII)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 textureX
+		ARG 4 textureY
+		ARG 5 width
+		ARG 6 height
 	METHOD method_1937 drawString (Lnet/minecraft/class_34;Ljava/lang/String;III)V
+		ARG 1 fontRenderer
+		ARG 2 text
+		ARG 3 x
+		ARG 4 y
+		ARG 5 color

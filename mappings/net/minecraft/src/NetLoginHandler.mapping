@@ -1,8 +1,4 @@
 CLASS net/minecraft/class_10 net/minecraft/src/NetLoginHandler
-	CLASS 1 ThreadLoginVerifier
-		FIELD field_362 loginPacket Lnet/minecraft/class_118;
-		FIELD field_363 loginHandler Lnet/minecraft/class_10;
-
 	FIELD field_353 logger Ljava/util/logging/Logger;
 	FIELD field_354 netManager Lnet/minecraft/class_117;
 	FIELD field_355 finishedProcessing Z
@@ -12,3 +8,19 @@ CLASS net/minecraft/class_10 net/minecraft/src/NetLoginHandler
 	FIELD field_359 username Ljava/lang/String;
 	FIELD field_360 packet1login Lnet/minecraft/class_118;
 	FIELD field_361 serverId Ljava/lang/String;
+	METHOD <init> (Lnet/minecraft/server/MinecraftServer;Ljava/net/Socket;Ljava/lang/String;)V
+		ARG 1 minecraftServer
+		ARG 2 socket
+		ARG 3 remoteAddress
+	METHOD method_414 processLogin ()V
+	METHOD method_417 kickUser (Ljava/lang/String;)V
+		ARG 1 reason
+	METHOD method_418 getDescription ()Ljava/lang/String;
+	METHOD method_419 handleLoginPacket (Lnet/minecraft/class_118;)V
+		ARG 1 loginPacket
+	CLASS 1 ThreadLoginVerifier
+		FIELD field_362 loginPacket Lnet/minecraft/class_118;
+		FIELD field_363 loginHandler Lnet/minecraft/class_10;
+		METHOD <init> (Lnet/minecraft/class_10;Lnet/minecraft/class_118;)V
+			ARG 1 loginHandler
+			ARG 2 loginPacket

@@ -1,6 +1,8 @@
 CLASS net/minecraft/class_45 net/minecraft/src/Packet71Weather
-	FIELD field_172 field_27054_a I
-	FIELD field_173 field_27053_b I
-	FIELD field_174 field_27057_c I
-	FIELD field_175 field_27056_d I
-	FIELD field_176 field_27055_e I
+	FIELD field_172 entityId I
+	FIELD field_173 xPosition I
+	FIELD field_174 yPosition I
+	FIELD field_175 zPosition I
+	FIELD field_176 weatherType I
+	METHOD <init> (Lnet/minecraft/class_57;)V
+		ARG 1 entity

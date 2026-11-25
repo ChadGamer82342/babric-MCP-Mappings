@@ -3,3 +3,8 @@ CLASS net/minecraft/class_201 net/minecraft/src/Packet100OpenWindow
 	FIELD field_742 inventoryType I
 	FIELD field_743 windowTitle Ljava/lang/String;
 	FIELD field_744 slotsCount I
+	METHOD <init> (IILjava/lang/String;I)V
+		ARG 1 windowId
+		ARG 2 inventoryType
+		ARG 3 windowTitle
+		ARG 4 slotCount

@@ -2,3 +2,7 @@ CLASS net/minecraft/class_1 net/minecraft/src/Packet7UseEntity
 	FIELD field_1 playerEntityId I
 	FIELD field_2 targetEntity I
 	FIELD field_3 isLeftClick I
+	METHOD <init> (III)V
+		ARG 1 playerEntityId
+		ARG 2 targetEntityId
+		ARG 3 action

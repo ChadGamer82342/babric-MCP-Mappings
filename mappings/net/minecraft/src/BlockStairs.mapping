@@ -1,2 +1,5 @@
 CLASS net/minecraft/class_416 net/minecraft/src/BlockStairs
 	FIELD field_1672 modelBlock Lnet/minecraft/class_17;
+	METHOD <init> (ILnet/minecraft/class_17;)V
+		ARG 1 blockId
+		ARG 2 modelBlock

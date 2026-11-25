@@ -1,5 +1,16 @@
 CLASS net/minecraft/class_105 net/minecraft/src/MapGenBase
-	FIELD field_330 field_1306_a I
+	FIELD field_330 random I
 	FIELD field_331 rand Ljava/util/Random;
-	METHOD method_395 func_867_a (Lnet/minecraft/class_51;Lnet/minecraft/class_18;II[B)V
-	METHOD method_396 func_868_a (Lnet/minecraft/class_18;IIII[B)V
+	METHOD method_395 generate (Lnet/minecraft/class_51;Lnet/minecraft/class_18;II[B)V
+		ARG 1 chunkProvider
+		ARG 2 world
+		ARG 3 chunkX
+		ARG 4 chunkZ
+		ARG 5 blocks
+	METHOD method_396 recursiveGenerate (Lnet/minecraft/class_18;IIII[B)V
+		ARG 1 world
+		ARG 2 chunkX
+		ARG 3 chunkZ
+		ARG 4 originChunkX
+		ARG 5 originChunkZ
+		ARG 6 blocks

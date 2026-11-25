@@ -1,22 +1,22 @@
 CLASS net/minecraft/class_555 net/minecraft/src/EntityRenderer
-	FIELD field_2327 field_22221_y F
-	FIELD field_2328 field_22220_z F
-	FIELD field_2329 field_22230_A F
+	FIELD field_2327 prevCameraRoll F
+	FIELD field_2328 cameraRoll F
+	FIELD field_2329 cameraRollOffset F
 	FIELD field_2330 cloudFog Z
 	FIELD field_2331 cameraZoom D
 	FIELD field_2332 cameraYaw D
 	FIELD field_2333 cameraPitch D
 	FIELD field_2334 prevFrameTime J
-	FIELD field_2335 field_28133_I J
+	FIELD field_2335 renderStartTime J
 	FIELD field_2336 random Ljava/util/Random;
 	FIELD field_2337 rainSoundCounter I
 	FIELD field_2338 fogColor2 F
 	FIELD field_2339 fogColor1 F
-	FIELD field_2340 field_28135_a Z
+	FIELD field_2340 anaglyphEnabled Z
 	FIELD field_2341 anaglyphField I
 	FIELD field_2342 itemRenderer Lnet/minecraft/class_556;
-	FIELD field_2343 field_1394_b I
-	FIELD field_2344 field_1393_c I
+	FIELD field_2343 renderState I
+	FIELD field_2344 renderState2 I
 	FIELD field_2345 fogColorBuffer Ljava/nio/FloatBuffer;
 	FIELD field_2346 fogColorRed F
 	FIELD field_2347 fogColorGreen F
@@ -31,26 +31,48 @@ CLASS net/minecraft/class_555 net/minecraft/src/EntityRenderer
 	FIELD field_2356 mouseFilterDummy2 Lnet/minecraft/class_12;
 	FIELD field_2357 mouseFilterDummy3 Lnet/minecraft/class_12;
 	FIELD field_2358 mouseFilterDummy4 Lnet/minecraft/class_12;
-	FIELD field_2359 field_22228_r F
-	FIELD field_2360 field_22227_s F
-	FIELD field_2361 field_22226_t F
-	FIELD field_2362 field_22225_u F
-	FIELD field_2363 field_22224_v F
-	FIELD field_2364 field_22223_w F
-	FIELD field_2365 field_22222_x F
+	FIELD field_2359 thirdPersonDistance F
+	FIELD field_2360 prevThirdPersonDistance F
+	FIELD field_2361 thirdPersonYaw F
+	FIELD field_2362 prevThirdPersonYaw F
+	FIELD field_2363 thirdPersonPitch F
+	FIELD field_2364 prevThirdPersonPitch F
+	FIELD field_2365 targetFov F
+	METHOD <init> (Lnet/minecraft/client/Minecraft;)V
+		ARG 1 minecraft
 	METHOD method_1837 updateRenderer ()V
 	METHOD method_1838 getMouseOver (F)V
-	METHOD method_1839 func_908_a (FFFF)Ljava/nio/FloatBuffer;
+		ARG 1 partialTick
+	METHOD method_1839 getFloatBuffer (FFFF)Ljava/nio/FloatBuffer;
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 w
 	METHOD method_1840 setupCameraTransform (FI)V
+		ARG 1 partialTick
+		ARG 2 pass
 	METHOD method_1841 renderWorld (FJ)V
+		ARG 1 partialTick
+		ARG 2 finishTimeNano
 	METHOD method_1842 setupFog (IF)V
-	METHOD method_1843 func_905_b ()V
+		ARG 1 fogMode
+		ARG 2 partialTick
+	METHOD method_1843 setupOverlayRendering ()V
 	METHOD method_1844 updateCameraAndRender (F)V
-	METHOD method_1845 func_4135_b (FI)V
+		ARG 1 partialTick
+	METHOD method_1845 renderHand (FI)V
+		ARG 1 partialTick
+		ARG 2 eyeIndex
 	METHOD method_1846 addRainParticles ()V
 	METHOD method_1847 renderRainSnow (F)V
+		ARG 1 partialTick
 	METHOD method_1848 getFOVModifier (F)F
+		ARG 1 partialTick
 	METHOD method_1849 hurtCameraEffect (F)V
+		ARG 1 partialTick
 	METHOD method_1850 setupViewBobbing (F)V
+		ARG 1 partialTick
 	METHOD method_1851 orientCamera (F)V
+		ARG 1 partialTick
 	METHOD method_1852 updateFogColor (F)V
+		ARG 1 partialTick

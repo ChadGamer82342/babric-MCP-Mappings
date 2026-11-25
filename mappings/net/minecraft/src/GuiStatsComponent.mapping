@@ -1,7 +1,13 @@
 CLASS net/minecraft/class_247 net/minecraft/src/GuiStatsComponent
-	CLASS 1 GuiStatsListener
-		FIELD field_915 statsComponent Lnet/minecraft/class_247;
-
 	FIELD field_912 memoryUse [I
 	FIELD field_913 updateCounter I
 	FIELD field_914 displayStrings [Ljava/lang/String;
+	METHOD method_829 updateStats ()V
+	METHOD paint (Ljava/awt/Graphics;)V
+		ARG 1 graphics
+	CLASS 1 GuiStatsListener
+		FIELD field_915 statsComponent Lnet/minecraft/class_247;
+		METHOD <init> (Lnet/minecraft/class_247;)V
+			ARG 1 statsComponent
+		METHOD actionPerformed (Ljava/awt/event/ActionEvent;)V
+			ARG 1 event

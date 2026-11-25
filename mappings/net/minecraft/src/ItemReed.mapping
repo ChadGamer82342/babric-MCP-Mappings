@@ -1,2 +1,5 @@
 CLASS net/minecraft/class_262 net/minecraft/src/ItemReed
-	FIELD field_1062 field_320_a I
+	FIELD field_1062 blockId I
+	METHOD <init> (ILnet/minecraft/class_17;)V
+		ARG 1 itemId
+		ARG 2 block

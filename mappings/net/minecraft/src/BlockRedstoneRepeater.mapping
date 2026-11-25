@@ -1,5 +1,13 @@
 CLASS net/minecraft/class_510 net/minecraft/src/BlockRedstoneRepeater
-	FIELD field_2123 field_22024_a [D
-	FIELD field_2124 field_22023_b [I
+	FIELD field_2123 TORCH_OFFSETS [D
+	FIELD field_2124 REPEATER_DELAYS [I
 	FIELD field_2125 isRepeaterPowered Z
-	METHOD method_1728 func_22022_g (Lnet/minecraft/class_18;IIII)Z
+	METHOD <init> (IZ)V
+		ARG 1 blockId
+		ARG 2 powered
+	METHOD method_1728 isIndirectlyPowered (Lnet/minecraft/class_18;IIII)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 metadata

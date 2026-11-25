@@ -1,19 +1,37 @@
 CLASS net/minecraft/class_96 net/minecraft/src/StatFileWriter
-	FIELD field_2604 field_25102_a Ljava/util/Map;
-	FIELD field_2605 field_25101_b Ljava/util/Map;
-	FIELD field_2606 field_27189_c Z
+	FIELD field_2604 statsData Ljava/util/Map;
+	FIELD field_2605 unsentStats Ljava/util/Map;
+	FIELD field_2606 statsDirty Z
 	FIELD field_2607 statsSyncher Lnet/minecraft/class_605;
-	METHOD method_1983 func_27176_a ()Ljava/util/Map;
-	METHOD method_1984 func_27177_a (Ljava/lang/String;)Ljava/util/Map;
-	METHOD method_1985 func_27185_a (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
-	METHOD method_1986 func_27179_a (Ljava/util/Map;)V
+	METHOD <init> (Lnet/minecraft/class_237;Ljava/io/File;)V
+		ARG 1 session
+		ARG 2 file
+	METHOD method_1983 getStatsMap ()Ljava/util/Map;
+	METHOD method_1984 parseStatsFile (Ljava/lang/String;)Ljava/util/Map;
+		ARG 0 json
+	METHOD method_1985 buildStatsJson (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
+		ARG 0 userName
+		ARG 1 sessionId
+		ARG 2 stats
+	METHOD method_1986 loadStats (Ljava/util/Map;)V
+		ARG 1 stats
 	METHOD method_1987 writeStatToMap (Ljava/util/Map;Lnet/minecraft/class_139;I)V
+		ARG 1 statsMap
+		ARG 2 stat
+		ARG 3 value
 	METHOD method_1988 hasAchievementUnlocked (Lnet/minecraft/class_24;)Z
+		ARG 1 achievement
 	METHOD method_1989 writeStat (Lnet/minecraft/class_139;)I
+		ARG 1 stat
 	METHOD method_1990 readStat (Lnet/minecraft/class_139;I)V
-	METHOD method_1991 func_27175_b ()V
-	METHOD method_1992 func_27180_b (Ljava/util/Map;)V
-	METHOD method_1993 func_27181_b (Lnet/minecraft/class_24;)Z
+		ARG 1 stat
+		ARG 2 value
+	METHOD method_1991 saveStats ()V
+	METHOD method_1992 increaseStats (Ljava/util/Map;)V
+		ARG 1 stats
+	METHOD method_1993 canUnlockAchievement (Lnet/minecraft/class_24;)Z
+		ARG 1 achievement
 	METHOD method_1994 syncStats ()V
-	METHOD method_1995 func_27187_c (Ljava/util/Map;)V
-	METHOD method_1996 func_27178_d ()V
+	METHOD method_1995 setStats (Ljava/util/Map;)V
+		ARG 1 stats
+	METHOD method_1996 flushStats ()V

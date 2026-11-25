@@ -8,8 +8,17 @@ CLASS net/minecraft/class_428 net/minecraft/src/EnumToolMaterial
 	FIELD field_1694 maxUses I
 	FIELD field_1695 efficiencyOnProperMaterial F
 	FIELD field_1696 damageVsEntity I
-	FIELD field_1697 field_21209_j [Lnet/minecraft/class_428;
+	FIELD field_1697 VALUES [Lnet/minecraft/class_428;
+	METHOD <init> (Ljava/lang/String;IIIFI)V
+		ARG 1 name
+		ARG 2 ordinal
+		ARG 3 harvestLevel
+		ARG 4 maxUses
+		ARG 5 efficiency
+		ARG 6 damage
 	METHOD method_1417 getMaxUses ()I
 	METHOD method_1418 getEfficiencyOnProperMaterial ()F
 	METHOD method_1419 getDamageVsEntity ()I
 	METHOD method_1420 getHarvestLevel ()I
+	METHOD valueOf (Ljava/lang/String;)Lnet/minecraft/class_428;
+		ARG 0 name

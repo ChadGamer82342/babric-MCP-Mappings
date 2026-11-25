@@ -1,14 +1,35 @@
 CLASS net/minecraft/class_519 net/minecraft/src/WorldChunkManager
 	FIELD field_2235 temperature [D
 	FIELD field_2236 humidity [D
-	FIELD field_2237 field_4196_c [D
-	FIELD field_2238 field_4195_d [Lnet/minecraft/class_153;
-	FIELD field_2239 field_4194_e Lnet/minecraft/class_458;
-	FIELD field_2240 field_4193_f Lnet/minecraft/class_458;
-	FIELD field_2241 field_4192_g Lnet/minecraft/class_458;
+	FIELD field_2237 rainfall [D
+	FIELD field_2238 biomes [Lnet/minecraft/class_153;
+	FIELD field_2239 temperatureNoiseGenerator Lnet/minecraft/class_458;
+	FIELD field_2240 humidityNoise Lnet/minecraft/class_458;
+	FIELD field_2241 detailNoise Lnet/minecraft/class_458;
+	METHOD <init> (Lnet/minecraft/class_18;)V
+		ARG 1 world
 	METHOD method_1786 getTemperature (II)D
+		ARG 1 x
+		ARG 2 z
 	METHOD method_1787 getBiomeGenAt (II)Lnet/minecraft/class_153;
-	METHOD method_1788 func_4069_a (IIII)[Lnet/minecraft/class_153;
+		ARG 1 x
+		ARG 2 z
+	METHOD method_1788 getBiomeGenAt (IIII)[Lnet/minecraft/class_153;
+		ARG 1 x
+		ARG 2 z
+		ARG 3 width
+		ARG 4 height
 	METHOD method_1789 getBiomeGenAtChunkCoord (Lnet/minecraft/class_515;)Lnet/minecraft/class_153;
+		ARG 1 chunkPosition
 	METHOD method_1790 getTemperatures ([DIIII)[D
+		ARG 1 temperatures
+		ARG 2 x
+		ARG 3 z
+		ARG 4 width
+		ARG 5 height
 	METHOD method_1791 loadBlockGeneratorData ([Lnet/minecraft/class_153;IIII)[Lnet/minecraft/class_153;
+		ARG 1 biomes
+		ARG 2 x
+		ARG 3 z
+		ARG 4 width
+		ARG 5 height

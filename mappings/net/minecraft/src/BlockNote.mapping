@@ -1,1 +1,3 @@
 CLASS net/minecraft/class_348 net/minecraft/src/BlockNote
+	METHOD <init> (I)V
+		ARG 1 blockId

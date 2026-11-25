@@ -3,8 +3,15 @@ CLASS net/minecraft/class_270 net/minecraft/src/WatchableObject
 	FIELD field_1094 dataValueId I
 	FIELD field_1095 watchedObject Ljava/lang/Object;
 	FIELD field_1096 isWatching Z
+	METHOD <init> (IILjava/lang/Object;)V
+		ARG 1 objectType
+		ARG 2 objectId
+		ARG 3 object
 	METHOD method_960 getDataValueId ()I
 	METHOD method_961 setObject (Ljava/lang/Object;)V
+		ARG 1 object
 	METHOD method_962 setWatching (Z)V
+		ARG 1 watching
 	METHOD method_963 getObject ()Ljava/lang/Object;
 	METHOD method_964 getObjectType ()I
+	METHOD method_965 isWatched ()Z

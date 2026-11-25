@@ -1,23 +1,34 @@
 CLASS net/minecraft/class_121 net/minecraft/src/EntityWolf
 	FIELD field_368 looksWithInterest Z
-	FIELD field_369 field_25048_b F
-	FIELD field_370 field_25054_c F
+	FIELD field_369 interestProgress F
+	FIELD field_370 prevInterestProgress F
 	FIELD field_371 isWolfShaking Z
-	FIELD field_372 field_25052_g Z
+	FIELD field_372 isShaking Z
 	FIELD field_373 timeWolfIsShaking F
 	FIELD field_374 prevTimeWolfIsShaking F
 	METHOD method_420 getShakeAngle (FF)F
+		ARG 1 partialTick
+		ARG 2 shakeProgress
 	METHOD method_421 getShadingWhileShaking (F)F
+		ARG 1 partialTick
 	METHOD method_422 getInterestedAngle (F)F
+		ARG 1 partialTick
 	METHOD method_423 getWolfShaking ()Z
 	METHOD method_424 setTailRotation ()F
 	METHOD method_425 isWolfTamed ()Z
 	METHOD method_426 setWolfOwner (Ljava/lang/String;)V
+		ARG 1 ownerName
 	METHOD method_427 showHeartsOrSmokeFX (Z)V
+		ARG 1 showHearts
 	METHOD method_428 setWolfSitting (Z)V
+		ARG 1 sitting
 	METHOD method_429 getPathOrWalkableBlock (Lnet/minecraft/class_57;F)V
+		ARG 1 target
+		ARG 2 distance
 	METHOD method_430 setWolfAngry (Z)V
+		ARG 1 angry
 	METHOD method_431 setWolfTamed (Z)V
+		ARG 1 tamed
 	METHOD method_432 getWolfOwner ()Ljava/lang/String;
 	METHOD method_433 isWolfSitting ()Z
 	METHOD method_434 isWolfAngry ()Z

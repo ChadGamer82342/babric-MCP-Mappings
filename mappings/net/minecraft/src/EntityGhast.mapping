@@ -8,3 +8,7 @@ CLASS net/minecraft/class_364 net/minecraft/src/EntityGhast
 	FIELD field_1382 targetedEntity Lnet/minecraft/class_57;
 	FIELD field_1383 aggroCooldown I
 	METHOD method_1190 isCourseTraversable (DDDD)Z
+		ARG 1 waypointX
+		ARG 3 waypointY
+		ARG 5 waypointZ
+		ARG 7 stepCount

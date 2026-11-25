@@ -1,4 +1,18 @@
 CLASS net/minecraft/class_563 net/minecraft/src/EntityDiggingFX
-	FIELD field_2383 field_4082_a Lnet/minecraft/class_17;
-	FIELD field_2384 field_32001_o I
-	METHOD method_1856 func_4041_a (III)Lnet/minecraft/class_563;
+	FIELD field_2383 block Lnet/minecraft/class_17;
+	FIELD field_2384 side I
+	METHOD <init> (Lnet/minecraft/class_18;DDDDDDLnet/minecraft/class_17;II)V
+		ARG 1 world
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 motionX
+		ARG 10 motionY
+		ARG 12 motionZ
+		ARG 14 block
+		ARG 15 side
+		ARG 16 metadata
+	METHOD method_1856 multiplyColor (III)Lnet/minecraft/class_563;
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z

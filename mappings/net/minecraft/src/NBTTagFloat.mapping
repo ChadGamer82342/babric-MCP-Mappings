@@ -1,2 +1,4 @@
 CLASS net/minecraft/class_358 net/minecraft/src/NBTTagFloat
 	FIELD field_1336 floatValue F
+	METHOD <init> (F)V
+		ARG 1 value

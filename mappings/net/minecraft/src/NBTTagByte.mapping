@@ -1,2 +1,4 @@
 CLASS net/minecraft/class_360 net/minecraft/src/NBTTagByte
 	FIELD field_1356 byteValue B
+	METHOD <init> (B)V
+		ARG 1 value

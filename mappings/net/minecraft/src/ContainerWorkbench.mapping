@@ -1,7 +1,13 @@
 CLASS net/minecraft/class_196 net/minecraft/src/ContainerWorkbench
 	FIELD field_708 craftMatrix Lnet/minecraft/class_159;
 	FIELD field_709 craftResult Lnet/minecraft/class_134;
-	FIELD field_710 field_20133_c Lnet/minecraft/class_18;
-	FIELD field_711 field_20132_h I
-	FIELD field_712 field_20131_i I
-	FIELD field_713 field_20130_j I
+	FIELD field_710 world Lnet/minecraft/class_18;
+	FIELD field_711 x I
+	FIELD field_712 y I
+	FIELD field_713 z I
+	METHOD <init> (Lnet/minecraft/class_136;Lnet/minecraft/class_18;III)V
+		ARG 1 playerInventory
+		ARG 2 world
+		ARG 3 x
+		ARG 4 y
+		ARG 5 z

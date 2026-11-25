@@ -1,3 +1,6 @@
 CLASS net/minecraft/class_506 net/minecraft/src/ContainerChest
-	FIELD field_2110 field_20125_a Lnet/minecraft/class_134;
-	FIELD field_2111 field_27282_b I
+	FIELD field_2110 chestInventory Lnet/minecraft/class_134;
+	FIELD field_2111 numRows I
+	METHOD <init> (Lnet/minecraft/class_134;Lnet/minecraft/class_134;)V
+		ARG 1 playerInventory
+		ARG 2 chestInventory

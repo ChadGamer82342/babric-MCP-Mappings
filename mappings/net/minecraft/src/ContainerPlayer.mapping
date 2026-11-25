@@ -1,8 +1,19 @@
 CLASS net/minecraft/class_277 net/minecraft/src/ContainerPlayer
-	CLASS 1 SlotArmor
-		FIELD field_1127 armorType I
-		FIELD field_1128 inventory Lnet/minecraft/class_277;
-
 	FIELD field_1124 craftMatrix Lnet/minecraft/class_159;
 	FIELD field_1125 craftResult Lnet/minecraft/class_134;
 	FIELD field_1126 isSinglePlayer Z
+	METHOD <init> (Lnet/minecraft/class_136;)V
+		ARG 1 inventory
+	METHOD <init> (Lnet/minecraft/class_136;Z)V
+		ARG 1 playerInventory
+		ARG 2 localWorld
+	CLASS 1 SlotArmor
+		FIELD field_1127 armorType I
+		FIELD field_1128 inventory Lnet/minecraft/class_277;
+		METHOD <init> (Lnet/minecraft/class_277;Lnet/minecraft/class_134;IIII)V
+			ARG 1 container
+			ARG 2 inventory
+			ARG 3 slotIndex
+			ARG 4 x
+			ARG 5 y
+			ARG 6 armorType

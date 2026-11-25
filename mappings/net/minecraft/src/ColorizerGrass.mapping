@@ -1,4 +1,7 @@
 CLASS net/minecraft/class_287 net/minecraft/src/ColorizerGrass
 	FIELD field_1141 grassBuffer [I
 	METHOD method_981 getGrassColor (DD)I
-	METHOD method_982 func_28181_a ([I)V
+		ARG 0 temperature
+		ARG 2 humidity
+	METHOD method_982 setGrassColorBuffer ([I)V
+		ARG 0 colorBuffer

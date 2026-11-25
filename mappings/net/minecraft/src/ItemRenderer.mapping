@@ -4,14 +4,24 @@ CLASS net/minecraft/class_556 net/minecraft/src/ItemRenderer
 	FIELD field_2403 equippedProgress F
 	FIELD field_2404 prevEquippedProgress F
 	FIELD field_2405 renderBlocksInstance Lnet/minecraft/class_13;
-	FIELD field_2406 field_28131_f Lnet/minecraft/class_321;
-	FIELD field_2407 field_20099_f I
+	FIELD field_2406 mapRenderer Lnet/minecraft/class_321;
+	FIELD field_2407 equippedItemSlot I
+	METHOD <init> (Lnet/minecraft/client/Minecraft;)V
+		ARG 1 minecraft
 	METHOD method_1859 updateEquippedItem ()V
 	METHOD method_1860 renderItemInFirstPerson (F)V
+		ARG 1 partialTick
 	METHOD method_1861 renderInsideOfBlock (FI)V
+		ARG 1 partialTick
+		ARG 2 blockId
 	METHOD method_1862 renderItem (Lnet/minecraft/class_127;Lnet/minecraft/class_31;)V
-	METHOD method_1863 func_9449_b ()V
+		ARG 1 entity
+		ARG 2 itemStack
+	METHOD method_1863 resetEquippedProgress ()V
 	METHOD method_1864 renderOverlays (F)V
-	METHOD method_1865 func_9450_c ()V
+		ARG 1 partialTick
+	METHOD method_1865 resetEquippedProgress2 ()V
 	METHOD method_1866 renderWarpedTextureOverlay (F)V
+		ARG 1 partialTick
 	METHOD method_1867 renderFireInFirstPerson (F)V
+		ARG 1 partialTick

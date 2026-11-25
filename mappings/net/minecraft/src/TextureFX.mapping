@@ -5,5 +5,8 @@ CLASS net/minecraft/class_336 net/minecraft/src/TextureFX
 	FIELD field_1414 textureId I
 	FIELD field_1415 tileSize I
 	FIELD field_1416 tileImage I
+	METHOD <init> (I)V
+		ARG 1 textureIndex
 	METHOD method_1205 onTick ()V
 	METHOD method_1206 bindImage (Lnet/minecraft/class_76;)V
+		ARG 1 renderEngine

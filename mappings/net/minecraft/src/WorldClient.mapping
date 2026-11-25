@@ -1,22 +1,50 @@
 CLASS net/minecraft/class_454 net/minecraft/src/WorldClient
-	CLASS class_456 WorldBlockPositionType
-		FIELD field_1728 field_1202_a I
-		FIELD field_1729 field_1201_b I
-		FIELD field_1730 field_1207_c I
-		FIELD field_1731 field_1206_d I
-		FIELD field_1732 field_1205_e I
-		FIELD field_1733 field_1204_f I
-		FIELD field_1734 field_1203_g Lnet/minecraft/class_454;
-
-	FIELD field_1722 field_1057_z Ljava/util/LinkedList;
+	FIELD field_1722 pendingBlockUpdates Ljava/util/LinkedList;
 	FIELD field_1723 sendQueue Lnet/minecraft/class_219;
-	FIELD field_1724 field_20915_C Lnet/minecraft/class_455;
-	FIELD field_1725 field_1055_D Lnet/minecraft/class_80;
-	FIELD field_1726 field_20914_E Ljava/util/Set;
-	FIELD field_1727 field_1053_F Ljava/util/Set;
+	FIELD field_1724 clientChunkProvider Lnet/minecraft/class_455;
+	FIELD field_1725 entityHashMap Lnet/minecraft/class_80;
+	FIELD field_1726 entitySpawnQueue Ljava/util/Set;
+	FIELD field_1727 entityRemovalQueue Ljava/util/Set;
+	METHOD <init> (Lnet/minecraft/class_219;JI)V
+		ARG 1 netClientHandler
+		ARG 2 seed
+		ARG 4 dimensionId
 	METHOD method_1494 doPreChunk (IIZ)V
-	METHOD method_1495 func_712_a (ILnet/minecraft/class_57;)V
-	METHOD method_1496 func_709_b (I)Lnet/minecraft/class_57;
+		ARG 1 chunkX
+		ARG 2 chunkZ
+		ARG 3 load
+	METHOD method_1495 addEntity (ILnet/minecraft/class_57;)V
+		ARG 1 entityId
+		ARG 2 entity
+	METHOD method_1496 getEntityByID (I)Lnet/minecraft/class_57;
+		ARG 1 entityId
 	METHOD method_1497 removeEntityFromWorld (I)Lnet/minecraft/class_57;
-	METHOD method_1498 func_711_c (IIIIII)V
-	METHOD method_1499 func_714_c (IIIII)Z
+		ARG 1 entityId
+	METHOD method_1498 invalidateBlockReceiveRegion (IIIIII)V
+		ARG 1 minBlockX
+		ARG 2 minBlockY
+		ARG 3 minBlockZ
+		ARG 4 maxBlockX
+		ARG 5 maxBlockY
+		ARG 6 maxBlockZ
+	METHOD method_1499 setBlockMetadataWithNotify (IIIII)Z
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 blockId
+		ARG 5 metadata
+	CLASS class_456 WorldBlockPositionType
+		FIELD field_1728 x I
+		FIELD field_1729 y I
+		FIELD field_1730 z I
+		FIELD field_1731 ticksRemaining I
+		FIELD field_1732 blockId I
+		FIELD field_1733 metadata I
+		FIELD field_1734 blockPosition Lnet/minecraft/class_454;
+		METHOD <init> (Lnet/minecraft/class_454;IIIII)V
+			ARG 1 world
+			ARG 2 minX
+			ARG 3 minY
+			ARG 4 minZ
+			ARG 5 maxX
+			ARG 6 maxZ

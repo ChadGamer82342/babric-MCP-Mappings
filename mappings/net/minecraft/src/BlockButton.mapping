@@ -1,3 +1,14 @@
 CLASS net/minecraft/class_323 net/minecraft/src/BlockButton
+	METHOD <init> (II)V
+		ARG 1 blockId
+		ARG 2 textureId
 	METHOD method_1047 getOrientation (Lnet/minecraft/class_18;III)I
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_1048 shortWindowId (Lnet/minecraft/class_18;III)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z

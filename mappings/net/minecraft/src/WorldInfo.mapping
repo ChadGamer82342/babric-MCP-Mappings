@@ -14,20 +14,25 @@ CLASS net/minecraft/class_7 net/minecraft/src/WorldInfo
 	FIELD field_25 rainTime I
 	FIELD field_26 thundering Z
 	FIELD field_27 thunderTime I
-	METHOD method_3 getNBTTagCompound ()Lnet/minecraft/class_8;
-	METHOD method_4 setSaveVersion (I)V
-	METHOD method_5 setSpawn (III)V
-	METHOD method_6 setWorldTime (J)V
-	METHOD method_7 updateTagCompound (Lnet/minecraft/class_8;Lnet/minecraft/class_8;)V
-	METHOD method_8 setWorldName (Ljava/lang/String;)V
-	METHOD method_9 getNBTTagCompoundWithPlayer (Ljava/util/List;)Lnet/minecraft/class_8;
+	METHOD <init> (JLjava/lang/String;)V
+		ARG 1 randomSeed
+		ARG 3 worldName
+	METHOD <init> (Lnet/minecraft/class_7;)V
+		ARG 1 worldInfo
+	METHOD <init> (Lnet/minecraft/class_8;)V
+		ARG 1 compound
 	METHOD method_10 setThundering (Z)V
+		ARG 1 thundering
 	METHOD method_11 getRandomSeed ()J
 	METHOD method_12 setThunderTime (I)V
+		ARG 1 thunderTime
 	METHOD method_13 setSizeOnDisk (J)V
+		ARG 1 sizeOnDisk
 	METHOD method_14 setRaining (Z)V
+		ARG 1 raining
 	METHOD method_15 getSpawnX ()I
 	METHOD method_16 setRainTime (I)V
+		ARG 1 rainTime
 	METHOD method_17 getSpawnY ()I
 	METHOD method_18 getSpawnZ ()I
 	METHOD method_19 getWorldTime ()J
@@ -39,9 +44,29 @@ CLASS net/minecraft/class_7 net/minecraft/src/WorldInfo
 	METHOD method_25 getRaining ()Z
 	METHOD method_26 getRainTime ()I
 	METHOD method_27 setSpawnX (I)V
+		ARG 1 spawnX
 	METHOD method_28 setPlayerNBTTagCompound (Lnet/minecraft/class_8;)V
+		ARG 1 playerTag
 	METHOD method_29 setSpawnY (I)V
+		ARG 1 spawnY
+	METHOD method_3 getNBTTagCompound ()Lnet/minecraft/class_8;
 	METHOD method_30 setSpawnZ (I)V
+		ARG 1 spawnZ
 	METHOD method_31 getPlayerNBTTagCompound ()Lnet/minecraft/class_8;
 	METHOD method_32 getWorldName ()Ljava/lang/String;
 	METHOD method_33 getLastTimePlayed ()J
+	METHOD method_4 setSaveVersion (I)V
+		ARG 1 saveVersion
+	METHOD method_5 setSpawn (III)V
+		ARG 1 spawnX
+		ARG 2 spawnY
+		ARG 3 spawnZ
+	METHOD method_6 setWorldTime (J)V
+		ARG 1 worldTime
+	METHOD method_7 updateTagCompound (Lnet/minecraft/class_8;Lnet/minecraft/class_8;)V
+		ARG 1 compound
+		ARG 2 playerTag
+	METHOD method_8 setWorldName (Ljava/lang/String;)V
+		ARG 1 worldName
+	METHOD method_9 getNBTTagCompoundWithPlayer (Ljava/util/List;)Lnet/minecraft/class_8;
+		ARG 1 players

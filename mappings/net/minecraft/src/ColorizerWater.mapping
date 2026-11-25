@@ -1,3 +1,4 @@
 CLASS net/minecraft/class_279 net/minecraft/src/ColorizerWater
 	FIELD field_1129 waterBuffer [I
-	METHOD method_972 func_28182_a ([I)V
+	METHOD method_972 setWaterColorBuffer ([I)V
+		ARG 0 colorBuffer

@@ -1,11 +1,8 @@
 CLASS net/minecraft/class_477 net/minecraft/src/CanvasIsomPreview
-	CLASS 1 ThreadRunIsoClient
-		FIELD field_1966 isoCanvas Lnet/minecraft/class_477;
-
-	FIELD field_1954 field_1784_j I
+	FIELD field_1954 yOffset I
 	FIELD field_1955 xPosition I
 	FIELD field_1956 yPosition I
-	FIELD field_1957 field_1793_a I
+	FIELD field_1957 frameCounter I
 	FIELD field_1958 zoomLevel I
 	FIELD field_1959 displayHelpText Z
 	FIELD field_1960 worldObj Lnet/minecraft/class_18;
@@ -13,15 +10,49 @@ CLASS net/minecraft/class_477 net/minecraft/src/CanvasIsomPreview
 	FIELD field_1962 running Z
 	FIELD field_1963 imageBufferList Ljava/util/List;
 	FIELD field_1964 imageBuffers [[Lnet/minecraft/class_478;
-	FIELD field_1965 field_1785_i I
+	FIELD field_1965 xOffset I
+	METHOD keyPressed (Ljava/awt/event/KeyEvent;)V
+		ARG 1 event
+	METHOD keyReleased (Ljava/awt/event/KeyEvent;)V
+		ARG 1 event
+	METHOD keyTyped (Ljava/awt/event/KeyEvent;)V
+		ARG 1 event
 	METHOD method_1633 getMinecraftDir ()Ljava/io/File;
 	METHOD method_1634 setTimeOfDay (I)V
+		ARG 1 timeOfDay
 	METHOD method_1635 getImageBuffer (II)Lnet/minecraft/class_478;
+		ARG 1 x
+		ARG 2 y
 	METHOD method_1636 isRunning (Lnet/minecraft/class_477;)Z
 	METHOD method_1637 drawScreen (Ljava/awt/Graphics2D;)V
+		ARG 1 graphics
 	METHOD method_1638 getAppDir (Ljava/lang/String;)Ljava/io/File;
-	METHOD method_1639 func_1272_b ()V
+		ARG 1 appDirectory
+	METHOD method_1639 startThreads ()V
 	METHOD method_1640 loadWorld (Ljava/lang/String;)V
+		ARG 1 worldName
 	METHOD method_1641 exit ()V
 	METHOD method_1642 showNextBuffer ()V
 	METHOD method_1643 getOs ()Lnet/minecraft/class_343;
+	METHOD mouseClicked (Ljava/awt/event/MouseEvent;)V
+		ARG 1 event
+	METHOD mouseDragged (Ljava/awt/event/MouseEvent;)V
+		ARG 1 event
+	METHOD mouseEntered (Ljava/awt/event/MouseEvent;)V
+		ARG 1 event
+	METHOD mouseExited (Ljava/awt/event/MouseEvent;)V
+		ARG 1 event
+	METHOD mouseMoved (Ljava/awt/event/MouseEvent;)V
+		ARG 1 event
+	METHOD mousePressed (Ljava/awt/event/MouseEvent;)V
+		ARG 1 event
+	METHOD mouseReleased (Ljava/awt/event/MouseEvent;)V
+		ARG 1 event
+	METHOD paint (Ljava/awt/Graphics;)V
+		ARG 1 graphics
+	METHOD update (Ljava/awt/Graphics;)V
+		ARG 1 graphics
+	CLASS 1 ThreadRunIsoClient
+		FIELD field_1966 isoCanvas Lnet/minecraft/class_477;
+		METHOD <init> (Lnet/minecraft/class_477;)V
+			ARG 1 preview

@@ -1,2 +1,5 @@
 CLASS net/minecraft/class_381 net/minecraft/src/ItemMinecart
 	FIELD field_1431 minecartType I
+	METHOD <init> (II)V
+		ARG 1 itemId
+		ARG 2 minecartType

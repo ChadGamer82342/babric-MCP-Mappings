@@ -3,8 +3,17 @@ CLASS net/minecraft/class_293 net/minecraft/src/GuiContainer
 	FIELD field_1153 ySize I
 	FIELD field_1154 inventorySlots Lnet/minecraft/class_71;
 	FIELD field_1155 itemRenderer Lnet/minecraft/class_92;
+	METHOD <init> (Lnet/minecraft/class_71;)V
+		ARG 1 container
 	METHOD method_984 drawGuiContainerBackgroundLayer (F)V
+		ARG 1 partialTick
 	METHOD method_985 drawGuiContainerForegroundLayer ()V
 	METHOD method_986 getSlotAtPosition (II)Lnet/minecraft/class_133;
+		ARG 1 mouseX
+		ARG 2 mouseY
 	METHOD method_987 drawSlotInventory (Lnet/minecraft/class_133;)V
+		ARG 1 slot
 	METHOD method_988 getIsMouseOverSlot (Lnet/minecraft/class_133;II)Z
+		ARG 1 slot
+		ARG 2 mouseX
+		ARG 3 mouseY

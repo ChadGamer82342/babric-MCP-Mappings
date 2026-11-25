@@ -8,4 +8,6 @@ CLASS net/minecraft/class_215 net/minecraft/src/Packet24MobSpawn
 	FIELD field_803 yPosition I
 	FIELD field_804 zPosition I
 	FIELD field_805 yaw B
+	METHOD <init> (Lnet/minecraft/class_127;)V
+		ARG 1 entity
 	METHOD method_747 getMetadata ()Ljava/util/List;

@@ -1,4 +1,7 @@
 CLASS net/minecraft/class_341 net/minecraft/src/GuiRenameWorld
-	FIELD field_1271 field_22112_a Lnet/minecraft/class_32;
-	FIELD field_1272 field_22114_h Lnet/minecraft/class_181;
-	FIELD field_1273 field_22113_i Ljava/lang/String;
+	FIELD field_1271 parentScreen Lnet/minecraft/class_32;
+	FIELD field_1272 textField Lnet/minecraft/class_181;
+	FIELD field_1273 worldName Ljava/lang/String;
+	METHOD <init> (Lnet/minecraft/class_32;Ljava/lang/String;)V
+		ARG 1 parentScreen
+		ARG 2 worldName

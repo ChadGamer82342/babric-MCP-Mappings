@@ -3,3 +3,7 @@ CLASS net/minecraft/class_393 net/minecraft/src/Packet5PlayerInventory
 	FIELD field_1523 slot I
 	FIELD field_1524 itemID I
 	FIELD field_1525 itemDamage I
+	METHOD <init> (IILnet/minecraft/class_31;)V
+		ARG 1 entityId
+		ARG 2 slot
+		ARG 3 itemStack

@@ -1,2 +1,5 @@
 CLASS net/minecraft/class_352 net/minecraft/src/ItemSword
 	FIELD field_1314 weaponDamage I
+	METHOD <init> (ILnet/minecraft/class_428;)V
+		ARG 1 itemId
+		ARG 2 toolMaterial

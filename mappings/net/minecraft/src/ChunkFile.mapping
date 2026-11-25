@@ -1,8 +1,10 @@
 CLASS net/minecraft/class_634 net/minecraft/src/ChunkFile
-	FIELD field_2754 field_22326_a Ljava/io/File;
-	FIELD field_2755 field_22325_b I
-	FIELD field_2756 field_22327_c I
-	METHOD method_2095 func_22324_a ()Ljava/io/File;
+	FIELD field_2754 file Ljava/io/File;
+	FIELD field_2755 chunkX I
+	FIELD field_2756 chunkZ I
+	METHOD <init> (Ljava/io/File;)V
+		ARG 1 file
+	METHOD method_2095 getFile ()Ljava/io/File;
 	METHOD method_2096 func_22322_a (Lnet/minecraft/class_634;)I
-	METHOD method_2097 func_22323_b ()I
-	METHOD method_2098 func_22321_c ()I
+	METHOD method_2097 getChunkX ()I
+	METHOD method_2098 getChunkZ ()I

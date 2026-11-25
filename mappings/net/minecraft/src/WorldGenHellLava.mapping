@@ -1,2 +1,4 @@
 CLASS net/minecraft/class_351 net/minecraft/src/WorldGenHellLava
-	FIELD field_1313 field_4158_a I
+	FIELD field_1313 blockId I
+	METHOD <init> (I)V
+		ARG 1 blockId

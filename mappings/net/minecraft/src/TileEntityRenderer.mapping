@@ -14,10 +14,26 @@ CLASS net/minecraft/class_331 net/minecraft/src/TileEntityRenderer
 	FIELD field_1564 specialRendererMap Ljava/util/Map;
 	FIELD field_1565 fontRenderer Lnet/minecraft/class_34;
 	METHOD method_1272 getFontRenderer ()Lnet/minecraft/class_34;
-	METHOD method_1273 func_31072_a (Lnet/minecraft/class_18;)V
+	METHOD method_1273 setWorld (Lnet/minecraft/class_18;)V
+		ARG 1 world
 	METHOD method_1274 cacheActiveRenderInfo (Lnet/minecraft/class_18;Lnet/minecraft/class_76;Lnet/minecraft/class_34;Lnet/minecraft/class_127;F)V
+		ARG 1 world
+		ARG 2 renderEngine
+		ARG 3 fontRenderer
+		ARG 4 entity
+		ARG 5 partialTick
 	METHOD method_1275 getSpecialRendererForClass (Ljava/lang/Class;)Lnet/minecraft/class_330;
+		ARG 1 tileEntityClass
 	METHOD method_1276 hasSpecialRenderer (Lnet/minecraft/class_55;)Z
+		ARG 1 tileEntity
 	METHOD method_1277 renderTileEntityAt (Lnet/minecraft/class_55;DDDF)V
+		ARG 1 tileEntity
+		ARG 2 x
+		ARG 4 y
+		ARG 6 z
+		ARG 8 partialTick
 	METHOD method_1278 renderTileEntity (Lnet/minecraft/class_55;F)V
+		ARG 1 tileEntity
+		ARG 2 partialTick
 	METHOD method_1279 getSpecialRendererForEntity (Lnet/minecraft/class_55;)Lnet/minecraft/class_330;
+		ARG 1 tileEntity

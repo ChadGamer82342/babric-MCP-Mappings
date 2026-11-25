@@ -1,8 +1,12 @@
 CLASS net/minecraft/class_452 net/minecraft/src/LoadingScreenRenderer
-	FIELD field_1714 field_1004_a Ljava/lang/String;
+	FIELD field_1714 loadingText Ljava/lang/String;
 	FIELD field_1715 mc Lnet/minecraft/client/Minecraft;
-	FIELD field_1716 field_1007_c Ljava/lang/String;
-	FIELD field_1717 field_1006_d J
-	FIELD field_1718 field_1005_e Z
+	FIELD field_1716 currentlyDisplayedText Ljava/lang/String;
+	FIELD field_1717 lastUpdateTime J
+	FIELD field_1718 loadingScreenActive Z
+	METHOD <init> (Lnet/minecraft/client/Minecraft;)V
+		ARG 1 minecraft
 	METHOD method_1491 printText (Ljava/lang/String;)V
-	METHOD method_1492 func_597_c (Ljava/lang/String;)V
+		ARG 1 text
+	METHOD method_1492 updateProgressScreen (Ljava/lang/String;)V
+		ARG 1 message

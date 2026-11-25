@@ -1,4 +1,7 @@
 CLASS net/minecraft/class_438 net/minecraft/src/Packet40EntityMetadata
 	FIELD field_1975 entityId I
-	FIELD field_1976 field_21048_b Ljava/util/List;
-	METHOD method_1649 func_21047_b ()Ljava/util/List;
+	FIELD field_1976 watchedObjects Ljava/util/List;
+	METHOD <init> (ILnet/minecraft/class_216;)V
+		ARG 1 entityId
+		ARG 2 watcher
+	METHOD method_1649 getWatchableObjects ()Ljava/util/List;

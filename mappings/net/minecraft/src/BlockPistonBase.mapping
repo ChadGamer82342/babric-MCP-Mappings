@@ -1,12 +1,48 @@
 CLASS net/minecraft/class_223 net/minecraft/src/BlockPistonBase
 	FIELD field_844 isSticky Z
-	FIELD field_845 field_31048_b Z
+	FIELD field_845 isMoving Z
+	METHOD <init> (IIZ)V
+		ARG 1 blockId
+		ARG 2 textureId
+		ARG 3 sticky
 	METHOD method_759 canPushBlock (ILnet/minecraft/class_18;IIIZ)Z
-	METHOD method_760 func_31044_d (I)I
-	METHOD method_761 func_31039_c (Lnet/minecraft/class_18;IIILnet/minecraft/class_54;)I
+		ARG 0 blockId
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 allowMob
+	METHOD method_760 getFacingFromMetadata (I)I
+		ARG 0 metadata
+	METHOD method_761 getPistonOrientation (Lnet/minecraft/class_18;IIILnet/minecraft/class_54;)I
+		ARG 0 world
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 player
 	METHOD method_762 isPowered (I)Z
-	METHOD method_763 func_31041_f (Lnet/minecraft/class_18;IIII)Z
-	METHOD method_764 func_31043_h (Lnet/minecraft/class_18;III)V
-	METHOD method_765 func_31045_h (Lnet/minecraft/class_18;IIII)Z
-	METHOD method_766 func_31047_i (Lnet/minecraft/class_18;IIII)Z
+		ARG 0 metadata
+	METHOD method_763 isPowered (Lnet/minecraft/class_18;IIII)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 direction
+	METHOD method_764 updatePistonState (Lnet/minecraft/class_18;III)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+	METHOD method_765 canExtend (Lnet/minecraft/class_18;IIII)Z
+		ARG 0 world
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 direction
+	METHOD method_766 tryExtend (Lnet/minecraft/class_18;IIII)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 direction
 	METHOD method_767 ignoreUpdates ()I
